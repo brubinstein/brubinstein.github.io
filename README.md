@@ -1,2 +1,2 @@
 # brubinstein.github.io
-My personal homepage
+Personal homepage for Benjamin Rubinstein
