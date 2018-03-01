@@ -1,0 +1,14 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+### Subject Teaching
+
+* [COMP90051 Statistical Machine Learning](https://handbook.unimelb.edu.au/view/2018/COMP90051): Semester 2, 2013--15, 2018
+* [BUSA90501 Statistical Learning 2](https://handbook.unimelb.edu.au/view/2015/BUSA90501): Winter, 2015-16 (in Melbourne Business School)
+* [COMP10002 Foundations of Algorithms](https://handbook.unimelb.edu.au/view/2015/COMP10002): Semester 1, 2014-15
+
+### Program Design
+
+I co-designed several exciting programs offered by my department (within Engineering): the [Master of Business Analytics](http://mbs.edu/programs/masterbusinessanalytics/Pages/Master-Business-Analytics.aspx) (joint with the Melbourne Business School, QS-list ranked #5 globally and #1 in the Asia-Pacific), the [Bachelor of Science major in Data Science](http://bsc.unimelb.edu.au/majors/data-science) and the [Master of Data Science](http://science-courses.unimelb.edu.au/study/degrees/master-of-data-science/overview) (both joint with Maths & Stats within Science). These programs reflect the interdisciplinary nature of machine learning and its allied areas.

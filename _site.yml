@@ -1,0 +1,26 @@
+name: "Benjamin I. P. Rubinstein"
+output_dir: "."
+navbar:
+  title: "Benjamin I. P. Rubinstein"
+  left:
+    - text: "Group"
+      href: group.html
+    - text: "Papers"
+      href: pubs.html
+    - text: "Software"
+      href: software.html
+    - text: "Teaching"
+      href: teaching.html
+    - text: "Impact"
+      href: impact.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/bipr
+    - icon: fa-linkedin fa-lg
+      href: http://www.linkedin.com/in/benjaminrubinstein
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'

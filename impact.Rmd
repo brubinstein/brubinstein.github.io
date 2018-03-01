@@ -1,0 +1,178 @@
+---
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Machine Learning
+
+### Microsoft data linking
+
+<img src="images/leibniz.jpg" style="width:250px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+Over 2010--13, I was one of two researchers and a small handful of developers, building a production system for data integration---an application of machine learning in databases that leveraged our research at Microsoft e.g., [[VLDB'12](http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf)]. The system shipped multiple times internally (resulting in 4x ShipIt! awards for sustained product transfer). Notable applications were to the Bing Search engine across multiple verticals, and the Xbox game console. After the 2011/12 refresh, in which our data integration was a key contribution from Research, Xbox revenue increased by several $100m (due to [increased](http://allthingsd.com/20120510/microsofts-sneaky-success-the-xbox-is-the-most-popular-video-player-in-the-u-s/) [sales](http://allthingsd.com/20120327/xbox-users-clocking-more-hours-gobbling-media-than-gaming-online/) of consoles and Xbox Live subscriptions). Within Microsoft Research, this impact was [attributed](http://www.bing.com/community/site_blogs/b/search/archive/2011/12/08/bing-on-xbox-team-don-t-be-shy-about-talking-to-the-tv.aspx) to our small team. In Bing’s social vertical, our system matched over 1b records daily. I continue to work on data integration at Melbourne.
+
+### Predicting liver transplantation failure
+
+<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Liver.svg-->
+<img src="images/liver.png" style="width:120px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+Through 2016 my group with colleague Bailey collaborated with the Austin Hospital's transplantation unit, on predicting outcomes (graft failure) of liver transplantation for Australian demographics. With machine learning-based approaches, PhD student Yamuna Kankanige could improve by over 20% the predictive accuracy of the Donor Risk Index [[Transplantation'17](https://www.ncbi.nlm.nih.gov/pubmed/27941428)]---a risk score widely used by Australian surgeons today, in planning transplants and follow-up interventions.  
+
+_Media coverage:_ [9news](http://www.9news.com.au/health/2017/01/12/12/11/matchmaking-approach-to-liver-transplants), [heraldsun](http://www.heraldsun.com.au/news/victoria/how-dating-site-eharmony-can-help-boost-liver-transplant-success/news-story/eaaf4cc3c859dbd5c38baed5c2b496b0)
+
+## Privacy \& Security
+
+### 30yr Medicare/PBS dataset and the Re-identification Criminalisation Bill
+
+<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Medicare_brand.svg-->
+<img src="images/medicare.png" style="width:150px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+With colleagues Teague and Culnane, I helped uncover one of the largest privacy breaches in Australian history 2016--17. Federal health and human services in mid-2016 released an open dataset of 30 years of Medicare and Pharmaceutical Benefits Schemes transaction records, for 10% of the Australian population. The intention was to drive health economics research, for evidence-based policy development. Unfortunately minimal privacy protections were in place, while the data reported sensitive treatments e.g., for AIDS, late-term abortions, etc. Initially we completely [reidentified doctors](https://pursuit.unimelb.edu.au/articles/understanding-the-maths-is-crucial-for-protecting-privacy), due to improper hashing of their IDs.  As a result the dataset was taken offline and a [public statement](http://www.health.gov.au/internet/main/publishing.nsf/Content/mr-yr16-dept-dept005.htm) released by the Department. It could not be recalled. A year later we [announced](https://pursuit.unimelb.edu.au/articles/the-simple-process-of-re-identifying-patients-in-public-health-records) we had [reidentified](https://arxiv.org/abs/1712.05627) patients such as well-known figures in Australian sport and politics.
+
+<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Australian_Coat_of_Arms.png-->
+<img src="images/govt.png" style="width:150px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+The day after Medicare's retraction, the Attorney General published a plan to [legislate against reidentification](https://www.attorneygeneral.gov.au/Mediareleases/Pages/2016/ThirdQuarter/Amendment-to-the-Privacy-Act-to-further-protect-de-identified-data.aspx) of Commonwealth datasets. In the months to come the _Reidentification Criminal Offence Bill_ (an amendment to the _Privacy Act 1988_) was introduced to Parliament criminalising the act of reidentification, unless [with](http://www.itnews.com.au/news/brandis-says-white-hats-will-be-exempt-from-data-law-changes-438496) [prior](http://www.canberratimes.com.au/national/public-service/government-appoints-information-watchdog-timothy-pilgrim-but-no-one-to-fill-top-privacy-foi-jobs-20160928-grqm9j.html) [permission](https://www.oaic.gov.au/media-and-speeches/statements/australian-privacy-commissioner-s-investigation-into-published-mbs-and-pbs-data-sets). The bill, if passed, would be retroactively applied and reverse the burden of proof on accused. While stifling security experts and journalists responsibly disclosing existing privacy breaches to the government, the bill would not prevent private corporations or foreign entities outside Australian jurisdiction from misusing Commonwealth data. Of 15 submissions to the ensuing Parliamentary Inquiry examining the appropriateness of the bill, 14 were against including the Law Council of Australia, Australian Bankers’ Association, and EFF.
+Our [submission to the inquiry](http://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Legal_and_Constitutional_Affairs/PrivacyReidentification/Submissions) achieved significant impact, being directly quoted 9 times in the Senate Committee’s final report. 
+We wrote an [Op-Ed](http://www.smh.com.au/national/public-service/can-the-government-really-protect-your-privacy-when-it-deidentifies-public-data-20161204-gt3nny.html) in the Sydney Morning Herald clearly explaining [why](https://pursuit.unimelb.edu.au/articles/crime-and-privacy-in-open-data) criminalising reidentification would do more harm than good.
+
+_Media coverage (2016):_ [zdnet](http://www.zdnet.com/article/brandis-swings-his-golden-hammer-misses-mark/) ([again](http://www.zdnet.com/article/brandis-re-identification-law-proposal-slammed/)),
+[The Register](http://www.theregister.co.uk/2016/09/29/researchers_crack_oz_govt_medical_data_in_easy_basic_pc_attack/),
+[itnews](http://www.itnews.com.au/news/health-pulls-medicare-dataset-after-breach-of-doctor-details-438463) 
+([again](http://www.itnews.com.au/news/brandis-says-white-hats-will-be-exempt-from-data-law-changes-438496)), 
+[ABS news](http://www.abc.net.au/news/2016-09-29/medicare-pbs-dataset-pulled-over-encryption-concerns/7888686), 
+[The Guardian](https://www.theguardian.com/world/2016/sep/29/george-brandis-to-criminalise-re-identifying-published-government-data), 
+[The Age](http://www.theage.com.au/national/public-service/privacy-watchdog-called-after-health-department-data-breach-20160929-grr2m1.html), 
+[CSO](http://www.cso.com.au/article/607712/telstra-defensive-reverse-engineering-medicare-data-highlights-healthcare-security-risks/), 
+[HuffPo](http://www.huffingtonpost.com.au/2016/09/28/privacy-commissioner-to-investigate-medicare-data-breach/), 
+[Canberra Times](http://www.canberratimes.com.au/national/public-service/government-appoints-information-watchdog-timothy-pilgrim-but-no-one-to-fill-top-privacy-foi-jobs-20160928-grqm9j.html), 
+[Crickey](https://www.crikey.com.au/2016/09/29/keane-is-brandis-closing-the-door-on-white-hat-hackers/), 
+[ComputerWorld](http://www.computerworld.com.au/article/607708/will-privacy-act-changes-chilling-effect-cyber-security-research/), 
+[Gizmodo](http://www.gizmodo.com.au/2016/09/aussie-medicare-data-taken-offline-after-potential-breach-noticed/), 
+[Digital Rights Watch](http://digitalrightswatch.org.au/2016/09/29/concerns-around-proposed-amendments-to-privacy-act/), 
+[The Saturday Paper](https://www.thesaturdaypaper.com.au/news/politics/2016/10/08/millions-australians-caught-health-records-breach/14758452003833)  
+_Media coverage (2017 exceeding 1m views):_ 
+[ABC](http://www.abc.net.au/news/science/2017-12-18/anonymous-medicare-data-can-identify-patients-researchers-say/9267684), 
+[Sydney Morning Herald](http://www.smh.com.au/technology/innovation/australians-health-records-unwittingly-exposed-20171218-p4yxt2.html), 
+[IT News](https://www.itnews.com.au/news/health-open-data-bungle-meant-aussies-could-be-identified-480010), 
+[ZdNet](http://www.zdnet.com/article/re-identification-possible-with-australian-de-identified-medicare-and-pbs-open-data/), 
+[The Register](https://www.theregister.co.uk/2017/12/18/no_hack_needed_anonymisation_beaten_with_a_dash_of_sql/), 
+[SBS News](https://www.sbs.com.au/news/retracted-health-records-can-be-used-to-re-identify-patients-study), 
+[Business Insider](https://www.businessinsider.com.au/researchers-claim-private-health-records-of-millions-of-australians-were-exposed-2017-12), 
+[News.com.au](http://www.news.com.au/technology/online/security/one-in-10-australians-health-records-exposed-in-department-data-blunder/news-story/bd78435619d694d373f52634d5afa950?utm_content=SocialFlow&amp;utm_campaign=EditorialSF&amp;utm_source=News.com.au&amp;utm_medium=Twitter), 
+[Daily Telegraph](https://www.dailytelegraph.com.au/technology/one-in-10-australians-health-records-exposed-in-department-data-blunder/news-story/bd78435619d694d373f52634d5afa950), 
+[Brisbane Times](https://www.brisbanetimes.com.au/technology/australians-health-records-unwittingly-exposed-20171218-p4yxt2.html), 
+[Computer World](https://www.computerworld.com.au/article/631356/greens-call-limits-open-data/?utm_medium=rss&amp;utm_source=googlenewseditorspickfeed), 
+[LifeHacker](https://www.lifehacker.com.au/2017/12/confidential-medical-information-can-be-exposed/), 
+[BoingBoing](https://boingboing.net/2017/12/21/encryption-attacks.html),
+[Northern Star](http://www.northernstar.com.au/news/one-in-10-australians-health-records-exposed-in-de/3293358/), 
+[BuzzFeed](https://www.buzzfeed.com/ginarushton/your-medical-records-could-have-been-exposed-in-a-health?utm_term=.ahAm0J2mX#.jl3PWlAP6)
+
+### Technical privacy assessments: ABS, ONS, Opal
+
+<img src="images/laplace.png" style="width:200px; margin-right: 10px;" align="left"> 
+
+Also with colleagues Culnane and Teague since 2016, I have contributed towards several technical privacy assessments of government data initiatives. Contracted by the [Australian Bureau of Statistics](http://www.abs.gov.au/) (ABS), we have [analysed the privacy](https://arxiv.org/abs/1802.07975) of several options for name encoding for private record linkage---as might be used for Australian Census data for example. For [Transport for NSW](https://www.transport.nsw.gov.au/), we have performed a technical [privacy assessment](https://arxiv.org/abs/1704.08547) of a Data61-processed dataset of Opal transport card bus, train, ferry touch ons/offs again under contract. The data has subsequently been published. We have also discovered vulnerabilities in the hashing methodology published by the [UK Office of National Statistics](https://www.ons.gov.uk/) in a third [privacy assessment](https://arxiv.org/abs/1712.00871) (explained [here](https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem)).
+
+### Promoting privacy through cheating at Kaggle
+
+<img src="images/k.png" style="width:60px; margin-right: 10px;" align="left"> 
+
+In 2011 with Narayanan (now Princeton)
+and Shi (now Cornell), I helped demonstrate the power of privacy attacks to Kaggle (a $16m Series A, Google acquired platform for crowdsourcing machine learning) [[IJCNN'11](http://arxiv.org/abs/1102.4374)]. After determining the source of an anonymised social network dataset, intended for use
+in a link prediction contest, we downloaded and linked it to the competition test set. Normally a linkage attack would
+end there, having re-identified users. We used it to look up correct test answers and win the competition by ‘cheating’.
+No privacy breach resulted and contestants remained able to compete. However the result raised awareness for Kaggle,
+to the stark reality of privacy attacks. Team member Narayanan subsequently [consulted](http://randomwalker.info/publications/heritage-health-re-identifiability.pdf) on the privacy of the \$3m Heritage Health Prize dataset.
+
+### Side-channel attacks on Firefox
+
+<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Firefox_logo-sospc.name_.png-->
+<img src="images/firefox.png" style="width:80px; margin-right: 10px;" align="left"> 
+
+With a Berkeley group led by Dawn Song [[report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html)], I helped improve the security of [Mozilla's](https://www.mozilla.org/) open-source development processes. While open-source projects tend to improve system security through the principle of 'many eyes', Mozilla was publishing security-related commits to the public [Firefox web browser](https://www.mozilla.org/en-US/firefox/) source repository, often a month before those commits would be automatically pushed to users. We trained a learning-based ranker to predict which commits were more likely security-related. An attacker could then easily sift through a few commits by hand to find zero-day exploits, on average a month prior to patching. As a result of our work Mozilla made security-related commits [private](https://www.mozilla.org/en-US/about/governance/policies/security-group/membership/) until they were published as patches.
+
+## Funding & Awards
+
+### Funding
+
+Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$3.2m total** in competitive funding (Cat 1--4), **\$2.0m as lead-CI**, \$1.2m on a per-CI basis. Funding includes:
+
+* 2017--20 **\$1.05m: [Defence Science & Technology Group](https://www.dst.defence.gov.au/) and [Data61](https://www.data61.csiro.au/)** CRP _Adversarial Machine Learning for Cyber_ lead-CI (with Tansu Alpcan, Sarah Erfani, Chris Leckie - UoM, Jun Zhang - Swinburne) projected with renewal.
+* 2017--21 **\$970k: [Department of Education and Training](https://www.education.gov.au/)** [_Academic Centre for Cyber Security Excellence (ACCSE)_](https://www.education.gov.au/academic-centres-cyber-security-excellence-accse) co-CI (with Chris Leckie, Atif Ahmad, Rao Kotagiri, Udaya Parampalli, Shanika Karunasekera, Vanessa Teague, Tansu Alpcan, Tim McCormack, Marimuthu Palaniswami)
+* 2017--18 **\$93k: [Defence Science & Technology Group](https://www.dst.defence.gov.au/)** _Tactical Security and Health in Multi-Modal Sensor Control and Management_ with Iman Shames and Farokhii.
+* 2017--18 **\$24k: [Australia Bureau of Statistics](http://www.abs.gov.au/)**, ABS/AMSI internship program, _Evaluating feasibility of Bayesian entity resolution_ with Neil Marchant.
+* 2017 **\$168k: [Australian Bureau of Statistics](http://www.abs.gov.au/)**, Research Contract on _Design of securely encrypted (anonymised) linkage keys_ with Chris Culnane and Vanessa Teague.
+* 2016--18 **\$370k:** [**Australian Research Council** Discovery Early Career Researcher Award](https://rms.arc.gov.au/RMS/Report/Download/Report/a3f6be6e-33f7-4fb5-98a6-7526aaa184cf/6) _Secure and Private Machine Learning_ (as sole-CI fellow) Cat1 with additional \$85k University of Melbourne DECRA establishment grant.
+* 2015 **\$48k: [Melbourne Networked Society Institute](http://networkedsociety.unimelb.edu.au/)** [_Active Defence_](http://networkedsociety.unimelb.edu.au/research/projects/2015/active-defence.html) (with Atif Ahmad, Tansu Alpcan, Andre Gygax, Chris Leckie); media: [pursuit](https://pursuit.unimelb.edu.au/articles/can-hackers-turn-off-the-lights)
+* 2015--16 **\$128k: Elon Musk-backed** [**FLI** Project Grant](http://futureoflife.org/misc/2015selection) for [_Security Evaluation of Machine Learning Systems_](http://futureoflife.org/misc/2015awardees#Rubinstein) (sole-CI) Cat3; media: [vice](http://www.vice.com/en_au/read/we-spoke-to-an-expert-protecting-us-against-artificial-intelligence) [news.com.au](http://mobile.news.com.au/technology/innovation/elon-musks-multimillion-dollar-plan-to-stop-robots-taking-control/story-fnjwucti-1227435849874) [pursuit](https://pursuit.unimelb.edu.au/articles/the-rise-of-the-machines-fact-or-fiction)
+* 2015 **\$20k:** [**Microsoft Research** Azure Machine Learning Award](http://research.microsoft.com/en-us/projects/azure/ml.aspx) to support work on big data preparation
+* 2015--17 **\$216k:** [**Australian Research Council** Discovery Project](http://www.arc.gov.au/ncgp/dp/dp_outcomes.htm) _Democratising Big Machine Learning_ (as sole-CI) Cat1
+* 2014 **\$39k:** [**University of Melbourne** Early Career Researcher Grant](http://mro.unimelb.edu.au/content/early-career-researcher-grants) to support work on [adversarial machine learning](secml.html)
+* 2014 **\$5k:** [**Amazon** AWS Machine Learning Grant](http://aws.amazon.com/grants/#25292) to support work on [adversarial machine learning](secml.html)
+
+### Awards & Honours
+
+* WiE Best Postgrad Paper Prize (2017), IEEE Australia Council for PhD student Maryam Fanaeepour’s joint work
+* Victorian Young Tall Poppy Science Award (2016), Australian Institute of Policy & Science
+* Microsoft Azure ML Award (2015), Microsoft Research
+* Excellence in Research Award (2014), Dept CIS, University of Melbourne
+* Gold Star Award (2011), Microsoft Research, top employee accolade
+* ShipIt! Awards (2010--12, four times), Microsoft, each for sustained product transfer
+* Yahoo! Key Scientific Challenge Prize (2009), Adversarial Machine Learning
+* Siebel Scholars Fellowship (2009), Siebel Foundation, final year graduate fellowship
+* Best Poster Award (2008), 11th Int. Symp. Recent Advances in Intrusion Detection (RAID’08)
+* UC Regents University Fellowship (2004--05), UC Berkeley, first year graduate fellowship
+* IEEE Computer Society Larson Best Paper Prize (2002), ugrad papers worldwide for
+
+## Service
+
+### Speaking engagements
+
+* 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
+* 02/2018: Session chairing _Security, Privacy & Trust_ at [AAAI2018](https://aaai.org/Conferences/AAAI-18/)
+* 10/2017: Invited speaker at the [DARPA Safe ML workshop](https://simons.berkeley.edu/workshops/safe-m-l) at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
+* 04/2017: Invited speaker at the Melbourne CTO Club (comprising over a dozen CTOs of mid-sized tech firms).
+* 03/2017: Speaker at the [AMIRA](http://www.amira.com.au/) Exploration Managers Conference, RACV Club Healesville.
+* 01/2017: Speaking at Telstra (data science)
+* 11/2016: Speaker/panelist at the public lecture [Human and Machine Judgement and Interaction Symposium](https://events.unimelb.edu.au/events/7849-human-and-machine-judgement-and-interaction-symposium), Uni Melbourne
+* 05/2016: Invited speaker at the [National Fintech Cyber Security Summit](http://www.fintechcybersummit.com.au/) at the Ivy, Sydney hosted by Data61, Stone & Chalk, the Chief Scientist of Australia.
+* 04/2016: Speaking at Telstra (data science)
+* 02/2016: Speaking at Samsung Research America and UC Berkeley.
+* 02/2016: Speaking in two exciting panels at AAAI'2016 on [keeping AI beneficial](http://www.cse.unsw.edu.au/~tw/aiethics/AI_Ethics/Introduction.html) and [challenges for AI in cyber operations](http://www-bcf.usc.edu/~aruneshs/AICS2016/index.html).
+* 12/2015: Plenary at the 12th Engineering Mathematics and Applications Conference ([EMAC'2015](https://emac2015.unisa.edu.au/)) the biennial meeting of the EMG special interest group of ANZIAM
+* 07/2015: Keynote at the Australian Academy of Science Elizabeth and Frederick [White Research Conference](http://geoconference.wix.com/efwhite2015) on Mining Data for Detection and Prediction of Failure in Geomaterial
+* 11/2014: Facebook (Menlo Park) talk Data Integration through the Lens of Statistical Learning
+
+### Decadal plan
+
+As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--17) I helped contribute to the development of a Decadal plan for ICT.
+
+### Program committee membership
+
+* [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php),
+**ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/), 
+**ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
+**NIPS**['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/), 
+[**AISTATS**'2017](http://www.aistats.org/), 
+[CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 
+**KDD**['2015](http://www.kdd.org/kdd2015/),['16](http://kdd.org/kdd2016/), 
+[**CSF**'2014](http://www.ieee-security.org/CSFWweb/) (co-chair AI & Security Track), 
+[**SIGMOD**'2013](http://www.sigmod.org/2013/), 
+[**IJCAI**'2013](http://ijcai13.org/)
+* Workshop PCs: 
+[Deep Learning for Security 2018](https://www.ieee-security.org/TC/SPW2018/DLS/) (at IEEE S&P), 
+AI for Cyber Security (AICS at AAAI)['2017](http://www-personal.umich.edu/~arunesh/AICS2017/),['18](http://www-personal.umich.edu/~arunesh/AICS2018/), 
+AI & Security (AISec at CCS)['2009](http://sites.google.com/a/aisec.info/aisec-2009/),['10](http://sites.google.com/a/aisec.info/aisec-2010/),['13](http://sites.google.com/site/ccsaisec2013/),['15](http://www-bcf.usc.edu/~aruneshs/AISec2015.html),['16](http://teamcore.usc.edu/people/arunesh/AISec2016.html)['17](http://www.ai-sec.net/AISec2017/index.html), 
+[S+SSPR'2016](http://www.s-sspr.org/) (at ICPR), 
+[PSDML'2010](http://fias.uni-frankfurt.de/~dimitrakakis/workshops/psdml-2010/) (at ECML/PKDD)
+* Organiser:
+ACM AI & Security workshops (AISEC)['2011](http://www.flacp.fujitsulabs.com/~aisec2011/index.html),['12](http://research.microsoft.com/en-us/events/aisec2012/default.aspx),['14](http://www.cse.chalmers.se/~aikmitr/AISec2014.html), 
+[Learning, Security & Privacy workshop](https://sites.google.com/site/learnsecprivacy2014/) (at ICML'2014)
+* Chair, Demonstration and Workshop Local Arrangements
+[SIGMOD'2015](http://www.sigmod2015.org/)

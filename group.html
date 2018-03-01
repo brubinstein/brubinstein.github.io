@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Benjamin I. P. Rubinstein</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="group.html">Group</a>
+</li>
+<li>
+  <a href="pubs.html">Papers</a>
+</li>
+<li>
+  <a href="software.html">Software</a>
+</li>
+<li>
+  <a href="teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="impact.html">Impact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/bipr">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://www.linkedin.com/in/benjaminrubinstein">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<p>I am fortunate to have supervised a brilliant group of researchers</p>
+<div id="postdocs" class="section level3">
+<h3>Postdocs</h3>
+<ul>
+<li><a href="https://scholar.google.com/citations?user=TpErHPkAAAAJ&amp;hl=en">Shen Wang</a> (2016– ). Probabilistic programming, databases, record linkage.</li>
+<li><a href="https://scholar.google.com/citations?user=e_mtK4kAAAAJ&amp;hl=en">Yi Han</a> (2016– ). Adversarial machine learning.</li>
+</ul>
+</div>
+<div id="phd-students" class="section level3">
+<h3>PhD students</h3>
+<ul>
+<li><a href="https://www.linkedin.com/in/dongge-liu-9a957913a">Dongge Liu</a> (w Toby Murray 2018– ). Software fuzzing with machine learning.</li>
+<li><a href="https://au.linkedin.com/in/leyla-roohi-b4544a67">Leyla Roohi</a> (w Vanessa Teague 2017– ). Secure storage and private querying for telecommunications metadata.</li>
+<li><a href="https://www.researchgate.net/profile/Lingjuan_Lyu">Lingjuan Lyu</a> (w Marimuthu Palaniswami 2016– ). Privacy in distributed sensing.</li>
+<li><a href="https://www.linkedin.com/in/neil-marchant-466678aa/">Neil Marchant</a> (w Aurore Delaigle 2016– ). Record linkage, adaptive importance sampling.</li>
+<li>Yuan Li (w Trevor Cohn 2015– ). Crowd sourcing, Bayesian optimisation, NLP.</li>
+<li><a href="https://xunyunliu.github.io/">Xunyun Liu</a> (w Raj Buyya, Rodrigo Calheiros 2015– ). Stream computing.</li>
+<li><a href="https://sites.google.com/site/safiheidari/">Safiollah Heidari</a> (w Raj Buyya 2015– ). Distributed graph processing.</li>
+<li><a href="https://www.linkedin.com/in/yamuna-kankanige-8b258a26/">Yamuna Kankanige</a> (w James Bailey 2015– ). Liver transplant outcomes, Austin Health</li>
+<li><a href="https://www.researchgate.net/profile/Zay_Aye">Zay Aye</a> - CompSci (w Rao Kotagiri 2014– ). Learning distance metrics.</li>
+</ul>
+</div>
+<div id="phd-studentscompleted" class="section level3">
+<h3>PhD students—Completed</h3>
+<ul>
+<li><a href="https://scholar.google.com.au/citations?user=1EPDwbAAAAAJ&amp;hl=en">Maryam Fanaeepour</a> - CompSci (w Lars Kulik, Egemen Tanin 2014–17). Location data privacy → Postdoc at Duke University</li>
+<li><a href="https://scholar.google.com.au/citations?user=GtpWKiwAAAAJ&amp;hl=en">Jiazhen He</a> - CompSci (w James Bailey, Rui Zhang 2014–17). Education analytics and MOOCs → Postdoc at Univ Melbourne</li>
+<li><a href="https://www.researchgate.net/profile/Zuhe_Zhang">Zuhe Zhang</a> - Maths &amp; Stats (w Sanming Zhou 2014–17). Differential privacy in Bayesian statistics → Data Scientist at ANZ Bank</li>
+</ul>
+</div>
+<div id="phd-internsformer-microsoft-research" class="section level3">
+<h3>PhD Interns—former Microsoft Research</h3>
+<ul>
+<li><a href="http://www.linkedin.com/pub/akshay-balsubramani/12/3aa/2">Akshay Balsubramani</a> - UC San Diego (2012) → Postdoc at Stanford</li>
+<li><a href="http://acsweb.ucsd.edu/~ecoviell/">Emanuele Coviello</a> - UC San Diego (2012) → Founder/CEO at Keevio</li>
+<li><a href="http://www.eecs.berkeley.edu/~sahand_n/">Sahand Negahban</a> - UC Berkeley (2011) → Assistant Prof at Yale Statistics</li>
+<li><a href="http://sifaka.cs.uiuc.edu/~dzhang22/">Duo Zhang</a> - UIUC (2011) → Software Engineer at Twitter</li>
+<li><a href="http://dm1.cs.uiuc.edu/">Bo Zhao</a> - UIUC (2011) → Researcher at Microsoft Research</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

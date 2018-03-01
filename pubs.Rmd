@@ -1,0 +1,44 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("RefManageR")
+BibOptions(check.entries=FALSE, first.inits=FALSE,
+           max.names=50, bib.style="authortitle")
+bib <- ReadBib("bib/citations.bib", check=FALSE)
+start.year <- 2007
+pub.years <- sort(unique(sapply(bib, function(bibent) bibent$year)),
+                  decreasing=TRUE)
+source("r/rmd-bib-util.R")
+```
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<script type="text/javascript" src="js/download.js"></script>
+
+See my [Google Scholar profile](https://scholar.google.com.au/citations?user=hMG_gR4AAAAJ&hl=en&oi=ao) for bibliometrics, or [arXiv](http://arxiv.org/a/rubinstein_b_1) for preprints.
+
+```{r pubs, echo=FALSE, results="asis"}
+pre.year <- FALSE
+for (y in pub.years) {
+  if (as.integer(y) >= start.year) {
+    cat("\n### ",y,"\n\n", sep="")
+  } else {
+    if (!pre.year) {
+      cat("\n### Pre ", start.year, "\n\n", sep="")
+      pre.year <- TRUE
+    }
+  }
+  ybib <- bib[year = y]
+  presorts <- sort(sapply(ybib, function(yb) yb$presort))
+  for (prsrt in presorts) {
+    yb <- ybib[presort = prsrt]
+    bibtex.src(yb)
+    cat("* ")
+    print(yb)
+    print.rmdnote(yb, append = bibtex.lnk(yb), bold = FALSE)
+    cat("\n")
+  }
+}
+```

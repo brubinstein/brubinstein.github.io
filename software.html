@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Benjamin I. P. Rubinstein</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="group.html">Group</a>
+</li>
+<li>
+  <a href="pubs.html">Papers</a>
+</li>
+<li>
+  <a href="software.html">Software</a>
+</li>
+<li>
+  <a href="teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="impact.html">Impact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/bipr">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://www.linkedin.com/in/benjaminrubinstein">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<p>My <a href="group.html">group</a> and I have implemented our research contributions as useful software artifacts—in many cases as open-source software on which collaboration and contributions are most welcome. Other software has <a href="impact.html">shipped</a> within larger systems.</p>
+<hr />
+<p><a href="https://brubinstein.github.io/diffpriv/"><img src="images/diffpriv.png" style="width:150px; margin-right: 24px" align="left"></a></p>
+<p><a href="https://brubinstein.github.io/diffpriv/"><strong><code>diffpriv</code></strong></a> is an open-source R package for privacy-preserving machine learning and statistics. The package implements numerous mechanisms for guaranteeing <a href="https://en.wikipedia.org/wiki/Differential_privacy">differential privacy</a>—the leading framework for releasing data analyses on privacy-sensitive data in aggregate while protecting privacy of individuals, deployed Google, Apple and the U.S. Census Bureau, and awarded the 2017 Gödel Prize in theoretical computer science. The mechanisms implemented include our <em>Bernstein mechanism</em> for releasing functions such as classifiers trained on sensitive data [<a href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">AAAI’17</a>]. Notably <code>diffpriv</code> also implements our <em>sensitivity sampler</em> [<a href="http://proceedings.mlr.press/v70/rubinstein17a.html">ICML’17</a>] for easy privatisation of black-box functions including programs, for which mathematical analysis required for differential privacy is difficult or impossible. The package is distributed on <a href="https://cran.r-project.org/package=diffpriv">CRAN</a> and hosted on <a href="https://brubinstein.github.io/diffpriv/">GitHub</a>.</p>
+<hr />
+<p><a href="https://git.io/OASIS"><img src="images/oasis.PNG" style="width:150px; margin-right: 24px" align="left"></a></p>
+<p><a href="https://git.io/OASIS"><strong><code>OASIS</code></strong></a> is an open-source Python package for efficient creation of labelled classification test sets under extreme class imbalance. A common approach to creating test sets from an unlabelled pool of data is to sample uniformly points for (expert) labeling, on which a classifier of interest can be evaluated. However under class imbalance of for example 1:100, thousands of labels must be acquired for statistically-significant evaluation. <code>OASIS</code> implements an asymptotically optimal adaptive importance sampler [<a href="http://www.vldb.org/pvldb/vol10/p1322-rubinstein.pdf">VLDB’17</a>] for <em>actively</em> sampling points for labeling, such that evaluation can take place under much more extreme class imbalances. The package is distributed on <a href="https://pypi.python.org/pypi/oasis">PyPI</a> and hosted on <a href="https://ngmarchant.github.io/oasis/">GitHub</a>.</p>
+<hr />
+<p><a href="https://doi.org/doi:10.18129/B9.bioc.affy"><img src="images/bioconductor.png" style="width:150px; margin-right: 24px" align="left"></a></p>
+<p><a href="https://doi.org/doi:10.18129/B9.bioc.affy"><strong><code>affy</code></strong></a> is an open-source R package for analysis of Affymetrix GeneChip microarray data at the probe level. Of the several functions and classes implemented in <code>affy</code>, I contributed towards functionality of gene expression <em>detection</em>, as in the early 2000s I was interested in machine learning-based approaches for this task. <code>affy</code> is among the top-5% most downloaded packages distributed through <a href="https://bioconductor.org/">Bioconductor</a>, a major open-source project for high-throughput genomic data.</p>
+<hr />
+<div id="datasets" class="section level4">
+<h4>Datasets</h4>
+<p>The following collects datasets that may be used freely for non-commercial, research or educational purposes. I only ask that you cite the paper associated with the dataset, and to consider emailing about your extension so that we might link back. If linking to this page, please use the <a href="http://people.eng.unimelb.edu.au/brubinstein/data">permanent link</a></p>
+<hr />
+<p><strong>Attribute-Value-Level Matching</strong> in the [<a href="http://www.aaai.org/Papers/AAAI/2015/13Lim.pdf">AAAI’15</a>] paper explores normalisation of attribute values across multiple data sources, where attributes could be categorical, numerical, otherwise and could multi-valued. For example the genre(s) of a movie or the cuisine(s) of a restaurant. To benchmark our statistical approach (based on Canonical Correlation Analysis) against baselines, we crawled and prepared two datasets of four sources each on movie genres (7852 records across IMDB, Rotten Tomatoes, The Movie DB, Yahoo! Movies) and restaurant cuisines (3120 records across Factual, Foursquare, Google Places, Yelp). After performing a simple entity resolution (record linkage) to align matched records across sources, we extracted the attribute to be matched (genres or cuisines respectively). The data here represents keys to the original records, plus attribute values, all in entity-aligned order. Finally, we also used Amazon Mechanical Turk to produce human judgments to evaluate the attribute-value matchings. More details can be found in the download READMEs and the paper.</p>
+<ul>
+<li>Download <a href="http://people.eng.unimelb.edu.au/brubinstein/data/cca-movies.zip">movies.zip</a> (377KB) tab-separated files, one per source plus one MTurk; readme file</li>
+<li>Download <a href="http://people.eng.unimelb.edu.au/brubinstein/data/cca-restaurants.zip">restaurants.zip</a> (306KB) 5 tab-separated files, one per source plus one MTurk; readme file</li>
+<li>Download <a href="bib/lim2015sub.bib">lim2015sub.bib</a> the BibTeX-formatted reference we ask researchers to cite if using these datasets.</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

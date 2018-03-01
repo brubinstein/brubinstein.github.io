@@ -1,0 +1,15 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+I love to hear from prospective[^1]/enrolled students, industry or government entities seeking expert assistance, and other researchers:
+
+`{firstname}.{lastname}@unimelb.edu.au`
+
+Or reach out on [Twitter](https://twitter.com/bipr) or [LinkedIn](http://www.linkedin.com/in/benjaminrubinstein).
+
+I'm located in Room 7.21 of the [Doug McDonell Building](http://maps.unimelb.edu.au/parkville/building/168#.UkpqWIZBN8E) of the university's main Parkville campus---it's usually best to make an appointment by email before meeting in person.
+
+[^1]: <p style="font-size:75%">**Notes for prospective students.**
+While [Engineering PhD admissions/scholarship](http://www.eng.unimelb.edu.au/study/degrees/phd/) processes are centralised, a nominated supervisor must approve the application. I recruit 2 PhD students per year on average (with v high variance), co-supervised. As such I welcome contact from both domestic/international students seeking doctoral research opportunities. But I strongly suggest first browsing my [recent papers](pubs.html) and partial list of [PhD projects](http://apps.eng.unimelb.edu.au/research-projects/index.php?r=site/discipline&id=3). My work is frequently mathematical aspects of machine learning - suitable for backgrounds with advanced mathematics. Messages highlighting fit and including CV & transcripts are more likely to receive positive responses. I apologise if I am unable to respond, as I receive a high volume of requests. Enrolled MIT/MSc students should feel free to contact me. Finally, I am usually unable to take foreign-based summer interns, unless on the rare occasion the student has access to external sources of funding.</p>

@@ -1,0 +1,834 @@
+@inproceedings{fanaeepour2018histogramming,
+  title={Histogramming Privately Ever After: Differentially-Private Data-Dependent Error Bound Optimisation},
+  author={Fanaeepour, Maryam and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 34th International Conference on Data Engineering},
+  series={ICDE},
+  year={2018},
+  organization={IEEE},
+  presort={01},
+  rmdnote={full=https://arxiv.org/abs/1702.05607}
+}
+
+@article{fanaeepour2018differentially,
+  title={Differentially private counting of users' spatial regions},
+  author={Fanaeepour, Maryam and Rubinstein, Benjamin I. P.},
+  journal={Knowledge and Information Systems},
+  pages={1--28},
+  year={2018},
+  month={Jan},
+  volume={54},
+  number={1},
+  publisher={Springer London},
+  presort={02},
+  rmdnote={pdf=https://link.springer.com/article/10.1007/s10115-017-1113-6}
+}
+
+@article{lyu2018ppfa,
+author = {Lingjuan Lyu and Karthik Nandakumar and Rubinstein, Benjamin I. P. and Jiong Jin and Justin Bedo and Marimuthu Palaniswami},
+title = {{PPFA}: Privacy-Preserving Fog-enabled Aggregation in Smart Grid},
+journal = {IEEE Transactions on Industrial Informatics},
+note = {in press},
+month = {Feb},
+year = {2018},
+presort = {03}
+}
+
+@book{joseph2018adversarial,
+title = {Adversarial Machine Learning},
+year = {2018},
+author = {Joseph, Anthony D. and Nelson, Blaine and Rubinstein, Benjamin I. P. and Tygar, J. D.},
+publisher = {Cambridge University Press},
+note = {in press},
+rmdnote = {pub=https://www.cambridge.org/core/books/adversarial-machine-learning/C42A9D49CBC626DF7B8E54E72974AA3B},
+presort={04}
+}
+
+@misc{culnane2018options,
+  title={Options for encoding names for data linking at the Australian Bureau of Statistics},
+  author={Culnane, Chris and Rubinstein, Benjamin I. P. and Teague, Vanessa},
+  eprinttype={arXiv},
+  eprint = {1802.07975},
+  eprintclass = {cs.CR},
+  year={2018},
+  month={Feb},
+  presort={05},
+  rmdnote={pdf=https://arxiv.org/abs/1802.07975}
+}
+
+@inproceedings{aye2018fast,
+author = {Aye, Zay Maung Maung and Kotagiri Ramamohanaro and Rubinstein, Benjamin I. P.},
+title = {Fast Manifold Landmarking with Locality Sensitive Hashing},
+booktitle = {22nd Pacific-Asia Conference on Knowledge Discovery and Data Mining},
+series = {PAKDD},
+month = {Feb},
+year = {2018},
+note = {accepted},
+presort={06}
+}
+
+@inproceedings{han2018adequacy,
+  title={Adequacy of the Gradient-Descent Method for Classifier Evasion Attacks},
+  author={Han, Yi and Rubinstein, Benjamin I. P.},
+  booktitle={AAAI-18 Workshop on Artificial Intelligence for Cyber Security},
+  series={AICS},
+  year={2018},
+  month={Jan},
+  presort={07},
+  rmdnote={pdf=https://arxiv.org/abs/1704.01704}
+}
+
+@article{marchant2017search,
+  title={In Search of an Entity Resolution {OASIS}: Optimal Asymptotic Sequential Importance Sampling},
+  author={Marchant, Neil G. and Rubinstein, Benjamin I. P.},
+  journal={Proceedings of the VLDB Endowment},
+  volume={10},
+  number={11},
+  pages={1322--1333},
+  year={2017},
+  month={Feb},
+  publisher={VLDB Endowment},
+  presort={01},
+  rmdnote={pdf=http://www.vldb.org/pvldb/vol10/p1322-rubinstein.pdf;full=https://arxiv.org/abs/1703.00617;code=http://git.io/OASIS}
+}
+
+@inproceedings{rubinstein2017pain,
+  title={Pain-Free Random Differential Privacy with Sensitivity Sampling},
+  author={Rubinstein, Benjamin I. P. and Alda, Francesco},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
+  series={ICML},
+  pages={2950--2959},
+  year={2017},
+  month={May},
+  organization={PMLR},
+  presort={02},
+  rmdnote={pdf=http://proceedings.mlr.press/v70/rubinstein17a.html;full=https://arxiv.org/abs/1706.02562;code=https://brubinstein.github.io/diffpriv}
+}
+
+@inproceedings{alda2017bernstein,
+  title={The Bernstein mechanism: Function release under differential privacy},
+  author={Alda, Francesco and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 31st AAAI Conference on Artificial Intelligence},
+  series={AAAI},
+  year={2017},
+  month={Feb},
+  presort={03},
+  rmdnote={pdf=http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf;full=https://arxiv.org/abs/1507.04499;code=https://brubinstein.github.io/diffpriv}
+}
+
+@article{dimitrakakis2017differential,
+  title={Differential privacy for {B}ayesian inference through posterior sampling},
+  author={Dimitrakakis, Christos and Nelson, Blaine and Zhang, Zuhe and Mitrokotsa, Aikateirni and Rubinstein, Benjamin I. P.},
+  journal={Journal of Machine Learning Research},
+  volume={18},
+  number={11},
+  pages={1--39},
+  year={2017},
+  month={Mar},
+  presort={04},
+  rmdnote={pdf=http://www.jmlr.org/papers/v18/15-257.html}
+}
+
+@article{lau2017machine,
+  title={Machine-learning algorithms predict graft failure after liver transplantation},
+  author={Lau, Lawrence and Kankanige, Yamuna and Rubinstein, Benjamin and Jones, Robert and Christophi, Christopher and Muralidharan, Vijayaragavan and Bailey, James},
+  journal={Transplantation},
+  volume={101},
+  number={4},
+  pages={125--132},
+  year={2017},
+  month={Apr},
+  publisher={LWW},
+  presort={05},
+  rmdnote={pdf=https://www.ncbi.nlm.nih.gov/pubmed/27941428}
+}
+
+@book{verkade2017misconceptions,
+  title={Misconceptions as a trigger for enhancing student learning in higher education: A handbook for educators},
+  author={Verkade, Heather and Mulhern, Terrence D. and Lodge, Jason M. and Elliott, Kristine and Cropper, Simon and Rubinstein, Benjamin I. P. and Espinosa, Allen and Livett, Michelle and Dooley, Laura and Frankland, Sarah and Mulder, Raoul},
+  year={2017},
+  publisher={Published by The University of Melbourne},
+  isbn = {978 0 7340 5410 4},
+  presort={06},
+  rmdnote={pdf=http://hdl.handle.net/11343/197958}
+}
+
+@misc{fish2017sublinear,
+  title={Sublinear-Time Adaptive Data Analysis},
+  author={Fish, Benjamin and Reyzin, Lev and Rubinstein, Benjamin I. P.},
+  eprinttype = {arXiv},
+  eprintclass = {cs.LG},
+  eprint = {1709.09778},
+  year={2017},
+  month={Sep},
+  presort={07},
+  rmdnote={pdf=https://arxiv.org/abs/1709.09778}
+}
+
+@inproceedings{liu2017storm,
+  title={E-storm: Replication-based state management in distributed stream processing systems},
+  author={Liu, Xunyun and Harwood, Aaron and Karunasekera, Shanika and Rubinstein, Benjamin and Buyya, Rajkumar},
+  booktitle={46th International Conference on Parallel Processing},
+  series = {ICPP},
+  pages={571--580},
+  year={2017},
+  organization={IEEE},
+  presort={08}
+}
+
+@misc{culnane2017privacy,
+  title={Privacy Assessment of De-identified Opal Data: A report for Transport for NSW},
+  author={Culnane, Chris and Rubinstein, Benjamin I. P. and Teague, Vanessa},
+  eprinttype ={arXiv},
+  eprint = {1704.08547},
+  eprintclass = {cs.CR},
+  year={2017},
+  month={May},
+  presort={09},
+  rmdnote={pdf=https://arxiv.org/abs/1704.08547}
+}
+
+@misc{culnane2017vulnerabilities,
+  title={Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK Office for National Statistics' Privacy-Preserving Record Linkage},
+  author={Culnane, Chris and Rubinstein, Benjamin I. P. and Teague, Vanessa},
+  eprinttype={arXiv},
+  eprint={1712.00871},
+  eprintclass={cs.CR},
+  year={2017},
+  presort={10},
+  rmdnote={pdf=https://arxiv.org/abs/1712.00871;pop=https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem}
+}
+
+@misc{culnane2017health,
+  title={Health Data in an Open World},
+  author={Culnane, Chris and Rubinstein, Benjamin I. P. and Teague, Vanessa},
+  eprinttype={arXiv},
+  eprint = {1712.05627},
+  eprintclass = {cs.CY},
+  year={2017},
+  month={Dec},
+  presort={11},
+  rmdnote={pdf=https://arxiv.org/abs/1712.05627;pop=https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem}
+}
+
+@inproceedings{verkade2017exploring,
+  title={Exploring misconceptions as a trigger for enhancing student learning},
+  author={Verkade, Heather and Lodge, Jason M. and Elliott, Kristine and Mulhern, Terrence D. and Espinosa, Allen A. and Cropper, Simon J. and Rubinstein, Benjamin I. P.},
+  booktitle={Higher Education Research and Development Society of Australasia},
+  series={HERDSA},
+  year={2017},
+  month={Apr},
+  presort={12}
+}
+
+@inproceedings{zhang2016differential,
+  title={On the differential privacy of {B}ayesian inference},
+  author={Zhang, Zuhe and Rubinstein, Benjamin I. P. and Dimitrakakis, Christos},
+  booktitle={Proceedings of the 30th AAAI Conference on Artificial Intelligence},
+  series={AAAI},
+  pages={2365--2371},
+  year={2016},
+  month={Feb},
+  presort={01},
+  rmdnote={pdf=http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/12129/11885;full=http://arxiv.org/abs/1512.06992}
+}
+
+@inproceedings{he2016moocs,
+  title={{MOOCs} meet measurement theory: A topic-modelling approach},
+  author={He, Jiazhen and Rubinstein, Benjamin I. P. and Bailey, James and Zhang, Rui and Milligan, Sandra and Chan, Jeffrey},
+  booktitle={Proceedings of the 30th AAAI Conference on Artificial Intelligence},
+  pages={1195--1201},
+  series={AAAI},
+  year={2016},
+  month={Feb},
+  presort={02},
+  rmdnote={pdf=http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/11970/11722;full=http://arxiv.org/abs/1511.07961}
+}
+
+@inproceedings{fanaeepour2016beyond,
+  title={Beyond points and paths: counting private bodies},
+  author={Fanaeepour, Maryam and Rubinstein, Benjamin I. P.},
+  booktitle={2016 IEEE 16th International Conference on Data Mining},
+  series={ICDM},
+  pages={131--140},
+  year={2016},
+  month={Dec},
+  organization={IEEE},
+  presort={03},
+  rmdnote={pdf=http://ieeexplore.ieee.org/document/7837837/;full=http://arxiv.org/abs/1609.07983;alert=Winner, WiE Best Postgraduate Student Paper, IEEE Australia Council}
+}
+
+@inproceedings{alpcan2016large,
+  title={Large-scale strategic games and adversarial machine learning},
+  author={Alpcan, Tansu and Rubinstein, Benjamin I. P. and Leckie, Christopher},
+  booktitle={2016 IEEE 55th Conference on Decision and Control},
+  series={CDC},
+  pages={4420--4426},
+  year={2016},
+  month={Dec},
+  organization={IEEE},
+  presort={04},
+  rmdnote={pdf=http://ieeexplore.ieee.org/abstract/document/7798940/;full=http://arxiv.org/abs/1609.06438}
+}
+
+@article{han2016game,
+  title={A game theoretical approach to defend against co-resident attacks in cloud computing: Preventing co-residence using semi-supervised learning},
+  author={Han, Yi and Alpcan, Tansu and Chan, Jeffrey and Leckie, Christopher and Rubinstein, Benjamin I. P.},
+  journal={IEEE Transactions on information Forensics and Security},
+  volume={11},
+  number={3},
+  pages={556--570},
+  year={2016},
+  month={Mar},
+  publisher={IEEE},
+  presort={05},
+  rmdnote={pdf=http://dx.doi.org/10.1109/TIFS.2015.2505680}
+}
+
+@inproceedings{aye2016large,
+  title={Large Scale Metric learning},
+  author={Aye, Zay Maung Maung and Ramamohanarao, Kotagiri and Rubinstein, Benjamin I. P.},
+  booktitle={2016 International Joint Conference on Neural Networks},
+  series={IJCNN},
+  pages={1442--1449},
+  year={2016},
+  month={Jul},
+  organization={IEEE},
+  presort={06},
+  rmdnote={pdf=http://ieeexplore.ieee.org/document/7727368/}
+}
+
+@inproceedings{sanchez2016fast,
+  title={Fast trajectory clustering using Hashing methods},
+  author={Sanchez, Ivan and Aye, Zay Maung Maung and Rubinstein, Benjamin I. P. and Ramamohanarao, Kotagiri},
+  booktitle={2016 International Joint Conference on Neural Networks},
+  series={IJCNN},
+  pages={3689--3696},
+  year={2016},
+  month={Jul},
+  organization={IEEE},
+  presort={07},
+  rmdnote={pdf=http://ieeexplore.ieee.org/document/7727674/}
+}
+
+@inproceedings{milligan2016validity,
+  title={Validity: a framework for cross-disciplinary collaboration in mining indicators of learning from {MOOC} forums},
+  author={Milligan, Sandra and He, Jiazhen and Bailey, James and Zhang, Rui and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the Sixth International Conference on Learning Analytics \& Knowledge},
+  series={LAK},
+  pages={546--547},
+  year={2016},
+  month={Apr},
+  organization={ACM},
+  presort={08},
+  rmdnote={pdf=https://doi.org/10.1145/2883851.2883956}
+}
+
+@misc{he2016topicresponse,
+  title={{TopicResponse}: A Marriage of Topic Modelling and Rasch Modelling for Automatic Measurement in {MOOCs}},
+  author={He, Jiazhen and Rubinstein, Benjamin I. P. and Bailey, James and Zhang, Rui and Milligan, Sandra},
+  eprinttype={arXiv},
+  eprint={1607.08720},
+  eprintclass={cs.LG},
+  year={2016},
+  presort={09},
+  rmdnote={pdf=https://arxiv.org/abs/1607.08720;code=https://bitbucket.org/jiazhenhe/topicresponse}
+}
+
+@inproceedings{he2015identifying,
+  title={Identifying At-Risk Students in Massive Open Online Courses},
+  author={He, Jiazhen and Bailey, James and Rubinstein, Benjamin I. P. and Zhang, Rui},
+  booktitle={Proceedings of the 29th AAAI Conference on Artificial Intelligence},
+  series={AAAI},
+  pages={1749--1755},
+  year={2015},
+  presort={01},
+  rmdnote={pdf=http://www.aaai.org/Papers/AAAI/2015/13He.pdf}
+}
+
+@inproceedings{lim2015sub,
+  title={Sub-Merge: Diving Down to the Attribute-Value Level in Statistical Schema Matching.},
+  author={Lim, Zhe and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 29th AAAI Conference on Artificial Intelligence},
+  series={AAAI},
+  pages={1791--1797},
+  year={2015},
+  month={Jan},
+  presort={02},
+  rmdnote={pdf=http://www.aaai.org/Papers/AAAI/2015/13Lim.pdf;data=http://people.eng.unimelb.edu.au/brubinstein/data}
+}
+
+@article{zhang2015principled,
+  title={Principled graph matching algorithms for integrating multiple data sources},
+  author={Zhang, Duo and Rubinstein, Benjamin I. P. and Gemmell, Jim},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  volume={27},
+  number={10},
+  pages={2784--2796},
+  year={2015},
+  month={Apr},
+  publisher={IEEE},
+  presort={03},
+  rmdnote={pdf=http://ieeexplore.ieee.org/abstract/document/7095602/;full=http://arxiv.org/abs/1402.0282}
+}
+
+@incollection{rubinstein2015bounding,
+  title={Bounding embeddings of {VC} classes into maximum classes},
+  author={Rubinstein, J. Hyam and Rubinstein, Benjamin I. P. and Bartlett, Peter L.},
+  booktitle={Measures of Complexity},
+  editor={Vovk, V. and Papadopoulos, H. and Gammerman, A.},
+  pages={303--325},
+  year={2015},
+  publisher={Springer},
+  presort={04},
+  rmdnote={pdf=http://arxiv.org/abs/1401.7388;full=http://www.springer.com/us/book/9783319218519}
+}
+
+@article{fanaeepour2015case,
+  title={The {CASE} histogram: Privacy-aware processing of trajectory data using aggregates},
+  author={Fanaeepour, Maryam and Kulik, Lars and Tanin, Egemen and Rubinstein, Benjamin I. P.},
+  journal={GeoInformatica},
+  volume={19},
+  number={4},
+  pages={747--798},
+  year={2015},
+  month={Jul},
+  publisher={Springer},
+  presort={05},
+  rmdnote={pdf=http://link.springer.com/article/10.1007/s10707-015-0228-8}
+}
+
+@inproceedings{dimitrakakis2014robust,
+  title={Robust and private {B}ayesian inference},
+  author={Dimitrakakis, Christos and Nelson, Blaine and Mitrokotsa, Aikaterini and Rubinstein, Benjamin I. P.},
+  booktitle={25th International Conference on Algorithmic Learning Theory},
+  series={ALT},
+  pages={291--305},
+  year={2014},
+  month={Oct},
+  organization={Springer},
+  presort={01},
+  rmdnote={pdf=http://arxiv.org/abs/1306.1066v3}
+}
+
+@incollection{biggio2014security,
+  title={Security evaluation of support vector machines in adversarial environments},
+  author={Biggio, Battista and Corona, Igino and Nelson, Blaine and Rubinstein, Benjamin I. P. and Maiorca, Davide and Fumera, Giorgio and Giacinto, Giorgio and Roli, Fabio},
+  editor={Ma, Y. and Guo, G.},
+  booktitle={Support Vector Machines Applications},
+  pages={105--153},
+  year={2014},
+  month={Feb},
+  publisher={Springer},
+  presort={02},
+  rmdnote={pdf=http://dx.doi.org/10.1007/978-3-319-02300-7_4;full=http://arxiv.org/abs/1401.7727}
+}
+
+@inproceedings{dimitrakakis2014proceedings,
+author={Dimitrakakis, Christos and Mitrokotsa, Aikaterini and Rubinstein, Benjamin I. P.},
+title={Proceedings of the 7th Workshop on Artificial Intelligence and Security (AISec)},
+booktitle={Proceedings of the 2014 ACM Conference on Computer and Communications Security},
+series={CCS},
+pages={1--124},
+publisher={ACM Press},
+year={2014},
+presort={03},
+rmdnote={pdf=http://www.sheridanprinting.com/CCS2014ep_11_4/forms/aisec.htm}
+}
+
+@article{zhao2012bayesian,
+  title={A {B}ayesian approach to discovering truth from conflicting sources for data integration},
+  author={Zhao, Bo and Rubinstein, Benjamin I. P. and Gemmell, Jim and Han, Jiawei},
+  journal={Proceedings of the VLDB Endowment},
+  volume={5},
+  number={6},
+  pages={550--561},
+  year={2012},
+  month={Feb},
+  publisher={VLDB Endowment},
+  presort={01},
+  rmdnote={pdf=http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf}
+}
+
+@article{rubinstein2012stability,
+  title={On the stability of empirical risk minimization in the presence of multiple risk minimizers},
+  author={Rubinstein, Benjamin I. P. and Simma, Aleksandr},
+  journal={IEEE Transactions on Information Theory},
+  volume={58},
+  number={7},
+  pages={4160--4163},
+  year={2012},
+  month={Jul},
+  publisher={IEEE},
+  presort={02},
+  rmdnote={pdf=http://arxiv.org/abs/1002.2044}
+}
+
+@article{nelson2012query,
+  title={Query strategies for evading convex-inducing classifiers},
+  author={Nelson, Blaine and Rubinstein, Benjamin I. P. and Huang, Ling and Joseph, Anthony D. and Lee, Steven J. and Rao, Satish and Tygar, J. D.},
+  journal={Journal of Machine Learning Research},
+  volume={13},
+  number={May},
+  publisher={MIT Press},
+  pages={1293--1332},
+  year={2012},
+  presort={03},
+  rmdnote={pdf=http://www.jmlr.org/papers/v13/nelson12a.html}
+}
+
+@article{rubinstein2012geometric,
+  title={A geometric approach to sample compression},
+  author={Rubinstein, Benjamin I. P. and Rubinstein, J. Hyam},
+  journal={Journal of Machine Learning Research},
+  volume={13},
+  number={Apr},
+  publisher={MIT Press},
+  pages={1221--1261},
+  year={2012},
+  presort={04},
+  rmdnote={pdf=http://jmlr.csail.mit.edu/papers/v13/rubinstein12a.html}
+}
+
+@article{rubinstein2012learning,
+  title={Learning in a large function space: Privacy-preserving mechanisms for {SVM} learning},
+  author={Rubinstein, Benjamin I. P. and Bartlett, Peter L. and Huang, Ling and Taft, Nina},
+  journal={Journal of Privacy and Confidentiality},
+  volume={4},
+  number={1},
+  pages={65--100},
+  year={2012},
+  month={Aug},
+  note={Special Issue on Statistical and Learning-Theoretic Challenges in Data Privacy},
+  presort={05},
+  rmdnote={pdf=http://repository.cmu.edu/jpc/vol4/iss1/4/;full=http://arxiv.org/abs/0911.5708}
+}
+
+@article{barth2012learning,
+  title={A learning-based approach to reactive security},
+  author={Barth, Adam and Rubinstein, Benjamin I. P. and Sundararajan, Mukund and Mitchell, John C and Song, Dawn and Bartlett, Peter L.},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  volume={9},
+  number={4},
+  pages={482--493},
+  year={2012},
+  month={Jul},
+  publisher={IEEE},
+  presort={06},
+  rmdnote={pdf=http://doi.ieeecomputersociety.org/10.1109/TDSC.2011.42}
+}
+
+@inproceedings{negahban2012scaling,
+  title={Scaling multiple-source entity resolution using statistically efficient transfer learning},
+  author={Negahban, Sahand N. and Rubinstein, Benjamin I. P. and Gemmell, Jim},
+  booktitle={Proceedings of the 21st ACM International Conference on Information and Knowledge Management},
+  series={CIKM},
+  pages={2224--2228},
+  year={2012},
+  month={Oct},
+  organization={ACM},
+  presort={07},
+  rmdnote={pdf=http://dx.doi.org/10.1145/2396761.2398606;full=http://arxiv.org/abs/1208.1860}
+}
+
+@inproceedings{cardenas2012fifth,
+  title={Fifth ACM Workshop on Artificial Intelligence and Security (AISec)},
+  author={Cardenas, Alvaro A. and Nelson, Blaine and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 2012 ACM Conference on Computer and Communications Security},
+  series={CCS},
+  pages={1--110},
+  year={2012},
+  month={Oct},
+  organization={ACM},
+  presort={08},
+  rmdnote={pdf=http://dx.doi.org/10.1145/2382196.2382327}
+}
+
+@inproceedings{huang2011adversarial,
+  title={Adversarial machine learning},
+  author={Huang, Ling and Joseph, Anthony D. and Nelson, Blaine and Rubinstein, Benjamin I. P. and Tygar, J. D.},
+  booktitle={Proceedings of the 4th ACM Workshop on Security and Artificial Intelligence},
+  pages={43--58},
+  year={2011},
+  month={Oct},
+  organization={ACM},
+  presort={01},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/aisec2011-camera-ready.pdf}
+}
+
+@inproceedings{narayanan2011link,
+  title={Link prediction by de-anonymization: How we won the {K}aggle social network challenge},
+  author={Narayanan, Arvind and Shi, Elaine and Rubinstein, Benjamin I. P.},
+  booktitle={The 2011 International Joint Conference on Neural Networks},
+  series={IJCNN},
+  pages={1825--1834},
+  year={2011},
+  month={Feb},
+  organization={IEEE},
+  presort={02},
+  rmdnote={pdf=http://arxiv.org/abs/1102.4374}
+}
+
+@techreport{barth2011open,
+  title={How Open Should Open Source Be?},
+  author={Barth, Adam and Li, Saung and Rubinstein, Benjamin I. P. and Song, Dawn},
+  institution={Department of Electrical Engineering \& Computer Sciences, UC Berkeley},
+  type={technical report},
+  number={UCB/EECS-2011-98},
+  year={2011},
+  month={Aug},
+  presort={03},
+  rmdnote={pdf=http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html}
+}
+
+@techreport{gemmell2011improving,
+  title={Improving entity resolution with global constraints},
+  author={Gemmell, Jim and Rubinstein, Benjamin I. P. and Chandra, Ashok K.},
+  institution={Microsoft Research},
+  type={technical report},
+  number={MSR-TR-2011-100},
+  year={2011},
+  month={Aug},
+  presort={04},
+  rmdnote={pdf=https://arxiv.org/abs/1108.6016}
+}
+
+@inproceedings{cardenas2011proceedings,
+author={Cardenas, Alvaro A. and Greenstadt, Rachel and Rubinstein, Benjamin I. P.},
+title={Proceedings of the 4th Workshop on Artificial Intelligence and Security (AISec)},
+booktitle={Proceedings of the 2011 ACM Conference on Computer and Communications Security},
+series={CCS},
+pages={1--116},
+publisher={ACM Press},
+year={2011},
+month={Oct},
+presort={05},
+rmdnote={pdf=https://www.microsoft.com/en-us/research/publication/proceedings-of-the-4th-acm-workshop-on-security-and-artificial-intelligence/}
+}
+
+@inproceedings{nelson2010near,
+  title={Near-Optimal Evasion of Convex-Inducing Classifiers.},
+  author={Nelson, Blaine and Rubinstein, Benjamin I. P. and Huang, Ling and Joseph, Anthony D. and Lau, Shing-hon and Lee, Steven J. and Rao, Satish and Tran, Anthony and Tygar, J. Doug},
+  booktitle={Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics},
+  series={AISTATS},
+  pages={549--556},
+  year={2010},
+  presort={01},
+  rmdnote={pdf=http://jmlr.csail.mit.edu/proceedings/papers/v9/nelson10a/nelson10a.pdf}
+}
+
+@inproceedings{barth2010learning,
+  title={A learning-based approach to reactive security},
+  author={Barth, Adam and Rubinstein, Benjamin I. P. and Sundararajan, Mukund and Mitchell, John C. and Song, Dawn and Bartlett, Peter L.},
+  booktitle={Proceedings of the Fourteenth International Conference on Financial Cryptography and Data Security},
+  series={FC},
+  pages={192--206},
+  year={2010},
+  presort={02},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/react-short.pdf}
+}
+
+@inproceedings{nelson2010classifier,
+  title={Classifier evasion: Models and open problems},
+  author={Nelson, Blaine and Rubinstein, Benjamin I. P. and Huang, Ling and Joseph, Anthony D. and Tygar, J. D.},
+  booktitle={International Workshop on Privacy and Security Issues in Data Mining and Machine Learning},
+  series={PSDML},
+  pages={92--98},
+  year={2010},
+  presort={03},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/ecml2010.pdf}
+}
+
+@phdthesis{rubinstein2010secure,
+  title={Secure Learning and Learning for Security: Research in the Intersection},
+  author={Rubinstein, Benjamin I. P.},
+  year={2010},
+  month={May},
+  school={Department of Electrical Engineering \& Computer Sciences, University of California, Berkeley},
+  type={PhD dissertation},
+  presort={04},
+  rmdnote={pdf=http://www.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-71.html}
+}
+
+@inproceedings{ghosh2009adaptive,
+  title={Adaptive bidding for display advertising},
+  author={Ghosh, Arpita and Rubinstein, Benjamin I. P. and Vassilvitskii, Sergei and Zinkevich, Martin},
+  booktitle={Proceedings of the 18th International Conference on World Wide Web},
+  series={WWW},
+  pages={251--260},
+  year={2009},
+  organization={ACM},
+  presort={01},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/WWW09.pdf}
+}
+
+@article{rubinstein2009shifting,
+  title={Shifting: One-inclusion mistake bounds and sample compression},
+  author={Rubinstein, Benjamin I. P. and Bartlett, Peter L. and Rubinstein, J. Hyam},
+  journal={Journal of Computer and System Sciences},
+  volume={75},
+  number={1},
+  pages={37--59},
+  year={2009},
+  presort={02},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/RBR07-JCSS.pdf;fix=https://people.eng.unimelb.edu.au/brubinstein/papers/JCSS09-erratum.pdf}
+}
+
+@inproceedings{rubinstein2009antidote,
+  title={{ANTIDOTE}: Understanding and defending against poisoning of anomaly detectors},
+  author={Rubinstein, Benjamin I. P. and Nelson, Blaine and Huang, Ling and Joseph, Anthony D. and Lau, Shing-hon and Rao, Satish and Taft, Nina and Tygar, J. D.},
+  booktitle={Proceedings of the 9th ACM SIGCOMM Internet Measurement Conference},
+  series={IMC},
+  pages={1--14},
+  year={2009},
+  organization={ACM},
+  presort={03},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/imc206-rubinstein.pdf}
+}
+
+@article{rubinstein2009stealthy,
+  title={Stealthy poisoning attacks on {PCA}-based anomaly detectors},
+  author={Rubinstein, Benjamin I. P. and Nelson, Blaine and Huang, Ling and Joseph, Anthony D. and Lau, Shing-hon and Rao, Satish and Taft, Nina and Tygar, J. D.},
+  journal={ACM SIGMETRICS Performance Evaluation Review},
+  volume={37},
+  number={2},
+  pages={73--74},
+  year={2009},
+  publisher={ACM},
+  presort={04},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/RNHJLRTT09-SIGMETRICS09.pdf}
+}
+
+@incollection{nelson2009misleading,
+  title={Misleading learners: Co-opting your spam filter},
+  author={Nelson, Blaine and Barreno, Marco and Chi, Fuching Jack and Joseph, Anthony D. and Rubinstein, Benjamin I. P. and Saini, Udam and Sutton, Charles and Tygar, J. D. and Xia, Kai},
+  booktitle={Machine Learning in Cyber Trust: Security, Privacy, and Reliability},
+  pages={17--51},
+  year={2009},
+  publisher={Springer},
+  presort={05},
+  rmdnote={pdf=http://www.springer.com/computer/security+and+cryptology/book/978-0-387-88734-0}
+}
+
+@mastersthesis{rubinstein2009bshifting,
+author = {Rubinstein, Benjamin I. P.},
+title = {Shifting in the n-Cube: Online Mistake Bounds and the Sample Compression Conjecture},
+school = {Faculty of Engineering, University of Melbourne},
+year = {2009},
+type = {MCompSci thesis},
+presort={06},
+rmdnote={pdf=http://repository.unimelb.edu.au/10187/5774}
+}
+
+@inproceedings{rubinstein2008geometric,
+  title={Geometric \& Topological Representations of Maximum Classes with Applications to Sample Compression},
+  author={Rubinstein, J. Hyam and Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 21st Annual Conference on Learning Theory},
+  series={COLT},
+  pages={299--310},
+  year={2008},
+  presort={01},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/RR08-COLT08.pdf}
+}
+
+@inproceedings{rubinstein2008evading,
+  title={Evading anomaly detection through variance injection attacks on {PCA}},
+  author={Rubinstein, Benjamin I. P. and Nelson, Blaine and Huang, Ling and Joseph, Anthony D. and Lau, Shing-hon and Taft, Nina and Tygar, J. Doug},
+  booktitle={Proceedings of the 11th International Symposium on Recent Advances in Intrusion Detection},
+  series={RAID},
+  pages={394--395},
+  year={2008},
+  presort={02},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/RNHJLTT08-RAID08.pdf;alert=Winner of RAID08 best poster award}
+}
+
+@inproceedings{nelson2008exploiting,
+  title={Exploiting Machine Learning to Subvert Your Spam Filter.},
+  author={Nelson, Blaine and Barreno, Marco and Chi, Fuching Jack and Joseph, Anthony D. and Rubinstein, Benjamin I. P. and Saini, Udam and Sutton, Charles A. and Tygar, J. Doug and Xia, Kai},
+  booktitle={First USENIX Workshop on Large-scale Exploits and Emergent Threats},
+  series={LEET},
+  pages={1--9},
+  year={2008},
+  presort={03},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/leet08.pdf}
+}
+
+@inproceedings{barreno2008open,
+  title={Open problems in the security of learning},
+  author={Barreno, Marco and Bartlett, Peter L. and Chi, Fuching Jack and Joseph, Anthony D. and Nelson, Blaine and Rubinstein, Benjamin I. P. and Saini, Udam and Tygar, J. Doug},
+  booktitle={Proceedings of the 1st ACM Workshop on Artificial Intelligence \& Security},
+  series={AISec},
+  pages={19--26},
+  year={2008},
+  organization={ACM},
+  presort={04},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/BBCJNRST08-AISEC08.pdf}
+}
+
+@techreport{rubinstein2008compromising,
+  title={Compromising {PCA}-based anomaly detectors for network-wide traffic},
+  author={Rubinstein, Benjamin I. P. and Nelson, Blaine and Huang, Ling and Joseph, Anthony D. and Lau, Shing-hon and Taft, Nina and Tygar, Doug},
+  institution={EECS Department, University of California, Berkeley},
+  type={technical report},
+  number={UCB/EECS-2008-73},
+  year={2008},
+  presort={05},
+  rmdnote={pdf=http://www.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-73.html}
+}
+
+@inproceedings{rubinstein2007shifting,
+  title={Shifting, one-inclusion mistake bounds and tight multiclass expected risk bounds},
+  author={Rubinstein, Benjamin I. P. and Bartlett, Peter L. and Rubinstein, J. Hyam},
+  booktitle={Advances in Neural Information Processing Systems 19},
+  series={NIPS},
+  pages={1193--1200},
+  year={2007},
+  presort={01},
+  rmdnote={pdf=http://books.nips.cc/papers/files/nips19/NIPS2006_0683.pdf}
+}
+
+@proceedings{abraham2004proceedings,
+author={Abraham, Gad and Rubinstein, Benjamin I. P.},
+title = {Proceedings of the Second Australian Students' Computing Conference},
+series={AUSCC},
+isbn={0-975-71730-8},
+note ={ 175 pages},
+year ={2004},
+rmdnote={pdf=http://auscc.bipr.net/auscc04}
+}
+
+@proceedings{rubinstein2003proceedings,
+author = {Rubinstein, Benjamin I. P. and Chan, Nelson and Kshetrapalapuram, K. K.},
+title = {Proceedings of the First Australian Undergraduate Students' Computer Conference},
+series = {AUSCC},
+isbn = {0-646-42751-2},
+note = {126 pages},
+year = {2003},
+presort={01},
+rmdnote={pdf=http://auscc.bipr.net/auscc03}
+}
+
+@article{rubinstein2003machine,
+  title={Machine learning in low-level microarray analysis},
+  author={Rubinstein, Benjamin I. P. and McAuliffe, Jon and Cawley, Simon and Palaniswami, Marimuthu and Ramamohanarao, Kotagiri and Speed, Terence P.},
+  journal={ACM SIGKDD Explorations Newsletter},
+  volume={5},
+  number={2},
+  pages={130--139},
+  year={2003},
+  publisher={ACM},
+  note={Special Issue on Microarray Data Mining},
+  presort={02},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/sigkdd03.pdf}
+}
+
+@inproceedings{rubinstein2001evolving,
+  title={Evolving quantum circuits using genetic programming},
+  author={Rubinstein, Benjamin I. P.},
+  booktitle={Proceedings of the 2001 Congress on Evolutionary Computation},
+  series={CEC},
+  pages={144--151},
+  year={2001},
+  organization={IEEE},
+  rmdnote={pdf=https://people.eng.unimelb.edu.au/brubinstein/papers/cec01.pdf;alert=Winner of IEEE Computer Society's Lance Stafford Larson Scholarship for best undergraduate student paper worldwide}
+}
+
