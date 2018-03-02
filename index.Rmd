@@ -3,6 +3,8 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+<br>
+
 <img src="images/ben1.jpg" style="width:40%; border:12px solid; margin-right: 24px" align="left">
 
 **Benjamin I. P. Rubinstein**, PhD (Berkeley)  

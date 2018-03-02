@@ -3,6 +3,8 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+<br>
+
 My [group](group.html) and I have implemented our research contributions as useful software artifacts---in many cases as open-source software on which  collaboration and contributions are most welcome. Other software has [shipped](impact.html) within larger systems.
 
 ***
