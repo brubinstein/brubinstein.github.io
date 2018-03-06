@@ -1,0 +1,74 @@
+---
+header-includes:
+  - \input{../tex/preamble}
+documentclass: article
+classoption:
+  - a4paper
+  - 12pt
+geometry: margin=0.5cm
+output:
+  pdf_document:
+    keep_tex: true
+# script : arc-rope.Rmd
+# author : Benjamin Rubinstein
+# about  : Produces an Australian Research Council (ARC) style 
+#          LaTeX publication list suitable for Research Opportunity and
+#          Performance Evidence (ROPE). Such documents tend to list
+#          publications from some lower-bouding year, in reverse chronological
+#          order, structured by publication type. Typically appended to
+#          publications is information on rankings, and citations.
+#          By knitting this document into latex, the user can supplement output
+#          as needed - e.g. with asterisks for relevant publications to a grant - 
+#          but in theory this should take care of most of the work including
+#          fetching and merging Google Scholar citations. (But note then to 
+#          be careful about scholar rate limits.)
+---
+
+\newcounter{list}
+\setcounter{list}{0}
+
+\noindent \textbf{D8. Research Opportunity and Performance Evidence (ROPE)---Publication list}
+
+\noindent Bibliometrics retrieved `r format(Sys.Date(), format="%b %d, %Y")`: citation counts from Google Scholar; A\*,A,B,C conference rankings from CORE2018; A\*,A,B,C journal rankings from ERA2010 and 2015 5-year impact factors from Thomson Reuters. 
+Project ID and years funded are included for papers supported by an ARC grant. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("RefManageR")
+BibOptions(check.entries=FALSE, first.inits=FALSE, max.names=50, bib.style="authortitle", style="latex")
+bib <- ReadBib("../bib/citations.bib", check=FALSE)
+sections <- list("Authored Books"="book",
+                 "Book Chapters"="incollection",
+                 "Refereed Journal Articles"="article",
+                 "Fully-Refereed Conference Proceedings"="inproceedings",
+                 "Other Publication Outputs"=list(
+                   "Edited Proceedings"="proceedings", 
+                   "Technical Reports"="techreport;misc"))
+print.bibtype <- function(bib, btype) {
+  cat("\\begin{enumerate}\n\\setcounter{enumi}{\\value{list}}\n\n")
+  btype.split <- strsplit(btype, ";", fixed=T)[[1]]
+  for (bt in btype.split) {
+    ybib <- bib[bibtype = bt]
+    for (yb in names(ybib)) {
+      cat("\\item ")
+      print(ybib[yb])
+      cat("\n")
+    }
+  }
+  cat("\n\\setcounter{list}{\\value{enumi}}\n\\end{enumerate}\n\n")
+}
+```
+
+```{r books, echo=FALSE, comment="", results='asis'}
+for (key in names(sections)) {
+  cat("\n\n\\noindent\\textbf{", key, "}\n\n", sep="")
+  if (is.list(sections[[key]])) {
+    for (sub.key in names(sections[[key]])) {
+      cat("\n\n\\noindent\\textit{", sub.key, "}\n\n", sep="")
+      print.bibtype(bib, sections[[key]][[sub.key]])
+    }
+  } else {
+    print.bibtype(bib, sections[[key]])
+  }
+}
+```

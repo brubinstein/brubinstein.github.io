@@ -1,0 +1,818 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+\input{../tex/preamble}
+
+\begin{document}
+
+\newcounter{list} \setcounter{list}{0}
+
+\noindent \textbf{D8. Research Opportunity and Performance Evidence (ROPE)---Publication list}
+
+\noindent Bibliometrics retrieved Mar 06, 2018: citation counts from
+Google Scholar; A*,A,B,C conference rankings from CORE2018; A*,A,B,C
+journal rankings from ERA2010 and 2015 5-year impact factors from
+Thomson Reuters. Project ID and years funded are included for papers
+supported by an ARC grant.
+
+\noindent\textbf{Authored Books}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Joseph, Anthony D., Blaine Nelson, Benjamin I. P. Rubinstein and J. D. Tygar.
+\emph{Adversarial Machine Learning}.
+in press.
+Cambridge University Press, 2018.
+
+\item Verkade, Heather, Terrence D. Mulhern, Jason M. Lodge, Kristine Elliott, Simon Cropper, Benjamin I. P. Rubinstein, Allen Espinosa, Michelle Livett, Laura Dooley, Sarah Frankland and Raoul Mulder.
+\emph{Misconceptions as a trigger for enhancing student learning in higher education: A handbook for educators}.
+Published by The University of Melbourne, 2017.
+ISBN: 978 0 7340 5410 4.
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+\noindent\textbf{Book Chapters}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Rubinstein, J. Hyam, Benjamin I. P. Rubinstein and Peter L. Bartlett.
+``Bounding embeddings of VC classes into maximum classes''.
+In: 
+\emph{Measures of Complexity}.
+Ed. by V. Vovk, H. Papadopoulos and A. Gammerman.
+Springer, 2015, pp. 303--325.
+
+\item Biggio, Battista, Igino Corona, Blaine Nelson, Benjamin I. P. Rubinstein, Davide Maiorca, Giorgio Fumera, Giorgio Giacinto and Fabio Roli.
+``Security evaluation of support vector machines in adversarial environments''.
+In: 
+\emph{Support Vector Machines Applications}.
+Ed. by Y. Ma and G. Guo.
+Springer, Feb. 2014, pp. 105--153.
+
+\item Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph, Benjamin I. P. Rubinstein, Udam Saini, Charles Sutton, J. D. Tygar and Kai Xia.
+``Misleading learners: Co-opting your spam filter''.
+In: 
+\emph{Machine Learning in Cyber Trust: Security, Privacy, and Reliability}.
+Springer, 2009, pp. 17--51.
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+\noindent\textbf{Refereed Journal Articles}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Fanaeepour, Maryam and Benjamin I. P. Rubinstein.
+``Differentially private counting of users' spatial regions''.
+In: \emph{Knowledge and Information Systems} 54.1 (Jan. 2018), pp. 1--28.
+
+\item Lyu, Lingjuan, Karthik Nandakumar, Benjamin I. P. Rubinstein, Jiong Jin, Justin Bedo and Marimuthu Palaniswami.
+``PPFA: Privacy-Preserving Fog-enabled Aggregation in Smart Grid''.
+In: \emph{IEEE Transactions on Industrial Informatics} (Feb. 2018). in press.
+
+\item Marchant, Neil G. and Benjamin I. P. Rubinstein.
+``In Search of an Entity Resolution OASIS: Optimal Asymptotic Sequential Importance Sampling''.
+In: \emph{Proceedings of the VLDB Endowment} 10.11 (Feb. 2017), pp. 1322--1333.
+
+\item Dimitrakakis, Christos, Blaine Nelson, Zuhe Zhang, Aikateirni Mitrokotsa and Benjamin I. P. Rubinstein.
+``Differential privacy for Bayesian inference through posterior sampling''.
+In: \emph{Journal of Machine Learning Research} 18.11 (Mar. 2017), pp. 1--39.
+
+\item Lau, Lawrence, Yamuna Kankanige, Benjamin Rubinstein, Robert Jones, Christopher Christophi, Vijayaragavan Muralidharan and James Bailey.
+``Machine-learning algorithms predict graft failure after liver transplantation''.
+In: \emph{Transplantation} 101.4 (Apr. 2017), pp. 125--132.
+
+\item Han, Yi, Tansu Alpcan, Jeffrey Chan, Christopher Leckie and Benjamin I. P. Rubinstein.
+``A game theoretical approach to defend against co-resident attacks in cloud computing: Preventing co-residence using semi-supervised learning''.
+In: \emph{IEEE Transactions on information Forensics and Security} 11.3 (Mar. 2016), pp. 556--570.
+
+\item Zhang, Duo, Benjamin I. P. Rubinstein and Jim Gemmell.
+``Principled graph matching algorithms for integrating multiple data sources''.
+In: \emph{IEEE Transactions on Knowledge and Data Engineering} 27.10 (Apr. 2015), pp. 2784--2796.
+
+\item Fanaeepour, Maryam, Lars Kulik, Egemen Tanin and Benjamin I. P. Rubinstein.
+``The CASE histogram: Privacy-aware processing of trajectory data using aggregates''.
+In: \emph{GeoInformatica} 19.4 (Jul. 2015), pp. 747--798.
+
+\item Zhao, Bo, Benjamin I. P. Rubinstein, Jim Gemmell and Jiawei Han.
+``A Bayesian approach to discovering truth from conflicting sources for data integration''.
+In: \emph{Proceedings of the VLDB Endowment} 5.6 (Feb. 2012), pp. 550--561.
+
+\item Rubinstein, Benjamin I. P. and Aleksandr Simma.
+``On the stability of empirical risk minimization in the presence of multiple risk minimizers''.
+In: \emph{IEEE Transactions on Information Theory} 58.7 (Jul. 2012), pp. 4160--4163.
+
+\item Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, Steven J. Lee, Satish Rao and J. D. Tygar.
+``Query strategies for evading convex-inducing classifiers''.
+In: \emph{Journal of Machine Learning Research} 13.May (2012), pp. 1293--1332.
+
+\item Rubinstein, Benjamin I. P. and J. Hyam Rubinstein.
+``A geometric approach to sample compression''.
+In: \emph{Journal of Machine Learning Research} 13.Apr (2012), pp. 1221--1261.
+
+\item Rubinstein, Benjamin I. P., Peter L. Bartlett, Ling Huang and Nina Taft.
+``Learning in a large function space: Privacy-preserving mechanisms for SVM learning''.
+In: \emph{Journal of Privacy and Confidentiality} 4.1 (Aug. 2012). Special Issue on Statistical and Learning-Theoretic Challenges in Data Privacy, pp. 65--100.
+
+\item Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C Mitchell, Dawn Song and Peter L. Bartlett.
+``A learning-based approach to reactive security''.
+In: \emph{IEEE Transactions on Dependable and Secure Computing} 9.4 (Jul. 2012), pp. 482--493.
+
+\item Rubinstein, Benjamin I. P., Peter L. Bartlett and J. Hyam Rubinstein.
+``Shifting: One-inclusion mistake bounds and sample compression''.
+In: \emph{Journal of Computer and System Sciences} 75.1 (2009), pp. 37--59.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Satish Rao, Nina Taft and J. D. Tygar.
+``Stealthy poisoning attacks on PCA-based anomaly detectors''.
+In: \emph{ACM SIGMETRICS Performance Evaluation Review} 37.2 (2009), pp. 73--74.
+
+\item Rubinstein, Benjamin I. P., Jon McAuliffe, Simon Cawley, Marimuthu Palaniswami, Kotagiri Ramamohanarao and Terence P. Speed.
+``Machine learning in low-level microarray analysis''.
+In: \emph{ACM SIGKDD Explorations Newsletter} 5.2 (2003). Special Issue on Microarray Data Mining, pp. 130--139.
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+\noindent\textbf{Fully-Refereed Conference Proceedings}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Fanaeepour, Maryam and Benjamin I. P. Rubinstein.
+``Histogramming Privately Ever After: Differentially-Private Data-Dependent Error Bound Optimisation''.
+In: 
+\emph{Proceedings of the 34th International Conference on Data Engineering}.
+ICDE.
+IEEE.
+2018.
+
+\item Aye, Zay Maung Maung, Kotagiri Ramamohanaro and Benjamin I. P. Rubinstein.
+``Fast Manifold Landmarking with Locality Sensitive Hashing''.
+In: 
+\emph{22nd Pacific-Asia Conference on Knowledge Discovery and Data Mining}.
+PAKDD.
+accepted.
+Feb. 2018.
+
+\item Han, Yi and Benjamin I. P. Rubinstein.
+``Adequacy of the Gradient-Descent Method for Classifier Evasion Attacks''.
+In: 
+\emph{AAAI-18 Workshop on Artificial Intelligence for Cyber Security}.
+AICS.
+Jan. 2018.
+
+\item Rubinstein, Benjamin I. P. and Francesco Alda.
+``Pain-Free Random Differential Privacy with Sensitivity Sampling''.
+In: 
+\emph{Proceedings of the 34th International Conference on Machine Learning}.
+ICML.
+PMLR.
+May. 2017, pp. 2950--2959.
+
+\item Alda, Francesco and Benjamin I. P. Rubinstein.
+``The Bernstein mechanism: Function release under differential privacy''.
+In: 
+\emph{Proceedings of the 31st AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2017.
+
+\item Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin Rubinstein and Rajkumar Buyya.
+``E-storm: Replication-based state management in distributed stream processing systems''.
+In: 
+\emph{46th International Conference on Parallel Processing}.
+ICPP.
+IEEE.
+2017, pp. 571--580.
+
+\item Verkade, Heather, Jason M. Lodge, Kristine Elliott, Terrence D. Mulhern, Allen A. Espinosa, Simon J. Cropper and Benjamin I. P. Rubinstein.
+``Exploring misconceptions as a trigger for enhancing student learning''.
+In: 
+\emph{Higher Education Research and Development Society of Australasia}.
+HERDSA.
+Apr. 2017.
+
+\item Zhang, Zuhe, Benjamin I. P. Rubinstein and Christos Dimitrakakis.
+``On the differential privacy of Bayesian inference''.
+In: 
+\emph{Proceedings of the 30th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2016, pp. 2365--2371.
+
+\item He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang, Sandra Milligan and Jeffrey Chan.
+``MOOCs meet measurement theory: A topic-modelling approach''.
+In: 
+\emph{Proceedings of the 30th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2016, pp. 1195--1201.
+
+\item Fanaeepour, Maryam and Benjamin I. P. Rubinstein.
+``Beyond points and paths: counting private bodies''.
+In: 
+\emph{2016 IEEE 16th International Conference on Data Mining}.
+ICDM.
+IEEE.
+Dec. 2016, pp. 131--140.
+
+\item Alpcan, Tansu, Benjamin I. P. Rubinstein and Christopher Leckie.
+``Large-scale strategic games and adversarial machine learning''.
+In: 
+\emph{2016 IEEE 55th Conference on Decision and Control}.
+CDC.
+IEEE.
+Dec. 2016, pp. 4420--4426.
+
+\item Aye, Zay Maung Maung, Kotagiri Ramamohanarao and Benjamin I. P. Rubinstein.
+``Large Scale Metric learning''.
+In: 
+\emph{2016 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Jul. 2016, pp. 1442--1449.
+
+\item Sanchez, Ivan, Zay Maung Maung Aye, Benjamin I. P. Rubinstein and Kotagiri Ramamohanarao.
+``Fast trajectory clustering using Hashing methods''.
+In: 
+\emph{2016 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Jul. 2016, pp. 3689--3696.
+
+\item Milligan, Sandra, Jiazhen He, James Bailey, Rui Zhang and Benjamin I. P. Rubinstein.
+``Validity: a framework for cross-disciplinary collaboration in mining indicators of learning from MOOC forums''.
+In: 
+\emph{Proceedings of the Sixth International Conference on Learning Analytics \& Knowledge}.
+LAK.
+ACM.
+Apr. 2016, pp. 546--547.
+
+\item He, Jiazhen, James Bailey, Benjamin I. P. Rubinstein and Rui Zhang.
+``Identifying At-Risk Students in Massive Open Online Courses''.
+In: 
+\emph{Proceedings of the 29th AAAI Conference on Artificial Intelligence}.
+AAAI.
+2015, pp. 1749--1755.
+
+\item Lim, Zhe and Benjamin I. P. Rubinstein.
+``Sub-Merge: Diving Down to the Attribute-Value Level in Statistical Schema Matching.''
+In: 
+\emph{Proceedings of the 29th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Jan. 2015, pp. 1791--1797.
+
+\item Dimitrakakis, Christos, Blaine Nelson, Aikaterini Mitrokotsa and Benjamin I. P. Rubinstein.
+``Robust and private Bayesian inference''.
+In: 
+\emph{25th International Conference on Algorithmic Learning Theory}.
+ALT.
+Springer.
+Oct. 2014, pp. 291--305.
+
+\item Dimitrakakis, Christos, Aikaterini Mitrokotsa and Benjamin I. P. Rubinstein.
+``Proceedings of the 7th Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2014 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM Press, 2014, pp. 1--124.
+
+\item Negahban, Sahand N., Benjamin I. P. Rubinstein and Jim Gemmell.
+``Scaling multiple-source entity resolution using statistically efficient transfer learning''.
+In: 
+\emph{Proceedings of the 21st ACM International Conference on Information and Knowledge Management}.
+CIKM.
+ACM.
+Oct. 2012, pp. 2224--2228.
+
+\item Cardenas, Alvaro A., Blaine Nelson and Benjamin I. P. Rubinstein.
+``Fifth ACM Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2012 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM.
+Oct. 2012, pp. 1--110.
+
+\item Huang, Ling, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein and J. D. Tygar.
+``Adversarial machine learning''.
+In: 
+\emph{Proceedings of the 4th ACM Workshop on Security and Artificial Intelligence}.
+ACM.
+Oct. 2011, pp. 43--58.
+
+\item Narayanan, Arvind, Elaine Shi and Benjamin I. P. Rubinstein.
+``Link prediction by de-anonymization: How we won the Kaggle social network challenge''.
+In: 
+\emph{The 2011 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Feb. 2011, pp. 1825--1834.
+
+\item Cardenas, Alvaro A., Rachel Greenstadt and Benjamin I. P. Rubinstein.
+``Proceedings of the 4th Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2011 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM Press, Oct. 2011, pp. 1--116.
+
+\item Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Steven J. Lee, Satish Rao, Anthony Tran and J. Doug Tygar.
+``Near-Optimal Evasion of Convex-Inducing Classifiers.''
+In: 
+\emph{Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics}.
+AISTATS.
+2010, pp. 549--556.
+
+\item Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C. Mitchell, Dawn Song and Peter L. Bartlett.
+``A learning-based approach to reactive security''.
+In: 
+\emph{Proceedings of the Fourteenth International Conference on Financial Cryptography and Data Security}.
+FC.
+2010, pp. 192--206.
+
+\item Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph and J. D. Tygar.
+``Classifier evasion: Models and open problems''.
+In: 
+\emph{International Workshop on Privacy and Security Issues in Data Mining and Machine Learning}.
+PSDML.
+2010, pp. 92--98.
+
+\item Ghosh, Arpita, Benjamin I. P. Rubinstein, Sergei Vassilvitskii and Martin Zinkevich.
+``Adaptive bidding for display advertising''.
+In: 
+\emph{Proceedings of the 18th International Conference on World Wide Web}.
+WWW.
+ACM.
+2009, pp. 251--260.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Satish Rao, Nina Taft and J. D. Tygar.
+``ANTIDOTE: Understanding and defending against poisoning of anomaly detectors''.
+In: 
+\emph{Proceedings of the 9th ACM SIGCOMM Internet Measurement Conference}.
+IMC.
+ACM.
+2009, pp. 1--14.
+
+\item Rubinstein, J. Hyam and Benjamin I. P. Rubinstein.
+``Geometric \& Topological Representations of Maximum Classes with Applications to Sample Compression''.
+In: 
+\emph{Proceedings of the 21st Annual Conference on Learning Theory}.
+COLT.
+2008, pp. 299--310.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Nina Taft and J. Doug Tygar.
+``Evading anomaly detection through variance injection attacks on PCA''.
+In: 
+\emph{Proceedings of the 11th International Symposium on Recent Advances in Intrusion Detection}.
+RAID.
+2008, pp. 394--395.
+
+\item Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph, Benjamin I. P. Rubinstein, Udam Saini, Charles A. Sutton, J. Doug Tygar and Kai Xia.
+``Exploiting Machine Learning to Subvert Your Spam Filter.''
+In: 
+\emph{First USENIX Workshop on Large-scale Exploits and Emergent Threats}.
+LEET.
+2008, pp. 1--9.
+
+\item Barreno, Marco, Peter L. Bartlett, Fuching Jack Chi, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein, Udam Saini and J. Doug Tygar.
+``Open problems in the security of learning''.
+In: 
+\emph{Proceedings of the 1st ACM Workshop on Artificial Intelligence \& Security}.
+AISec.
+ACM.
+2008, pp. 19--26.
+
+\item Rubinstein, Benjamin I. P., Peter L. Bartlett and J. Hyam Rubinstein.
+``Shifting, one-inclusion mistake bounds and tight multiclass expected risk bounds''.
+In: 
+\emph{Advances in Neural Information Processing Systems 19}.
+NIPS.
+2007, pp. 1193--1200.
+
+\item Rubinstein, Benjamin I. P.
+``Evolving quantum circuits using genetic programming''.
+In: 
+\emph{Proceedings of the 2001 Congress on Evolutionary Computation}.
+CEC.
+IEEE.
+2001, pp. 144--151.
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+\noindent\textbf{Other Publication Outputs}
+
+\noindent\textit{Edited Proceedings}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Fanaeepour, Maryam and Benjamin I. P. Rubinstein.
+``Histogramming Privately Ever After: Differentially-Private Data-Dependent Error Bound Optimisation''.
+In: 
+\emph{Proceedings of the 34th International Conference on Data Engineering}.
+ICDE.
+IEEE.
+2018.
+
+\item Aye, Zay Maung Maung, Kotagiri Ramamohanaro and Benjamin I. P. Rubinstein.
+``Fast Manifold Landmarking with Locality Sensitive Hashing''.
+In: 
+\emph{22nd Pacific-Asia Conference on Knowledge Discovery and Data Mining}.
+PAKDD.
+accepted.
+Feb. 2018.
+
+\item Han, Yi and Benjamin I. P. Rubinstein.
+``Adequacy of the Gradient-Descent Method for Classifier Evasion Attacks''.
+In: 
+\emph{AAAI-18 Workshop on Artificial Intelligence for Cyber Security}.
+AICS.
+Jan. 2018.
+
+\item Rubinstein, Benjamin I. P. and Francesco Alda.
+``Pain-Free Random Differential Privacy with Sensitivity Sampling''.
+In: 
+\emph{Proceedings of the 34th International Conference on Machine Learning}.
+ICML.
+PMLR.
+May. 2017, pp. 2950--2959.
+
+\item Alda, Francesco and Benjamin I. P. Rubinstein.
+``The Bernstein mechanism: Function release under differential privacy''.
+In: 
+\emph{Proceedings of the 31st AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2017.
+
+\item Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin Rubinstein and Rajkumar Buyya.
+``E-storm: Replication-based state management in distributed stream processing systems''.
+In: 
+\emph{46th International Conference on Parallel Processing}.
+ICPP.
+IEEE.
+2017, pp. 571--580.
+
+\item Verkade, Heather, Jason M. Lodge, Kristine Elliott, Terrence D. Mulhern, Allen A. Espinosa, Simon J. Cropper and Benjamin I. P. Rubinstein.
+``Exploring misconceptions as a trigger for enhancing student learning''.
+In: 
+\emph{Higher Education Research and Development Society of Australasia}.
+HERDSA.
+Apr. 2017.
+
+\item Zhang, Zuhe, Benjamin I. P. Rubinstein and Christos Dimitrakakis.
+``On the differential privacy of Bayesian inference''.
+In: 
+\emph{Proceedings of the 30th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2016, pp. 2365--2371.
+
+\item He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang, Sandra Milligan and Jeffrey Chan.
+``MOOCs meet measurement theory: A topic-modelling approach''.
+In: 
+\emph{Proceedings of the 30th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Feb. 2016, pp. 1195--1201.
+
+\item Fanaeepour, Maryam and Benjamin I. P. Rubinstein.
+``Beyond points and paths: counting private bodies''.
+In: 
+\emph{2016 IEEE 16th International Conference on Data Mining}.
+ICDM.
+IEEE.
+Dec. 2016, pp. 131--140.
+
+\item Alpcan, Tansu, Benjamin I. P. Rubinstein and Christopher Leckie.
+``Large-scale strategic games and adversarial machine learning''.
+In: 
+\emph{2016 IEEE 55th Conference on Decision and Control}.
+CDC.
+IEEE.
+Dec. 2016, pp. 4420--4426.
+
+\item Aye, Zay Maung Maung, Kotagiri Ramamohanarao and Benjamin I. P. Rubinstein.
+``Large Scale Metric learning''.
+In: 
+\emph{2016 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Jul. 2016, pp. 1442--1449.
+
+\item Sanchez, Ivan, Zay Maung Maung Aye, Benjamin I. P. Rubinstein and Kotagiri Ramamohanarao.
+``Fast trajectory clustering using Hashing methods''.
+In: 
+\emph{2016 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Jul. 2016, pp. 3689--3696.
+
+\item Milligan, Sandra, Jiazhen He, James Bailey, Rui Zhang and Benjamin I. P. Rubinstein.
+``Validity: a framework for cross-disciplinary collaboration in mining indicators of learning from MOOC forums''.
+In: 
+\emph{Proceedings of the Sixth International Conference on Learning Analytics \& Knowledge}.
+LAK.
+ACM.
+Apr. 2016, pp. 546--547.
+
+\item He, Jiazhen, James Bailey, Benjamin I. P. Rubinstein and Rui Zhang.
+``Identifying At-Risk Students in Massive Open Online Courses''.
+In: 
+\emph{Proceedings of the 29th AAAI Conference on Artificial Intelligence}.
+AAAI.
+2015, pp. 1749--1755.
+
+\item Lim, Zhe and Benjamin I. P. Rubinstein.
+``Sub-Merge: Diving Down to the Attribute-Value Level in Statistical Schema Matching.''
+In: 
+\emph{Proceedings of the 29th AAAI Conference on Artificial Intelligence}.
+AAAI.
+Jan. 2015, pp. 1791--1797.
+
+\item Dimitrakakis, Christos, Blaine Nelson, Aikaterini Mitrokotsa and Benjamin I. P. Rubinstein.
+``Robust and private Bayesian inference''.
+In: 
+\emph{25th International Conference on Algorithmic Learning Theory}.
+ALT.
+Springer.
+Oct. 2014, pp. 291--305.
+
+\item Dimitrakakis, Christos, Aikaterini Mitrokotsa and Benjamin I. P. Rubinstein.
+``Proceedings of the 7th Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2014 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM Press, 2014, pp. 1--124.
+
+\item Negahban, Sahand N., Benjamin I. P. Rubinstein and Jim Gemmell.
+``Scaling multiple-source entity resolution using statistically efficient transfer learning''.
+In: 
+\emph{Proceedings of the 21st ACM International Conference on Information and Knowledge Management}.
+CIKM.
+ACM.
+Oct. 2012, pp. 2224--2228.
+
+\item Cardenas, Alvaro A., Blaine Nelson and Benjamin I. P. Rubinstein.
+``Fifth ACM Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2012 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM.
+Oct. 2012, pp. 1--110.
+
+\item Huang, Ling, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein and J. D. Tygar.
+``Adversarial machine learning''.
+In: 
+\emph{Proceedings of the 4th ACM Workshop on Security and Artificial Intelligence}.
+ACM.
+Oct. 2011, pp. 43--58.
+
+\item Narayanan, Arvind, Elaine Shi and Benjamin I. P. Rubinstein.
+``Link prediction by de-anonymization: How we won the Kaggle social network challenge''.
+In: 
+\emph{The 2011 International Joint Conference on Neural Networks}.
+IJCNN.
+IEEE.
+Feb. 2011, pp. 1825--1834.
+
+\item Cardenas, Alvaro A., Rachel Greenstadt and Benjamin I. P. Rubinstein.
+``Proceedings of the 4th Workshop on Artificial Intelligence and Security (AISec)''.
+In: 
+\emph{Proceedings of the 2011 ACM Conference on Computer and Communications Security}.
+CCS.
+ACM Press, Oct. 2011, pp. 1--116.
+
+\item Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Steven J. Lee, Satish Rao, Anthony Tran and J. Doug Tygar.
+``Near-Optimal Evasion of Convex-Inducing Classifiers.''
+In: 
+\emph{Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics}.
+AISTATS.
+2010, pp. 549--556.
+
+\item Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C. Mitchell, Dawn Song and Peter L. Bartlett.
+``A learning-based approach to reactive security''.
+In: 
+\emph{Proceedings of the Fourteenth International Conference on Financial Cryptography and Data Security}.
+FC.
+2010, pp. 192--206.
+
+\item Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph and J. D. Tygar.
+``Classifier evasion: Models and open problems''.
+In: 
+\emph{International Workshop on Privacy and Security Issues in Data Mining and Machine Learning}.
+PSDML.
+2010, pp. 92--98.
+
+\item Ghosh, Arpita, Benjamin I. P. Rubinstein, Sergei Vassilvitskii and Martin Zinkevich.
+``Adaptive bidding for display advertising''.
+In: 
+\emph{Proceedings of the 18th International Conference on World Wide Web}.
+WWW.
+ACM.
+2009, pp. 251--260.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Satish Rao, Nina Taft and J. D. Tygar.
+``ANTIDOTE: Understanding and defending against poisoning of anomaly detectors''.
+In: 
+\emph{Proceedings of the 9th ACM SIGCOMM Internet Measurement Conference}.
+IMC.
+ACM.
+2009, pp. 1--14.
+
+\item Rubinstein, J. Hyam and Benjamin I. P. Rubinstein.
+``Geometric \& Topological Representations of Maximum Classes with Applications to Sample Compression''.
+In: 
+\emph{Proceedings of the 21st Annual Conference on Learning Theory}.
+COLT.
+2008, pp. 299--310.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Nina Taft and J. Doug Tygar.
+``Evading anomaly detection through variance injection attacks on PCA''.
+In: 
+\emph{Proceedings of the 11th International Symposium on Recent Advances in Intrusion Detection}.
+RAID.
+2008, pp. 394--395.
+
+\item Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph, Benjamin I. P. Rubinstein, Udam Saini, Charles A. Sutton, J. Doug Tygar and Kai Xia.
+``Exploiting Machine Learning to Subvert Your Spam Filter.''
+In: 
+\emph{First USENIX Workshop on Large-scale Exploits and Emergent Threats}.
+LEET.
+2008, pp. 1--9.
+
+\item Barreno, Marco, Peter L. Bartlett, Fuching Jack Chi, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein, Udam Saini and J. Doug Tygar.
+``Open problems in the security of learning''.
+In: 
+\emph{Proceedings of the 1st ACM Workshop on Artificial Intelligence \& Security}.
+AISec.
+ACM.
+2008, pp. 19--26.
+
+\item Rubinstein, Benjamin I. P., Peter L. Bartlett and J. Hyam Rubinstein.
+``Shifting, one-inclusion mistake bounds and tight multiclass expected risk bounds''.
+In: 
+\emph{Advances in Neural Information Processing Systems 19}.
+NIPS.
+2007, pp. 1193--1200.
+
+\item \emph{Proceedings of the Second Australian Students' Computing Conference}.
+AUSCC.
+175 pages.
+2004.
+ISBN: 0-975-71730-8.
+
+\item \emph{Proceedings of the First Australian Undergraduate Students' Computer Conference}.
+AUSCC.
+126 pages.
+2003.
+ISBN: 0-646-42751-2.
+
+\item Rubinstein, Benjamin I. P.
+``Evolving quantum circuits using genetic programming''.
+In: 
+\emph{Proceedings of the 2001 Congress on Evolutionary Computation}.
+CEC.
+IEEE.
+2001, pp. 144--151.
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+\noindent\textit{Technical Reports}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{list}}
+
+\item Barth, Adam, Saung Li, Benjamin I. P. Rubinstein and Dawn Song.
+\emph{How Open Should Open Source Be?}
+technical report UCB/EECS-2011-98.
+Department of Electrical Engineering \& Computer Sciences, UC Berkeley, Aug. 2011.
+
+\item Gemmell, Jim, Benjamin I. P. Rubinstein and Ashok K. Chandra.
+\emph{Improving entity resolution with global constraints}.
+technical report MSR-TR-2011-100.
+Microsoft Research, Aug. 2011.
+
+\item Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Nina Taft and Doug Tygar.
+\emph{Compromising PCA-based anomaly detectors for network-wide traffic}.
+technical report UCB/EECS-2008-73.
+EECS Department, University of California, Berkeley, 2008.
+
+\item Culnane, Chris, Benjamin I. P. Rubinstein and Vanessa Teague.
+\emph{Options for encoding names for data linking at the Australian Bureau of Statistics}.
+Feb. 2018.
+arXiv: 1802.07975 [cs.CR].
+
+\item Fish, Benjamin, Lev Reyzin and Benjamin I. P. Rubinstein.
+\emph{Sublinear-Time Adaptive Data Analysis}.
+Sep. 2017.
+arXiv: 1709.09778 [cs.LG].
+
+\item Culnane, Chris, Benjamin I. P. Rubinstein and Vanessa Teague.
+\emph{Privacy Assessment of De-identified Opal Data: A report for Transport for NSW}.
+May. 2017.
+arXiv: 1704.08547 [cs.CR].
+
+\item Culnane, Chris, Benjamin I. P. Rubinstein and Vanessa Teague.
+\emph{Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK Office for National Statistics' Privacy-Preserving Record Linkage}.
+2017.
+arXiv: 1712.00871 [cs.CR].
+
+\item Culnane, Chris, Benjamin I. P. Rubinstein and Vanessa Teague.
+\emph{Health Data in an Open World}.
+Dec. 2017.
+arXiv: 1712.05627 [cs.CY].
+
+\item He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang and Sandra Milligan.
+\emph{TopicResponse: A Marriage of Topic Modelling and Rasch Modelling for Automatic Measurement in MOOCs}.
+2016.
+arXiv: 1607.08720 [cs.LG].
+
+
+\setcounter{list}{\value{enumi}}
+\end{enumerate}
+
+
+\end{document}
