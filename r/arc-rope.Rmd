@@ -37,6 +37,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library("RefManageR")
 BibOptions(check.entries=FALSE, first.inits=FALSE, max.names=50, bib.style="authortitle", style="latex")
 bib <- ReadBib("../bib/citations.bib", check=FALSE)
+source("bibliometrics.R")
+cites <- ScholarCites("hMG_gR4AAAAJ")
 sections <- list("Authored Books"="book",
                  "Book Chapters"="incollection",
                  "Refereed Journal Articles"="article",
@@ -52,6 +54,16 @@ print.bibtype <- function(bib, btype) {
     for (yb in names(ybib)) {
       cat("\\item ")
       print(ybib[yb])
+      if (any(yb == names(cites$pubs))) {
+        citeCount <- cites$pubs[yb]
+        if (citeCount > 0) {
+          if (citeCount > 1) {
+            cat(" \\textbf{(", cites$pubs[yb], " citations)}", sep="")
+          } else {
+            cat(" \\textbf{(", cites$pubs[yb], " citation)}", sep="")
+          }
+        }
+      }
       cat("\n")
     }
   }
@@ -63,9 +75,11 @@ print.bibtype <- function(bib, btype) {
 for (key in names(sections)) {
   cat("\n\n\\noindent\\textbf{", key, "}\n\n", sep="")
   if (is.list(sections[[key]])) {
-    for (sub.key in names(sections[[key]])) {
-      cat("\n\n\\noindent\\textit{", sub.key, "}\n\n", sep="")
-      print.bibtype(bib, sections[[key]][[sub.key]])
+    for (sub.ind in seq_along(sections[[key]])) {
+      sub.head <- names(sections[[key]])[sub.ind]
+      sub.key <- (sections[[key]])[[sub.ind]]
+      cat("\n\n\\noindent\\textit{", sub.head, "}\n\n", sep="")
+      print.bibtype(bib, sub.key)
     }
   } else {
     print.bibtype(bib, sections[[key]])
