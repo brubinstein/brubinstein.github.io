@@ -79,7 +79,9 @@ _Media coverage (2017 exceeding 1m views):_
 
 <img src="images/laplace.png" style="width:200px; margin-right: 10px;" align="left"> 
 
-Also with colleagues Culnane and Teague since 2016, I have contributed towards several technical privacy assessments of government data initiatives. Contracted by the [Australian Bureau of Statistics](http://www.abs.gov.au/) (ABS), we have [analysed the privacy](https://arxiv.org/abs/1802.07975) of several options for name encoding for private record linkage---as might be used for Australian Census data for example. For [Transport for NSW](https://www.transport.nsw.gov.au/), we have performed a technical [privacy assessment](https://arxiv.org/abs/1704.08547) of a Data61-processed dataset of Opal transport card bus, train, ferry touch ons/offs again under contract. The data has subsequently been published. We have also discovered vulnerabilities in the hashing methodology published by the [UK Office of National Statistics](https://www.ons.gov.uk/) in a third [privacy assessment](https://arxiv.org/abs/1712.00871) (explained [here](https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem)).
+Also with colleagues Culnane and Teague since 2016, I have contributed towards several technical privacy assessments of government data initiatives. Contracted by the [Australian Bureau of Statistics](http://www.abs.gov.au/) (ABS), we have [analysed the privacy](https://arxiv.org/abs/1802.07975) of several options for name encoding for private record linkage---as might be used for Australian Census data for example. For [Transport for NSW](https://www.transport.nsw.gov.au/), we have performed a technical [privacy assessment](https://arxiv.org/abs/1704.08547) of a Data61-processed dataset of Opal transport card bus, train, ferry touch ons/offs again under contract. The data has subsequently been published. We have also discovered vulnerabilities in the hashing methodology published by the [UK Office of National Statistics](https://www.ons.gov.uk/) in a third [privacy assessment](https://arxiv.org/abs/1712.00871) (explained [here](https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem)). Common themes to this work are reflected in our 2018 [report](https://www.cpdp.vic.gov.au/images/content/pdf/privacy_papers/20180503-De-identification-report-OVIC-V1.pdf) for the [Office of the Victorian Information Commissioner](https://www.cpdp.vic.gov.au).
+
+_Media coverage (2018):_ [Mandarin](https://www.themandarin.com.au/92713-vic-privacy-commissioner-publishing-de-identified-citizen-records-is-a-risky-enterprise/)
 
 ### Promoting privacy through cheating at Kaggle
 
@@ -136,6 +138,7 @@ Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$
 
 ### Speaking engagements
 
+* 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
 * 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
 * 02/2018: Session chairing _Security, Privacy & Trust_ at [AAAI2018](https://aaai.org/Conferences/AAAI-18/)
 * 10/2017: Invited speaker at the [DARPA Safe ML workshop](https://simons.berkeley.edu/workshops/safe-m-l) at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
@@ -153,14 +156,14 @@ Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$
 
 ### Decadal plan
 
-As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--17) I helped contribute to the development of a Decadal plan for ICT.
+As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--) contributing to the development of a Decadal plan for ICT.
 
 ### Program committee membership
 
 * [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php),
 **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/), 
+**NIPS**['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),
 **ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
-**NIPS**['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/), 
 [**AISTATS**'2017](http://www.aistats.org/), 
 [CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 
 **KDD**['2015](http://www.kdd.org/kdd2015/),['16](http://kdd.org/kdd2016/), 
