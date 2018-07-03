@@ -139,6 +139,7 @@ Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$
 ### Speaking engagements
 
 * 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
+* 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).
 * 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
 * 02/2018: Session chairing _Security, Privacy & Trust_ at [AAAI2018](https://aaai.org/Conferences/AAAI-18/)
 * 10/2017: Invited speaker at the [DARPA Safe ML workshop](https://simons.berkeley.edu/workshops/safe-m-l) at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
@@ -173,7 +174,7 @@ As member of the Australian Academy of Science's [National Committee for Informa
 * Workshop PCs: 
 [Deep Learning for Security 2018](https://www.ieee-security.org/TC/SPW2018/DLS/) (at IEEE S&P), 
 AI for Cyber Security (AICS at AAAI)['2017](http://www-personal.umich.edu/~arunesh/AICS2017/),['18](http://www-personal.umich.edu/~arunesh/AICS2018/), 
-AI & Security (AISec at CCS)['2009](http://sites.google.com/a/aisec.info/aisec-2009/),['10](http://sites.google.com/a/aisec.info/aisec-2010/),['13](http://sites.google.com/site/ccsaisec2013/),['15](http://www-bcf.usc.edu/~aruneshs/AISec2015.html),['16](http://teamcore.usc.edu/people/arunesh/AISec2016.html)['17](http://www.ai-sec.net/AISec2017/index.html), 
+AI & Security (AISec at CCS)['2009](http://sites.google.com/a/aisec.info/aisec-2009/),['10](http://sites.google.com/a/aisec.info/aisec-2010/),['13](http://sites.google.com/site/ccsaisec2013/),['15](http://www-bcf.usc.edu/~aruneshs/AISec2015.html),['16](http://teamcore.usc.edu/people/arunesh/AISec2016.html),['17](http://www.ai-sec.net/AISec2017/index.html),['18](http://aisec2018.icsi.berkeley.edu/aisec2018/), 
 [S+SSPR'2016](http://www.s-sspr.org/) (at ICPR), 
 [PSDML'2010](http://fias.uni-frankfurt.de/~dimitrakakis/workshops/psdml-2010/) (at ECML/PKDD)
 * Organiser:
