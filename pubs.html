@@ -20,9 +20,11 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -31,10 +33,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +93,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -389,8 +396,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-alda2017bernstein">
-@inproceedings{alda2017bernstein,
+<pre><code id="bibtex-alda2017the">
+@inproceedings{alda2017the,
   title = {The Bernstein mechanism: Function release under differential privacy},
   author = {Francesco Alda and Benjamin I. P. Rubinstein},
   booktitle = {Proceedings of the 31st AAAI Conference on Artificial Intelligence},
@@ -401,7 +408,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Alda, Francesco and Benjamin I. P. Rubinstein. “The Bernstein mechanism: Function release under differential privacy”. In: <em>Proceedings of the 31st AAAI Conference on Artificial Intelligence</em>. AAAI. Feb. 2017. [<a href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">PDF</a>; <a href="https://arxiv.org/abs/1507.04499">full</a>; <a href="https://brubinstein.github.io/diffpriv">software</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alda2017bernstein.bib', 'bibtex-alda2017bernstein')">BibTeX</a>]</li>
+<li>Alda, Francesco and Benjamin I. P. Rubinstein. “The Bernstein mechanism: Function release under differential privacy”. In: <em>Proceedings of the 31st AAAI Conference on Artificial Intelligence</em>. AAAI. Feb. 2017. [<a href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">PDF</a>; <a href="https://arxiv.org/abs/1507.04499">full</a>; <a href="https://brubinstein.github.io/diffpriv">software</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alda2017the.bib', 'bibtex-alda2017the')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -423,8 +430,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-lau2017machine">
-@article{lau2017machine,
+<pre><code id="bibtex-lau2017machinelearning">
+@article{lau2017machinelearning,
   title = {Machine-learning algorithms predict graft failure after liver transplantation},
   author = {Lawrence Lau and Yamuna Kankanige and Benjamin Rubinstein and Robert Jones and Christopher Christophi and Vijayaragavan Muralidharan and James Bailey},
   journal = {Transplantation},
@@ -438,7 +445,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Lau, Lawrence, Yamuna Kankanige, Benjamin Rubinstein, Robert Jones, Christopher Christophi, Vijayaragavan Muralidharan and James Bailey. “Machine-learning algorithms predict graft failure after liver transplantation”. In: <em>Transplantation</em> 101.4 (Apr. 2017), pp. 125-132. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/27941428">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('lau2017machine.bib', 'bibtex-lau2017machine')">BibTeX</a>]</li>
+<li>Lau, Lawrence, Yamuna Kankanige, Benjamin Rubinstein, Robert Jones, Christopher Christophi, Vijayaragavan Muralidharan and James Bailey. “Machine-learning algorithms predict graft failure after liver transplantation”. In: <em>Transplantation</em> 101.4 (Apr. 2017), pp. 125-132. [<a href="https://www.ncbi.nlm.nih.gov/pubmed/27941428">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('lau2017machinelearning.bib', 'bibtex-lau2017machinelearning')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -473,8 +480,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-liu2017storm">
-@inproceedings{liu2017storm,
+<pre><code id="bibtex-liu2017estorm">
+@inproceedings{liu2017estorm,
   title = {E-storm: Replication-based state management in distributed stream processing systems},
   author = {Xunyun Liu and Aaron Harwood and Shanika Karunasekera and Benjamin Rubinstein and Rajkumar Buyya},
   booktitle = {46th International Conference on Parallel Processing},
@@ -486,7 +493,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin Rubinstein and Rajkumar Buyya. “E-storm: Replication-based state management in distributed stream processing systems”. In: <em>46th International Conference on Parallel Processing</em>. ICPP. IEEE. 2017, pp. 571-580. [<a style="cursor: pointer;" onclick="DownloadToFile('liu2017storm.bib', 'bibtex-liu2017storm')">BibTeX</a>]</li>
+<li>Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin Rubinstein and Rajkumar Buyya. “E-storm: Replication-based state management in distributed stream processing systems”. In: <em>46th International Conference on Parallel Processing</em>. ICPP. IEEE. 2017, pp. 571-580. [<a style="cursor: pointer;" onclick="DownloadToFile('liu2017estorm.bib', 'bibtex-liu2017estorm')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -790,8 +797,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-fanaeepour2015case">
-@article{fanaeepour2015case,
+<pre><code id="bibtex-fanaeepour2015the">
+@article{fanaeepour2015the,
   title = {The {CASE} histogram: Privacy-aware processing of trajectory data using aggregates},
   author = {Maryam Fanaeepour and Lars Kulik and Egemen Tanin and Benjamin I. P. Rubinstein},
   journal = {GeoInformatica},
@@ -805,7 +812,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fanaeepour, Maryam, Lars Kulik, Egemen Tanin and Benjamin I. P. Rubinstein. “The CASE histogram: Privacy-aware processing of trajectory data using aggregates”. In: <em>GeoInformatica</em> 19.4 (Jul. 2015), pp. 747-798. [<a href="http://link.springer.com/article/10.1007/s10707-015-0228-8">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2015case.bib', 'bibtex-fanaeepour2015case')">BibTeX</a>]</li>
+<li>Fanaeepour, Maryam, Lars Kulik, Egemen Tanin and Benjamin I. P. Rubinstein. “The CASE histogram: Privacy-aware processing of trajectory data using aggregates”. In: <em>GeoInformatica</em> 19.4 (Jul. 2015), pp. 747-798. [<a href="http://link.springer.com/article/10.1007/s10707-015-0228-8">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2015the.bib', 'bibtex-fanaeepour2015the')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-4" class="section level3">
@@ -887,8 +894,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-rubinstein2012stability">
-@article{rubinstein2012stability,
+<pre><code id="bibtex-rubinstein2012on">
+@article{rubinstein2012on,
   title = {On the stability of empirical risk minimization in the presence of multiple risk minimizers},
   author = {Benjamin I. P. Rubinstein and Aleksandr Simma},
   journal = {IEEE Transactions on Information Theory},
@@ -902,7 +909,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. and Aleksandr Simma. “On the stability of empirical risk minimization in the presence of multiple risk minimizers”. In: <em>IEEE Transactions on Information Theory</em> 58.7 (Jul. 2012), pp. 4160-4163. [<a href="http://arxiv.org/abs/1002.2044">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012stability.bib', 'bibtex-rubinstein2012stability')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. and Aleksandr Simma. “On the stability of empirical risk minimization in the presence of multiple risk minimizers”. In: <em>IEEE Transactions on Information Theory</em> 58.7 (Jul. 2012), pp. 4160-4163. [<a href="http://arxiv.org/abs/1002.2044">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012on.bib', 'bibtex-rubinstein2012on')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1054,8 +1061,8 @@ $(document).ready(function () {
 </ul>
 
 <div class="bibox" style="display: none;">
-<pre><code id="bibtex-barth2011open">
-@techreport{barth2011open,
+<pre><code id="bibtex-barth2011how">
+@techreport{barth2011how,
   title = {How Open Should Open Source Be?},
   author = {Adam Barth and Saung Li and Benjamin I. P. Rubinstein and Dawn Song},
   institution = {Department of Electrical Engineering \& Computer Sciences, UC Berkeley},
@@ -1067,7 +1074,7 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Barth, Adam, Saung Li, Benjamin I. P. Rubinstein and Dawn Song. <em>How Open Should Open Source Be?</em> technical report UCB/EECS-2011-98. Department of Electrical Engineering &amp; Computer Sciences, UC Berkeley, Aug. 2011. [<a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2011open.bib', 'bibtex-barth2011open')">BibTeX</a>]</li>
+<li>Barth, Adam, Saung Li, Benjamin I. P. Rubinstein and Dawn Song. <em>How Open Should Open Source Be?</em> technical report UCB/EECS-2011-98. Department of Electrical Engineering &amp; Computer Sciences, UC Berkeley, Aug. 2011. [<a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2011how.bib', 'bibtex-barth2011how')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
