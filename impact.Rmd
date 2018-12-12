@@ -122,6 +122,7 @@ Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$
 
 ### Awards & Honours
 
+* Best Reviewer Award (2018), Thirty-second Conference on Neural Information Processing Systems (NeurIPS formerly NIPS)
 * WiE Best Postgrad Paper Prize (2017), IEEE Australia Council for PhD student Maryam Fanaeepour’s joint work
 * Victorian Young Tall Poppy Science Award (2016), Australian Institute of Policy & Science
 * Microsoft Azure ML Award (2015), Microsoft Research
@@ -157,13 +158,13 @@ Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$
 
 ### Decadal plan
 
-As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--) contributing to the development of a Decadal plan for ICT.
+As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--2020) contributing to the development of a Decadal plan for ICT.
 
 ### Program committee membership
 
-* [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php),
-**ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/), 
-**NIPS**['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),
+* **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/),['19 (area chair)](https://icml.cc/Conferences/2019), 
+[**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
+**NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),
 **ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
 [**AISTATS**'2017](http://www.aistats.org/), 
 [CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 
@@ -172,6 +173,7 @@ As member of the Australian Academy of Science's [National Committee for Informa
 [**SIGMOD**'2013](http://www.sigmod.org/2013/), 
 [**IJCAI**'2013](http://ijcai13.org/)
 * Workshop PCs: 
+[Privacy Preserving Machine Learning (PPML) 2018](https://ppml-workshop.github.io/ppml/) (at NeurIPS), 
 [Deep Learning for Security 2018](https://www.ieee-security.org/TC/SPW2018/DLS/) (at IEEE S&P), 
 AI for Cyber Security (AICS at AAAI)['2017](http://www-personal.umich.edu/~arunesh/AICS2017/),['18](http://www-personal.umich.edu/~arunesh/AICS2018/), 
 AI & Security (AISec at CCS)['2009](http://sites.google.com/a/aisec.info/aisec-2009/),['10](http://sites.google.com/a/aisec.info/aisec-2010/),['13](http://sites.google.com/site/ccsaisec2013/),['15](http://www-bcf.usc.edu/~aruneshs/AISec2015.html),['16](http://teamcore.usc.edu/people/arunesh/AISec2016.html),['17](http://www.ai-sec.net/AISec2017/index.html),['18](http://aisec2018.icsi.berkeley.edu/aisec2018/), 
