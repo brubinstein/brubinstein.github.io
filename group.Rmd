@@ -25,8 +25,8 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### PhD students---Completed
 
-* [Lingjuan Lyu](https://www.researchgate.net/profile/Lingjuan_Lyu) (w Marimuthu Palaniswami 2016-- ). Privacy in distributed sensing → Postdoc at the ANU
-* [Safiollah Heidari](https://sites.google.com/site/safiheidari/) (w Raj Buyya 2015-- ). Distributed graph processing → Founder, NeuroPhyte
+* [Lingjuan Lyu](https://www.researchgate.net/profile/Lingjuan_Lyu) (w Marimuthu Palaniswami 2016--18). Privacy in distributed sensing → Postdoc at the ANU
+* [Safiollah Heidari](https://sites.google.com/site/safiheidari/) (w Raj Buyya 2015--18). Distributed graph processing → Founder, NeuroPhyte
 * [Xunyun Liu](https://xunyunliu.github.io/) (w Raj Buyya, Rodrigo Calheiros 2015--18). Stream computing → Assistant Prof at NUDT
 * [Zay Aye](https://www.researchgate.net/profile/Zay_Aye) - CompSci (w Rao Kotagiri 2014--18). Learning distance metrics → Postdoc at Univ Melbourne
 * [Yamuna Kankanige](https://www.linkedin.com/in/yamuna-kankanige-8b258a26/) (w James Bailey 2015--18). Predicting liver transplant outcomes with Austin Health → Bioinformatician at Peter MacCallum Cancer Centre
