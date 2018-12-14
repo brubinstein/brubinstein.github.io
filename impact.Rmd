@@ -6,6 +6,10 @@ output:
     toc_depth: 4
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 <br>
@@ -105,20 +109,50 @@ With a Berkeley group led by Dawn Song [[report](http://www.eecs.berkeley.edu/Pu
 
 ### Funding
 
-Since arriving at the University of Melbourne Oct 2013, I have been awarded **\$3.2m total** in competitive funding (Cat 1--4), **\$2.0m as lead-CI**, \$1.2m on a per-CI basis. Funding includes:
+Since arriving at the University of Melbourne Oct 2013, I have been awarded competitive funding (Cat 1--4) of 
+```{r funding, echo=FALSE, results="asis"}
+FT <- read.csv("funding/funding.csv")
 
-* 2017--20 **\$1.05m: [Defence Science & Technology Group](https://www.dst.defence.gov.au/) and [Data61](https://www.data61.csiro.au/)** CRP _Adversarial Machine Learning for Cyber_ lead-CI (with Tansu Alpcan, Sarah Erfani, Chris Leckie - UoM, Jun Zhang - Swinburne) projected with renewal.
-* 2017--21 **\$970k: [Department of Education and Training](https://www.education.gov.au/)** [_Academic Centre for Cyber Security Excellence (ACCSE)_](https://www.education.gov.au/academic-centres-cyber-security-excellence-accse) co-CI (with Chris Leckie, Atif Ahmad, Rao Kotagiri, Udaya Parampalli, Shanika Karunasekera, Vanessa Teague, Tansu Alpcan, Tim McCormack, Marimuthu Palaniswami)
-* 2017--18 **\$93k: [Defence Science & Technology Group](https://www.dst.defence.gov.au/)** _Tactical Security and Health in Multi-Modal Sensor Control and Management_ with Iman Shames and Farokhii.
-* 2017--18 **\$24k: [Australia Bureau of Statistics](http://www.abs.gov.au/)**, ABS/AMSI internship program, _Evaluating feasibility of Bayesian entity resolution_ with Neil Marchant.
-* 2017 **\$168k: [Australian Bureau of Statistics](http://www.abs.gov.au/)**, Research Contract on _Design of securely encrypted (anonymised) linkage keys_ with Chris Culnane and Vanessa Teague.
-* 2016--18 **\$370k:** [**Australian Research Council** Discovery Early Career Researcher Award](https://rms.arc.gov.au/RMS/Report/Download/Report/a3f6be6e-33f7-4fb5-98a6-7526aaa184cf/6) _Secure and Private Machine Learning_ (as sole-CI fellow) Cat1 with additional \$85k University of Melbourne DECRA establishment grant.
-* 2015 **\$48k: [Melbourne Networked Society Institute](http://networkedsociety.unimelb.edu.au/)** [_Active Defence_](http://networkedsociety.unimelb.edu.au/research/projects/2015/active-defence.html) (with Atif Ahmad, Tansu Alpcan, Andre Gygax, Chris Leckie); media: [pursuit](https://pursuit.unimelb.edu.au/articles/can-hackers-turn-off-the-lights)
-* 2015--16 **\$128k: Elon Musk-backed** [**FLI** Project Grant](http://futureoflife.org/misc/2015selection) for [_Security Evaluation of Machine Learning Systems_](http://futureoflife.org/misc/2015awardees#Rubinstein) (sole-CI) Cat3; media: [vice](http://www.vice.com/en_au/read/we-spoke-to-an-expert-protecting-us-against-artificial-intelligence) [news.com.au](http://mobile.news.com.au/technology/innovation/elon-musks-multimillion-dollar-plan-to-stop-robots-taking-control/story-fnjwucti-1227435849874) [pursuit](https://pursuit.unimelb.edu.au/articles/the-rise-of-the-machines-fact-or-fiction)
-* 2015 **\$20k:** [**Microsoft Research** Azure Machine Learning Award](http://research.microsoft.com/en-us/projects/azure/ml.aspx) to support work on big data preparation
-* 2015--17 **\$216k:** [**Australian Research Council** Discovery Project](http://www.arc.gov.au/ncgp/dp/dp_outcomes.htm) _Democratising Big Machine Learning_ (as sole-CI) Cat1
-* 2014 **\$39k:** [**University of Melbourne** Early Career Researcher Grant](http://mro.unimelb.edu.au/content/early-career-researcher-grants) to support work on [adversarial machine learning](secml.html)
-* 2014 **\$5k:** [**Amazon** AWS Machine Learning Grant](http://aws.amazon.com/grants/#25292) to support work on [adversarial machine learning](secml.html)
+total.competitive <- 0
+total.lead <- 0
+total.ci <- 0
+for (i in seq(from=1,to=nrow(FT))) {
+  if (FT[i,"Category"] != "") {
+    total.competitive <- FT[i,"Amount"] + total.competitive
+    CIs <- strsplit(paste(FT[i,"CIs"]), ", |,")[[1]]
+    if (CIs[1] == "Ben Rubinstein" || CIs[1] == "Benjamin Rubinstein" || CIs[1] == "Rubinstein" || CIs[1] == "B. Rubinstein") {
+      total.lead <- total.lead + FT[i,"Amount"]
+    }
+    total.ci <- total.ci + FT[i,"Amount"] / length(CIs)
+  }
+}
+cat("**\\$", round(total.competitive/1000, 2), "m total**, ", sep="")
+cat("**\\$", round(total.lead/1000, 2), "m as lead-CI**, ", sep="")
+cat("\\$", round(total.ci/1000, 2), "m on a per-CI basis. Funding includes:\n\n", sep="")
+  
+FT <- read.csv("funding/funding.csv")
+for (i in seq(from=1,to=nrow(FT))) {
+  cat("\n* ")
+  cat(FT[i,"Start"])
+  if (FT[i,"Start"] < FT[i,"End"])
+    cat("--", FT[i,"End"], sep="")
+  cat(" **\\$")
+  if (FT[i,"Amount"] >= 1000) {
+    cat(FT[i,"Amount"]/1000, "m", sep="")
+  } else {
+    cat(FT[i,"Amount"], "k", sep="")
+  }
+  cat(": ", paste(FT[i,"Sponsor"]), "** ", paste(FT[i,"Scheme"]), ", ", sep="")
+  if (FT[i,"Title"]!="") cat("_", paste(FT[i,"Title"]), "_, ", sep="")
+  CIs <- strsplit(paste(FT[i,"CIs"]), ", |,")[[1]]
+  if (length(CIs) < 5) {
+    cat(CIs, sep=", ")
+  } else {
+    cat(CIs[1], " et al", sep="")
+  }
+  cat(". ", paste(FT[i,"Notes"]), sep="")
+}
+```
 
 ### Awards & Honours
 
