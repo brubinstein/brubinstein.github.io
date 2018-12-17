@@ -1,6 +1,10 @@
 ---
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 <br>
@@ -10,4 +14,24 @@
 **Benjamin I. P. Rubinstein**, PhD (Berkeley)  
 Associate Professor, _School of Computing & Information Systems, University of Melbourne_
 
-I actively research topics in machine learning, security & privacy, databases such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in the research divisions of Microsoft, Google, Intel and Yahoo! (all in the United States), followed by a short stint at IBM Research Australia. As a full-time Researcher at Microsoft Research, Silicon Valley, I shipped production systems for entity resolution in Bing and the Xbox360; my research has helped identify and plug side-channel attacks against the popular Firefox browser, and deanonymise an unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016. Since joining Melbourne in 2013, I have been awarded over \$3m in competitive funding (\$1.7m as lead). My work has been recognised through an Australian Research Council DECRA award, and a Young Tall Poppy Science award.
+I actively research topics in machine learning, security & privacy, databases such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in the research divisions of Microsoft, Google, Intel and Yahoo! (all in the United States), followed by a short stint at IBM Research Australia. As a full-time Researcher at Microsoft Research, Silicon Valley, I shipped production systems for entity resolution in Bing and the Xbox360; my research has helped identify and plug side-channel attacks against the popular Firefox browser, and deanonymise an unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016. Since joining Melbourne in 2013, I have been awarded 
+```{r funding, echo=FALSE, results="asis"}
+FT <- read.csv("funding/funding.csv")
+
+total.competitive <- 0
+total.lead <- 0
+total.ci <- 0
+for (i in seq(from=1,to=nrow(FT))) {
+  if (FT[i,"Category"] != "") {
+    total.competitive <- FT[i,"Amount"] + total.competitive
+    CIs <- strsplit(paste(FT[i,"CIs"]), ", |,")[[1]]
+    if (CIs[1] == "Ben Rubinstein" || CIs[1] == "Benjamin Rubinstein" || CIs[1] == "Rubinstein" || CIs[1] == "B. Rubinstein") {
+      total.lead <- total.lead + FT[i,"Amount"]
+    }
+    total.ci <- total.ci + FT[i,"Amount"] / length(CIs)
+  }
+}
+cat("\\$", round(total.competitive/1000, 2), "m in competitive funding ", sep="")
+cat("(\\$", round(total.lead/1000, 2), "m as lead). ", sep="")
+```
+My work has been recognised through an Australian Research Council DECRA award, and a Young Tall Poppy Science award.
