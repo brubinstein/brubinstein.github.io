@@ -15,6 +15,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### PhD students
 
+* Ruihan Zhang (w Tim Miller 2019-- ). Explainable AI and machine learning.
 * [Duc Than Nguyen](https://ndthan.bitbucket.io/) (w Toby Murray 2018-- ). Probabilistic information flow security.
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
