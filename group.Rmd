@@ -9,7 +9,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### Postdocs
 
-* [Shuo Zhou](http://shuo-zhou.info/) (w Tordesillas, Bailey, Bondell 2018-- ). Complex networks in materials science, cybersecurity.
+* [Shuo Zhou](http://shuo-zhou.info/) (w Tordesillas, Bailey, Bondell 2019-- ). Complex networks in materials science, cybersecurity.
 * [Thibaut Lienart](https://tlienart.github.io/) (2018-- ). Adversarial machine learning.
 * [Yi Han](https://scholar.google.com/citations?user=e_mtK4kAAAAJ&hl=en) (2016-- ). Adversarial reinforcement learning, software-defined networks.
 
