@@ -11,7 +11,6 @@ I am fortunate to have supervised a brilliant group of researchers
 
 * [Shuo Zhou](http://shuo-zhou.info/) (w Tordesillas, Bailey, Bondell 2019-- ). Complex networks in materials science, cybersecurity.
 * [Thibaut Lienart](https://tlienart.github.io/) (2018-- ). Adversarial machine learning.
-* [Yi Han](https://scholar.google.com/citations?user=e_mtK4kAAAAJ&hl=en) (2016-- ). Adversarial reinforcement learning, software-defined networks.
 
 ### PhD students
 
@@ -37,6 +36,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### Other Alumni
 
+* [Yi Han](https://scholar.google.com/citations?user=e_mtK4kAAAAJ&hl=en) (postdoc 2016--19). Adversarial reinforcement learning → Postdoc at Melbourne
 * [Shen Wang](https://scholar.google.com/citations?user=TpErHPkAAAAJ&hl=en) (postdoc 2016--18). Probabilistic programming, databases, record linkage.
 * [Ben Fish](http://ben.fish/) (medium-term PhD visitor 2016) → Postdoc at MSR Montréal
 * [Francesco Aldà](http://www.ruhr-uni-bochum.de/lmi/alda/) (medium-term PhD visitor 2016) → Data Scientist at SAP, Germany
