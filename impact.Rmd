@@ -173,6 +173,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Speaking engagements
 
+* 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
 * 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
 * 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).
 * 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
@@ -198,7 +199,7 @@ As member of the Australian Academy of Science's [National Committee for Informa
 
 * **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/),['19 (area chair)](https://icml.cc/Conferences/2019), 
 [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
-**NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),
+**NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),['19](https://nips.cc/Conferences/2019/),
 **ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
 [**AISTATS**'2017](http://www.aistats.org/), 
 [CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 
@@ -207,6 +208,7 @@ As member of the Australian Academy of Science's [National Committee for Informa
 [**SIGMOD**'2013](http://www.sigmod.org/2013/), 
 [**IJCAI**'2013](http://ijcai13.org/)
 * Workshop PCs: 
+[2019 USENIX Security and AI Networking Conference (ScAINet'19)](https://www.usenix.org/conference/scainet19) (at USENIX Security), 
 [Privacy Preserving Machine Learning (PPML) 2018](https://ppml-workshop.github.io/ppml/) (at NeurIPS), 
 [Deep Learning for Security 2018](https://www.ieee-security.org/TC/SPW2018/DLS/) (at IEEE S&P), 
 AI for Cyber Security (AICS at AAAI)['2017](http://www-personal.umich.edu/~arunesh/AICS2017/),['18](http://www-personal.umich.edu/~arunesh/AICS2018/), 
