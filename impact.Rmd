@@ -173,7 +173,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Speaking engagements
 
-* 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
+* 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley. [Talk video](https://www.youtube.com/watch?v=zgA9rzp1uRs).
 * 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
 * 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).
 * 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
@@ -209,7 +209,7 @@ As member of the Australian Academy of Science's [National Committee for Informa
 [**IJCAI**'2013](http://ijcai13.org/)
 * Workshop PCs: 
 [2019 USENIX Security and AI Networking Conference (ScAINet'19)](https://www.usenix.org/conference/scainet19) (at USENIX Security), 
-[Privacy Preserving Machine Learning (PPML) 2018](https://ppml-workshop.github.io/ppml/) (at NeurIPS), 
+[Privacy Preserving Machine Learning (PPML) 2018](https://ppml-workshop.github.io/ppml/) (at NeurIPS), ['19](https://ppml-workshop.github.io/ppml/) (at CCS),
 [Deep Learning for Security 2018](https://www.ieee-security.org/TC/SPW2018/DLS/) (at IEEE S&P), 
 AI for Cyber Security (AICS at AAAI)['2017](http://www-personal.umich.edu/~arunesh/AICS2017/),['18](http://www-personal.umich.edu/~arunesh/AICS2018/), 
 AI & Security (AISec at CCS)['2009](http://sites.google.com/a/aisec.info/aisec-2009/),['10](http://sites.google.com/a/aisec.info/aisec-2010/),['13](http://sites.google.com/site/ccsaisec2013/),['15](http://www-bcf.usc.edu/~aruneshs/AISec2015.html),['16](http://teamcore.usc.edu/people/arunesh/AISec2016.html),['17](http://www.ai-sec.net/AISec2017/index.html),['18](http://aisec2018.icsi.berkeley.edu/aisec2018/), 
