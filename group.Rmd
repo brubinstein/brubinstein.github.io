@@ -9,6 +9,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### Postdocs
 
+* [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (w Alpcan 2019-- ). Spectrum management in contested environment with ML.
 * [Shuo Zhou](https://shuozhou.github.io/) (w Tordesillas, Bailey, Bondell 2019-- ). Complex networks in materials science, cybersecurity.
 * [Thibaut Lienart](https://tlienart.github.io/) (2018-- ). Adversarial machine learning.
 
@@ -18,9 +19,9 @@ I am fortunate to have supervised a brilliant group of researchers
 * [Duc Than Nguyen](https://ndthan.bitbucket.io/) (w Toby Murray 2018-- ). Probabilistic information flow security.
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
-* [Dongge Liu](https://www.linkedin.com/in/dongge-liu-9a957913a) (w Toby Murray, Gideon Ernst 2018-- ). Software fuzzing with machine learning.
+* [Dongge Liu](https://www.linkedin.com/in/dongge-liu-9a957913a) (w Toby Murray, Gidon Ernst at LMU Munich 2018-- ). Software fuzzing with machine learning.
 * [Leyla Roohi](https://au.linkedin.com/in/leyla-roohi-b4544a67) (w Vanessa Teague 2017-- ). Secure storage and private querying for telecommunications metadata.
-* [Neil Marchant](https://www.linkedin.com/in/neil-marchant-466678aa/) (w Aurore Delaigle 2016-- ). Record linkage, adaptive importance sampling.
+* [Neil Marchant](https://www.linkedin.com/in/neil-marchant-466678aa/) (w Beka Steorts at Duke, Aurore Delaigle 2016-- ). Record linkage, adaptive importance sampling.
 
 ### PhD students---Completed
 
