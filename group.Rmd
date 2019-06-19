@@ -9,9 +9,8 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### Postdocs
 
-* [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (w Alpcan 2019-- ). Spectrum management in contested environment with ML.
+* [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (w Alpcan 2019-- ). Machine learning for spectrum management in contested environments.
 * [Shuo Zhou](https://shuozhou.github.io/) (w Tordesillas, Bailey, Bondell 2019-- ). Complex networks in materials science, cybersecurity.
-* [Thibaut Lienart](https://tlienart.github.io/) (2018-- ). Adversarial machine learning.
 
 ### PhD students
 
@@ -37,6 +36,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### Other Alumni
 
+* [Thibaut Lienart](https://tlienart.github.io/) (postdoc 2018--19). Adversarial machine learning → Associate, Alan Turing Institute
 * [Yi Han](https://scholar.google.com/citations?user=e_mtK4kAAAAJ&hl=en) (postdoc 2016--19). Adversarial reinforcement learning → Postdoc at Melbourne
 * [Shen Wang](https://scholar.google.com/citations?user=TpErHPkAAAAJ&hl=en) (postdoc 2016--18). Probabilistic programming, databases, record linkage.
 * [Ben Fish](http://ben.fish/) (medium-term PhD visitor 2016) → Postdoc at MSR Montréal
