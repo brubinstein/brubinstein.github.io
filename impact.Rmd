@@ -79,6 +79,8 @@ _Media coverage (2017 exceeding 1m views):_
 [Northern Star](http://www.northernstar.com.au/news/one-in-10-australians-health-records-exposed-in-de/3293358/), 
 [BuzzFeed](https://www.buzzfeed.com/ginarushton/your-medical-records-could-have-been-exposed-in-a-health?utm_term=.ahAm0J2mX#.jl3PWlAP6)
 
+_Media coverage (onwards):_ [itnews](https://www.itnews.com.au/news/easily-re-identified-anonymised-data-threatens-privacy-528657?utm_source=desktop&utm_medium=twitter&utm_campaign=share) 
+
 ### Technical privacy assessments: ABS, ONS, Opal
 
 <img src="images/laplace.png" style="width:200px; margin-right: 10px;" align="left"> 
@@ -173,7 +175,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Speaking engagements
 
-* 06/2019: Invited speaker at the [Challenges and New Approaches for Protecting Privacy in Federal Statistical Programs](http://sites.nationalacademies.org/DBASSE/CNSTAT/challenges-and-new-approaches-for-protecting-privacy-in-federal-statistical-programs/index.htm) Workshop organised by the Committee on National Statistics (CNSTAT) at the U.S. National Acadmies of Sciences, Engineering, and Medicine, Washington D.C.
+* 06/2019: Invited speaker at the [Challenges and New Approaches for Protecting Privacy in Federal Statistical Programs](http://sites.nationalacademies.org/DBASSE/CNSTAT/challenges-and-new-approaches-for-protecting-privacy-in-federal-statistical-programs/index.htm) Workshop organised by the Committee on National Statistics (CNSTAT) at the U.S. National Acadmies of Sciences, Engineering, and Medicine, Washington D.C. [Talk videos](http://sites.nationalacademies.org/DBASSE/CNSTAT/DBASSE_193821)
 * 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley. [Talk video](https://www.youtube.com/watch?v=zgA9rzp1uRs).
 * 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
 * 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).

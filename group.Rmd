@@ -24,7 +24,7 @@ I am fortunate to have supervised a brilliant group of researchers
 
 ### PhD students---Completed
 
-* Yuan Li (w Trevor Cohn 2015--19). Crowd sourcing, Bayesian optimisation, NLP (completed; under examination)
+* Yuan Li (w Trevor Cohn 2015--19). Crowd sourcing, Bayesian optimisation, NLP (completed, passed)
 * [Lingjuan Lyu](https://www.researchgate.net/profile/Lingjuan_Lyu) (w Marimuthu Palaniswami 2016--18). Privacy in distributed sensing → Postdoc at the ANU
 * [Safiollah Heidari](https://sites.google.com/site/safiheidari/) (w Raj Buyya 2015--18). Distributed graph processing → Founder, NeuroPhyte
 * [Xunyun Liu](https://xunyunliu.github.io/) (w Raj Buyya, Rodrigo Calheiros 2015--18). Stream computing → Assistant Prof at NUDT
