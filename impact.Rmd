@@ -158,7 +158,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Awards & Honours
 
-* Best Reviewer Award (2018), Thirty-second Conference on Neural Information Processing Systems (NeurIPS formerly NIPS)
+* Best Reviewer Award (2018,2019), Conference on Neural Information Processing Systems (NeurIPS formerly NIPS)
 * WiE Best Postgrad Paper Prize (2017), IEEE Australia Council for PhD student Maryam Fanaeepour’s joint work
 * Victorian Young Tall Poppy Science Award (2016), Australian Institute of Policy & Science
 * Microsoft Azure ML Award (2015), Microsoft Research
@@ -194,9 +194,9 @@ for (i in seq(from=1,to=nrow(FT))) {
 * 07/2015: Keynote at the Australian Academy of Science Elizabeth and Frederick [White Research Conference](http://geoconference.wix.com/efwhite2015) on Mining Data for Detection and Prediction of Failure in Geomaterial
 * 11/2014: Facebook (Menlo Park) talk Data Integration through the Lens of Statistical Learning
 
-### Decadal plan
+### Strategic plan
 
-As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--2020) contributing to the development of a Decadal plan for ICT.
+As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--2020) contribued towards the development of the [Digital Futures strategic plan](https://www.science.org.au/support/analysis/decadal-plans/ics/preparing-australias-digital-future).
 
 ### Program committee membership
 
