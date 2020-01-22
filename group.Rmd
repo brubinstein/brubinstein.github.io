@@ -16,7 +16,7 @@ I am fortunate to supervise a brilliant group of researchers.
 ### PhD students
 
 * [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (2019-- ). Robustness in machine learning.
-* Ruihan Zhang (w Tim Miller 2019-- ). Explainable AI and machine learning.
+* Ruihan Zhang (w Tim Miller, Kris Ehinger 2019-- ). Explainable AI and machine learning.
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Dongge Liu](https://www.linkedin.com/in/dongge-liu-9a957913a) (w Toby Murray, Gidon Ernst at LMU Munich 2018-- ). Software fuzzing with machine learning.
