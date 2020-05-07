@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>impact.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,9 +25,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -76,9 +75,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -92,7 +89,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -102,6 +98,9 @@ img {
 }
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -117,7 +116,6 @@ body {
   padding-top: 69px;
   margin-top: -69px;
 }
-
 .section h2 {
   padding-top: 69px;
   margin-top: -69px;
@@ -137,6 +135,43 @@ body {
 .section h6 {
   padding-top: 69px;
   margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -158,47 +193,66 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
-
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -212,6 +266,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -247,8 +307,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -257,6 +315,16 @@ div.tocify {
 
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -387,14 +455,14 @@ div.tocify {
 <ul>
 <li>2020–2021 <strong>$358k: Facebook</strong> Sponsored Research Agreement, <em>Adversarial attacks on machine translation, and their defenses</em>, Trevor Cohn, Benjamin Rubinstein.</li>
 <li>2019–2022 <strong>$948k: Consunet and Defence Science &amp; Technology Group</strong> Defence CRC, <em>Distributed Autonomous Spectrum Management (DUST)</em>, Tansu Alpcan, Benjamin Rubinstein.</li>
-<li>2019 <strong>$31k: Defence Science &amp; Technology Group and Data61/CSIRO</strong> Next Gen Tech Fund CRP, <em>Towards Robust Learning Systems via Amortized Optimization and Domain Adaptation</em>, Dinh Phung et al.</li>
+<li>2019 <strong>$31k: Defence Science &amp; Technology Group and Data61/CSIRO</strong> Next Gen Tech Fund CRP, <em>Towards Robust Learning Systems via Amortized Optimization and Domain Adaptation</em>, Dinh Phung et al. </li>
 <li>2018–2019 <strong>$50k: Australia Bureau of Statistics</strong> Research Contract, <em>Disclosure Risk Analysis</em>, Chris Culnane, Benjamin Rubinstein.</li>
 <li>2018–2019 <strong>$153k: U.S. Army Research Office</strong> Research Grant, <em>Towards designing complex networks resilient to stealthy attack and cascading failure</em>, Antoinette Tordesillas, Benjamin Rubinstein, James Bailey, Howard Bondell.</li>
 <li>2018–2019 <strong>$24k: Mondo Power</strong> AMSI internship program, <em>Anomaly detection in time series energy consumption data</em>, Benjamin Rubinstein, Leyla Roohi.</li>
 <li>2018 <strong>$31k: Australia Bureau of Statistics</strong> Research Contract, <em>Scaling up Bayesian record linkage</em>, Benjamin Rubinstein, Neil Marchant.</li>
-<li>2018–2019 <strong>$77k: Oceania Cyber Security Centre</strong> Seed Grant, <em>Detection of Infected Internet-of-Thing Devices to Prevent Distributed Denial of Service Attacks</em>, Sarah Erfani et al.</li>
-<li>2017–2020 <strong>$725k: Defence Science &amp; Technology Group and Data61/CSIRO</strong> Next Gen Tech Fund CRP, <em>Adversarial Machine Learning for Cyber</em>, Benjamin Rubinstein et al.</li>
-<li>2017–2021 <strong>$970k: Department of Education and Training</strong> <a href="https://www.education.gov.au/academic-centres-cyber-security-excellence-accse">Academic Centre for Cyber Security Excellence</a> (ACCSE), Chris Leckie et al.</li>
+<li>2018–2019 <strong>$77k: Oceania Cyber Security Centre</strong> Seed Grant, <em>Detection of Infected Internet-of-Thing Devices to Prevent Distributed Denial of Service Attacks</em>, Sarah Erfani et al. </li>
+<li>2017–2020 <strong>$725k: Defence Science &amp; Technology Group and Data61/CSIRO</strong> Next Gen Tech Fund CRP, <em>Adversarial Machine Learning for Cyber</em>, Benjamin Rubinstein et al. </li>
+<li>2017–2021 <strong>$970k: Department of Education and Training</strong> <a href="https://www.education.gov.au/academic-centres-cyber-security-excellence-accse">Academic Centre for Cyber Security Excellence</a> (ACCSE), Chris Leckie et al. </li>
 <li>2017–2018 <strong>$93k: Defence Science &amp; Technology Group</strong> Research Contract, <em>Tactical Security and Health in Multi-Modal Sensor Control and Management</em>, Iman Shames, Benjamin Rubinstein, Farhad Farokhii.</li>
 <li>2017–2018 <strong>$24k: Australia Bureau of Statistics</strong> AMSI internship program, <em>Evaluating feasibility of Bayesian entity resolution</em>, Benjamin Rubinstein, Neil Marchant.</li>
 <li>2017 <strong>$168k: Australian Bureau of Statistics</strong> Research Contract, <em>Design of securely encrypted (anonymised) linkage keys</em>, Benjamin Rubinstein, Chris Culnane, Vanessa Teague.</li>
@@ -402,7 +470,7 @@ div.tocify {
 <li>2017 <strong>$35k: Office of the Commissioner for Privacy and Data Protection</strong> Research Contract, <em>Implications of de-identification of personal information and impact of de-identification on the Privacy &amp; Data Protection Act (Vic) 2014</em>, Vanessa Teague, Chris Culnane, Benjamin Rubinstein.</li>
 <li>2016–2018 <strong>$370k: Australian Research Council</strong> Discovery Early Career Researcher Award (DECRA), <em>Secure and Private Machine Learning</em>, Benjamin Rubinstein.</li>
 <li>2016–2018 <strong>$85k: University of Melbourne</strong> DECRA Establishment Grant, <em>Secure and Private Machine Learning</em>, Benjamin Rubinstein.</li>
-<li>2015 <strong>$48k: Melbourne Networked Society Institute</strong> Seed Grant, <em><a href="http://networkedsociety.unimelb.edu.au/research/projects/2015/active-defence.html">Active Defence</a></em>, Benjamin Rubinstein et al. <a href="https://pursuit.unimelb.edu.au/articles/can-hackers-turn-off-the-lights">Pursuit</a> article</li>
+<li>2015 <strong>$48k: Melbourne Networked Society Institute</strong> Seed Grant, <em><a href="http://networkedsociety.unimelb.edu.au/research/projects/2015/active-defence.html">Active Defence</a></em>, Benjamin Rubinstein et al. <a href="https://pursuit.unimelb.edu.au/articles/can-hackers-turn-off-the-lights">Pursuit</a> article</li>
 <li>2015–2016 <strong>$128k: FLI</strong> <a href="http://futureoflife.org/misc/2015selection">Project Grant</a>, <em><a href="http://futureoflife.org/misc/2015awardees#Rubinstein">Security Evaluation of Machine Learning Systems</a></em>, Benjamin Rubinstein. Funds backed by Elon Musk, media: <a href="http://www.vice.com/en_au/read/we-spoke-to-an-expert-protecting-us-against-artificial-intelligence">vice</a> <a href="http://mobile.news.com.au/technology/innovation/elon-musks-multimillion-dollar-plan-to-stop-robots-taking-control/story-fnjwucti-1227435849874">news.com.au</a> <a href="https://pursuit.unimelb.edu.au/articles/the-rise-of-the-machines-fact-or-fiction">pursuit</a></li>
 <li>2015 <strong>$20k: Microsoft Research</strong> <a href="http://research.microsoft.com/en-us/projects/azure/ml.aspx">Azure Machine Learning Award</a>, <em>Big data preparation</em>, Benjamin Rubinstein. In kind support</li>
 <li>2015–2017 <strong>$216k: Australian Research Council</strong> Discovery Project, Benjamin Rubinstein. First early-career sole-CI in FOR08, nationally, for 3 years</li>
@@ -487,6 +555,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

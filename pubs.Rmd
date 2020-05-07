@@ -38,7 +38,11 @@ for (y in pub.years) {
     yb <- ybib[presort = prsrt]
     bibtex.src(yb)
     cat("* ")
-    print(yb)
+    captured <- format(yb)
+    captured <- gsub("([0-9]+)(\\.)$", "\\1 ", captured)
+    cat(captured)
+    cat(" ")
+    #cat("\n")
     print.rmdnote(yb, append = bibtex.lnk(yb), bold = FALSE)
     cat("\n")
   }

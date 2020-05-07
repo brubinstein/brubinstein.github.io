@@ -44,7 +44,11 @@ print.rmdnote <- function(bibent,
         } else {
           anyRmd <- TRUE
         }
-        if (length(kvp) == 2) {
+        if (length(kvp) >= 2) {
+          if (length(kvp) > 2) {
+            kvptemp <- c(kvp[1], paste(tail(kvp,-1), sep="=", collapse="="))
+            kvp <- kvptemp
+          }
           f <- rmdFuncs[[kvp[1]]]
           v <- kvp[2]
           if (!is.null(f)) {

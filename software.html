@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>software.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,9 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -73,9 +72,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -89,7 +86,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -99,6 +95,9 @@ img {
 }
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -114,7 +113,6 @@ body {
   padding-top: 69px;
   margin-top: -69px;
 }
-
 .section h2 {
   padding-top: 69px;
   margin-top: -69px;
@@ -134,6 +132,43 @@ body {
 .section h6 {
   padding-top: 69px;
   margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -155,19 +190,74 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -237,7 +327,7 @@ $(document).ready(function () {
 <p>My <a href="group.html">group</a> and I have implemented our research contributions as useful software artifacts—in many cases as open-source software on which collaboration and contributions are most welcome. Other software has <a href="impact.html">shipped</a> within larger systems.</p>
 <hr />
 <p><a href="https://github.com/ngmarchant/dblink"><img src="images/d-blink.PNG" style="width:150px; margin-right: 24px" align="left"></a></p>
-<p><a href="https://github.com/ngmarchant/dblink"><strong><code>d-blink</code></strong></a> is an open-source Apache Spark package for end-to-end Bayesian statistical record linkage. The package implements our <a href="https://arxiv.org/abs/1909.06039">[Marchant et al. 2019]</a> extensions to the <code>blink</code> model of <a href="https://projecteuclid.org/euclid.ba/1441790411">[Steorts 2015]</a>. As a fully Bayesian model, <code>blink</code> models a (posterior) distribution over all matchings of records, useful for propagating uncertainty through downstream analyses. The approach is also unsupervised, meaning it does not require ground-truth annotations of examples of matching records to train on. <code>d-blink</code> makes a number of non-trivial extensions that facilitate distributed inference for significantly scaling <code>blink</code> up to larger datasets.</p>
+<p><a href="https://github.com/ngmarchant/dblink"><strong><code>d-blink</code></strong></a> is an open-source Apache Spark package for end-to-end Bayesian statistical record linkage. The package implements our <a href="https://arxiv.org/abs/1909.06039">[Marchant et al. 2019]</a> extensions to the <code>blink</code> model of <a href="https://projecteuclid.org/euclid.ba/1441790411">[Steorts 2015]</a>. As a fully Bayesian model, <code>blink</code> models a (posterior) distribution over all matchings of records, useful for propagating uncertainty through downstream analyses. The approach is also unsupervised, meaning it does not require ground-truth annotations of examples of matching records to train on. <code>d-blink</code> makes a number of non-trivial extensions that facilitate distributed inference for significantly scaling <code>blink</code> up to larger datasets.</p>
 <hr />
 <p><a href="https://brubinstein.github.io/diffpriv/"><img src="images/diffpriv.png" style="width:150px; margin-right: 24px" align="left"></a></p>
 <p><a href="https://brubinstein.github.io/diffpriv/"><strong><code>diffpriv</code></strong></a> is an open-source R package for privacy-preserving machine learning and statistics. The package implements numerous mechanisms for guaranteeing <a href="https://en.wikipedia.org/wiki/Differential_privacy">differential privacy</a>—the leading framework for releasing data analyses on privacy-sensitive data in aggregate while protecting privacy of individuals, deployed Google, Apple and the U.S. Census Bureau, and awarded the 2017 Gödel Prize in theoretical computer science. The mechanisms implemented include our <em>Bernstein mechanism</em> for releasing functions such as classifiers trained on sensitive data [<a href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">AAAI’17</a>]. Notably <code>diffpriv</code> also implements our <em>sensitivity sampler</em> [<a href="http://proceedings.mlr.press/v70/rubinstein17a.html">ICML’17</a>] for easy privatisation of black-box functions including programs, for which mathematical analysis required for differential privacy is difficult or impossible. The package is distributed on <a href="https://cran.r-project.org/package=diffpriv">CRAN</a> and hosted on <a href="https://brubinstein.github.io/diffpriv/">GitHub</a>.</p>
@@ -277,6 +367,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
