@@ -11,7 +11,15 @@ My [group](group.html) and I have implemented our research contributions as usef
 
 [<img src="images/d-blink.png" style="width:150px; margin-right: 24px" align="left">](https://github.com/ngmarchant/dblink)
 
-[**`d-blink`**](https://github.com/ngmarchant/dblink) is an open-source Apache Spark package for end-to-end Bayesian statistical record linkage. The package implements our [[Marchant et al. 2019]](https://arxiv.org/abs/1909.06039) extensions to the `blink` model of [[Steorts 2015]](https://projecteuclid.org/euclid.ba/1441790411). As a fully Bayesian model, `blink` models a (posterior) distribution over all matchings of records, useful for propagating uncertainty through downstream analyses. The approach is also unsupervised, meaning it does not require ground-truth annotations of examples of matching records to train on. `d-blink` makes a number of non-trivial extensions that facilitate distributed inference for significantly scaling `blink` up to larger datasets.  
+[**`d-blink`**](https://github.com/ngmarchant/dblink) is an open-source Apache Spark package for end-to-end Bayesian statistical record linkage. The package implements our [[Marchant et al. 2020]](https://amstat.tandfonline.com/doi/full/10.1080/10618600.2020.1825451) extensions to the `blink` model of [[Steorts 2015]](https://projecteuclid.org/euclid.ba/1441790411). As a fully Bayesian model, `blink` models a (posterior) distribution over all matchings of records, useful for propagating uncertainty through downstream analyses. The approach is also unsupervised, meaning it does not require ground-truth annotations of examples of matching records to train on. `d-blink` makes a number of non-trivial extensions that facilitate distributed inference for significantly scaling `blink` up to larger datasets.  
+
+***
+
+[<img src="images/legion.png" style="width:150px; margin-right: 24px" align="left">](https://github.com/Alan32Liu/Legion)
+
+[**`Legion`**](https://github.com/Alan32Liu/Legion) is an open-source concolic (concrete-symbolic) execution tool 
+that balances fuzzing and symbolic execution for software bug discovery, using the AI technique of Monte Carlo tree search (MCTS) as detailed in [[Liu et al. 2020]](https://arxiv.org/abs/2002.06311). Fuzzing generates concrete inputs at low cost, without guarantees of coverage of deep execution paths;
+symbolic execution can compute inputs for all paths, but is challenging to scale due to the path explosion problem.
 
 ***
 
