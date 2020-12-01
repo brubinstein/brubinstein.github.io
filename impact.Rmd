@@ -91,12 +91,10 @@ Through 2016 my group with colleague Bailey collaborated with the Austin Hospita
 [The Age](https://www.theage.com.au/national/victoria/you-can-do-what-you-like-with-the-data-personal-myki-details-exposed-20190815-p52hdc.html), 
 [The Australian](https://www.theaustralian.com.au/business/technology/ptv-breached-privacy-of-myki-users-victorian-privacy-commission/news-story/6d684052b0475878e8f1e8e23a22601c), 
 [The Mandarin](https://www.themandarin.com.au/113920-information-commissioner-slams-transport-privacy-breach-calls-for-victorian-public-sector-training/), and many more
-* 2019, OVIC commissioned book on AI ethics: [The Mandarin](https://www.themandarin.com.au/115118-eight-experts-on-the-risks-and-benefits-of-artificial-intelligence-in-government-and-the-public-sector/)
-* 2018, OVIC commissioned report on de-identification:  [The Mandarin](https://www.themandarin.com.au/92713-vic-privacy-commissioner-publishing-de-identified-citizen-records-is-a-risky-enterprise/)
-* 2018 onwards, Follow-up coverage of the MBS/PBS reidentification: 
- [itnews](https://www.itnews.com.au/news/easily-re-identified-anonymised-data-threatens-privacy-528657?utm_source=desktop&utm_medium=twitter&utm_campaign=share)
+* 2018--19, OVIC commissioned writing: book on AI ethics [The Mandarin](https://www.themandarin.com.au/115118-eight-experts-on-the-risks-and-benefits-of-artificial-intelligence-in-government-and-the-public-sector/); and 
+report on de-identification [The Mandarin](https://www.themandarin.com.au/92713-vic-privacy-commissioner-publishing-de-identified-citizen-records-is-a-risky-enterprise/)
 * 2017, Liver transplantation outcome prediction:  [9news](http://www.9news.com.au/health/2017/01/12/12/11/matchmaking-approach-to-liver-transplants), [heraldsun](http://www.heraldsun.com.au/news/victoria/how-dating-site-eharmony-can-help-boost-liver-transplant-success/news-story/eaaf4cc3c859dbd5c38baed5c2b496b0)
-* 2017 (1m+ views), Further reidentification of the Australian Medicare/Pharmaceutical (MBS/PBS) 10\% release: 
+* 2017--18 (1m+ views), Further reidentification of the Australian Medicare/Pharmaceutical (MBS/PBS) 10\% release: 
 [ABC](http://www.abc.net.au/news/science/2017-12-18/anonymous-medicare-data-can-identify-patients-researchers-say/9267684), 
 [Sydney Morning Herald](http://www.smh.com.au/technology/innovation/australians-health-records-unwittingly-exposed-20171218-p4yxt2.html), 
 [IT News](https://www.itnews.com.au/news/health-open-data-bungle-meant-aussies-could-be-identified-480010), 
@@ -111,7 +109,8 @@ Through 2016 my group with colleague Bailey collaborated with the Austin Hospita
 [LifeHacker](https://www.lifehacker.com.au/2017/12/confidential-medical-information-can-be-exposed/), 
 [BoingBoing](https://boingboing.net/2017/12/21/encryption-attacks.html),
 [Northern Star](http://www.northernstar.com.au/news/one-in-10-australians-health-records-exposed-in-de/3293358/), 
-[BuzzFeed](https://www.buzzfeed.com/ginarushton/your-medical-records-could-have-been-exposed-in-a-health?utm_term=.ahAm0J2mX#.jl3PWlAP6)
+[BuzzFeed](https://www.buzzfeed.com/ginarushton/your-medical-records-could-have-been-exposed-in-a-health?utm_term=.ahAm0J2mX#.jl3PWlAP6), 
+[itnews](https://www.itnews.com.au/news/easily-re-identified-anonymised-data-threatens-privacy-528657?utm_source=desktop&utm_medium=twitter&utm_campaign=share)
 * 2016, Reidentification of the Australian Medicare/Pharmaceutical (MBS/PBS) 10\% release:  [zdnet](http://www.zdnet.com/article/brandis-swings-his-golden-hammer-misses-mark/) ([again](http://www.zdnet.com/article/brandis-re-identification-law-proposal-slammed/)),
 [The Register](http://www.theregister.co.uk/2016/09/29/researchers_crack_oz_govt_medical_data_in_easy_basic_pc_attack/),
 [itnews](http://www.itnews.com.au/news/health-pulls-medicare-dataset-after-breach-of-doctor-details-438463) 
