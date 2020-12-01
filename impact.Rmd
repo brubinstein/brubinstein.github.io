@@ -120,15 +120,23 @@ cat(nrow(SUBS))
 SUBS <- read.csv("submissions/submissions.csv")
 for (i in seq(from=1,to=nrow(SUBS))) {
   cat("\n* ")
-  cat(SUBS[i,"Authors"])
-  cat(". [", SUBS[i,"Submission"], "](submissions/", SUBS[i,"File"], ")", sep="")
+  cat(SUBS[i,"Authors"], ". ", sep="")
+  if (is.na(SUBS[i,"File"])) {
+    cat(SUBS[i,"Submission"])
+  } else {
+    cat("[", SUBS[i,"Submission"], "](submissions/", SUBS[i,"File"], ")", sep="")
+  }
   if (SUBS[i,"Shorten"] == "Y") {
     cat(" submitted to the ")
   } else {
     cat(" in response to ")
-    cat("[", SUBS[i,"Consultation"], "](", SUBS[i,"URL"], "), ", sep="")
+    if (is.na(SUBS[i,"URL"])) {
+      cat(SUBS[i,"Consultation"])
+    } else {
+      cat("[", SUBS[i,"Consultation"], "](", SUBS[i,"URL"], ")", sep="")
+    }
   }
-  cat(SUBS[i,"Organisation"])
+  cat(", ", SUBS[i,"Organisation"], sep="")
   cat(", ", SUBS[i,"Date"], ".", sep="")
 }
 ```
