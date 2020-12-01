@@ -400,10 +400,10 @@ div.tocify {
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
 <p><br></p>
-<div id="privacy-security" class="section level2">
-<h2>Privacy &amp; Security</h2>
-<div id="yr-medicarepbs-dataset-and-the-re-identification-criminalisation-bill" class="section level3">
-<h3>30yr Medicare/PBS dataset and the Re-identification Criminalisation Bill</h3>
+<div id="projects" class="section level2">
+<h2>Projects</h2>
+<div id="yr-medicarepbs-dataset-re-identification" class="section level3">
+<h3>30yr Medicare/PBS dataset re-identification</h3>
 <!--Public domain image source: https://commons.wikimedia.org/wiki/File:Medicare_brand.svg-->
 <p><img src="images/medicare.png" style="width:150px; margin-right: 10px; margin-bottom: -10px" align="left"></p>
 <p>With colleagues Teague and Culnane, I helped uncover one of the largest privacy breaches in Australian history 2016–17. Federal health and human services in mid-2016 released an open dataset of 30 years of Medicare and Pharmaceutical Benefits Schemes transaction records, for 10% of the Australian population. The intention was to drive health economics research, for evidence-based policy development. Unfortunately minimal privacy protections were in place, while the data reported sensitive treatments e.g., for AIDS, late-term abortions, etc. Initially we completely <a href="https://pursuit.unimelb.edu.au/articles/understanding-the-maths-is-crucial-for-protecting-privacy">reidentified doctors</a>, due to improper hashing of their IDs. As a result the dataset was taken offline and a <a href="http://www.health.gov.au/internet/main/publishing.nsf/Content/mr-yr16-dept-dept005.htm">public statement</a> released by the Department. It could not be recalled. A year later we <a href="https://pursuit.unimelb.edu.au/articles/the-simple-process-of-re-identifying-patients-in-public-health-records">announced</a> we had <a href="https://arxiv.org/abs/1712.05627">reidentified</a> patients such as well-known figures in Australian sport and politics.</p>
@@ -416,27 +416,24 @@ div.tocify {
 <p><img src="images/laplace.png" style="width:200px; margin-right: 10px;" align="left"></p>
 <p>Also with colleagues Culnane and Teague since 2016, I have contributed towards several technical privacy assessments of government data initiatives. Contracted by the <a href="http://www.abs.gov.au/">Australian Bureau of Statistics</a> (ABS), we have <a href="https://arxiv.org/abs/1802.07975">analysed the privacy</a> of several options for name encoding for private record linkage—as might be used for Australian Census data for example. For <a href="https://www.transport.nsw.gov.au/">Transport for NSW</a>, we have performed a technical <a href="https://arxiv.org/abs/1704.08547">privacy assessment</a> of a Data61-processed dataset of Opal transport card bus, train, ferry touch ons/offs again under contract. The data has subsequently been published. We have also discovered vulnerabilities in the hashing methodology published by the <a href="https://www.ons.gov.uk/">UK Office of National Statistics</a> in a third <a href="https://arxiv.org/abs/1712.00871">privacy assessment</a> (explained <a href="https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem">here</a>). Common themes to this work are reflected in our 2018 <a href="https://ovic.vic.gov.au/resource/protecting-unit-record-level-personal-information/">report</a> for the <a href="https://www.cpdp.vic.gov.au">Office of the Victorian Information Commissioner</a>.</p>
 </div>
-<div id="promoting-privacy-through-cheating-at-kaggle" class="section level3">
-<h3>Promoting privacy through cheating at Kaggle</h3>
+<div id="cheating-at-kaggle" class="section level3">
+<h3>Cheating at Kaggle</h3>
 <p><img src="images/k.png" style="width:60px; margin-right: 10px;" align="left"></p>
 <p>In 2011 with Narayanan (now Princeton) and Shi (now Cornell), I helped demonstrate the power of privacy attacks to Kaggle (a $16m Series A, Google acquired platform for crowdsourcing machine learning) [<a href="http://arxiv.org/abs/1102.4374">IJCNN’11</a>]. After determining the source of an anonymised social network dataset, intended for use in a link prediction contest, we downloaded and linked it to the competition test set. Normally a linkage attack would end there, having re-identified users. We used it to look up correct test answers and win the competition by ‘cheating’. No privacy breach resulted and contestants remained able to compete. However the result raised awareness for Kaggle, to the stark reality of privacy attacks. Team member Narayanan subsequently <a href="http://randomwalker.info/publications/heritage-health-re-identifiability.pdf">consulted</a> on the privacy of the $3m Heritage Health Prize dataset.</p>
 </div>
-<div id="side-channel-attacks-on-firefox" class="section level3">
-<h3>Side-channel attacks on Firefox</h3>
+<div id="firefox-side-channel" class="section level3">
+<h3>Firefox side-channel</h3>
 <!--Public domain image source: https://commons.wikimedia.org/wiki/File:Firefox_logo-sospc.name_.png-->
 <p><img src="images/firefox.png" style="width:80px; margin-right: 10px;" align="left"></p>
 <p>With a Berkeley group led by Dawn Song [<a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html">report</a>], I helped improve the security of <a href="https://www.mozilla.org/">Mozilla’s</a> open-source development processes. While open-source projects tend to improve system security through the principle of ‘many eyes’, Mozilla was publishing security-related commits to the public <a href="https://www.mozilla.org/en-US/firefox/">Firefox web browser</a> source repository, often a month before those commits would be automatically pushed to users. We trained a learning-based ranker to predict which commits were more likely security-related. An attacker could then easily sift through a few commits by hand to find zero-day exploits, on average a month prior to patching. As a result of our work Mozilla made security-related commits <a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/membership/">private</a> until they were published as patches.</p>
 </div>
-</div>
-<div id="machine-learning" class="section level2">
-<h2>Machine Learning</h2>
 <div id="microsoft-data-linking" class="section level3">
 <h3>Microsoft data linking</h3>
 <p><img src="images/leibniz.jpg" style="width:250px; margin-right: 10px; margin-bottom: -10px" align="left"></p>
 <p>Over 2010–13, I was one of two researchers and a small handful of developers, building a production system for data integration—an application of machine learning in databases that leveraged our research at Microsoft e.g., [<a href="http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf">VLDB’12</a>]. The system shipped multiple times internally (resulting in 4x ShipIt! awards for sustained product transfer). Notable applications were to the Bing Search engine across multiple verticals, and the Xbox game console. After the 2011/12 refresh, in which our data integration was a key contribution from Research, Xbox revenue increased by several $100m (due to <a href="http://allthingsd.com/20120510/microsofts-sneaky-success-the-xbox-is-the-most-popular-video-player-in-the-u-s/">increased</a> <a href="http://allthingsd.com/20120327/xbox-users-clocking-more-hours-gobbling-media-than-gaming-online/">sales</a> of consoles and Xbox Live subscriptions). Within Microsoft Research, this impact was <a href="http://www.bing.com/community/site_blogs/b/search/archive/2011/12/08/bing-on-xbox-team-don-t-be-shy-about-talking-to-the-tv.aspx">attributed</a> to our small team. In Bing’s social vertical, our system matched over 1b records daily. I continue to work on data integration at Melbourne.</p>
 </div>
-<div id="predicting-liver-transplantation-failure" class="section level3">
-<h3>Predicting liver transplantation failure</h3>
+<div id="predicting-transplant-failure" class="section level3">
+<h3>Predicting transplant failure</h3>
 <!--Public domain image source: https://commons.wikimedia.org/wiki/File:Liver.svg-->
 <p><img src="images/liver.png" style="width:120px; margin-right: 10px; margin-bottom: -10px" align="left"></p>
 <p>Through 2016 my group with colleague Bailey collaborated with the Austin Hospital’s transplantation unit, on predicting outcomes (graft failure) of liver transplantation for Australian demographics. With machine learning-based approaches, PhD student Yamuna Kankanige could improve by over 20% the predictive accuracy of the Donor Risk Index [<a href="https://www.ncbi.nlm.nih.gov/pubmed/27941428">Transplantation’17</a>]—a risk score widely used by Australian surgeons today, in planning transplants and follow-up interventions.</p>
