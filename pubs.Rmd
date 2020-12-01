@@ -19,7 +19,7 @@ source("r/rmd-bib-util.R")
 
 <br>
 
-See my [Google Scholar profile](https://scholar.google.com.au/citations?user=hMG_gR4AAAAJ&oi=ao) for bibliometrics, or [arXiv](http://arxiv.org/a/rubinstein_b_1) for preprints.
+See my [Google Scholar profile](https://scholar.google.com.au/citations?user=hMG_gR4AAAAJ&oi=ao) for bibliometrics, or [arXiv](http://arxiv.org/a/rubinstein_b_1) for preprints. My responses to government consultations are [here](impact.html#policy_submissions).
 
 ```{r pubs, echo=FALSE, results="asis"}
 pre.year <- FALSE

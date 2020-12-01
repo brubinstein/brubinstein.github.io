@@ -109,7 +109,12 @@ _Media coverage:_ [9news](http://www.9news.com.au/health/2017/01/12/12/11/matchm
 
 ## Policy Submissions
 
-I have contributed submissions to a range of policy and legislation consultations and inquiries run by government departments and agencies. These responses highlight challenges and best-practice solutions in data privacy and AI.
+I have co-authored submissions to 
+```{r subCount, echo=FALSE, results="asis"}
+SUBS <- read.csv("submissions/submissions.csv")
+cat(nrow(SUBS))
+```
+ policy and legislation consultations and inquiries run by government departments and agencies. These responses highlight challenges and best-practice solutions in data privacy and AI.
 
 ```{r submissions, echo=FALSE, results="asis"}
 SUBS <- read.csv("submissions/submissions.csv")
@@ -117,11 +122,18 @@ for (i in seq(from=1,to=nrow(SUBS))) {
   cat("\n* ")
   cat(SUBS[i,"Authors"])
   cat(". [", SUBS[i,"Submission"], "](submissions/", SUBS[i,"File"], ")", sep="")
-  cat(" in response to ")
-  cat("[", SUBS[i,"Consultation"], "](", SUBS[i,"URL"], "), ", SUBS[i,"Organisation"], sep="")
+  if (SUBS[i,"Shorten"] == "Y") {
+    cat(" submitted to the ")
+  } else {
+    cat(" in response to ")
+    cat("[", SUBS[i,"Consultation"], "](", SUBS[i,"URL"], "), ", sep="")
+  }
+  cat(SUBS[i,"Organisation"])
   cat(", ", SUBS[i,"Date"], ".", sep="")
 }
 ```
+
+As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) I contributed to the [Digital Futures strategic plan](https://www.science.org.au/support/analysis/decadal-plans/ics/preparing-australias-digital-future).
 
 ## Funding & Awards
 
@@ -189,34 +201,15 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ## Service
 
-### Speaking engagements
+### Advisory
 
-* 06/2019: Invited speaker at the [Challenges and New Approaches for Protecting Privacy in Federal Statistical Programs](http://sites.nationalacademies.org/DBASSE/CNSTAT/challenges-and-new-approaches-for-protecting-privacy-in-federal-statistical-programs/index.htm) Workshop organised by the Committee on National Statistics (CNSTAT) at the U.S. National Acadmies of Sciences, Engineering, and Medicine, Washington D.C. [Talk videos](http://sites.nationalacademies.org/DBASSE/CNSTAT/DBASSE_193821)
-* 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley. [Talk video](https://www.youtube.com/watch?v=zgA9rzp1uRs).
-* 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
-* 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).
-* 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
-* 02/2018: Session chairing _Security, Privacy & Trust_ at [AAAI2018](https://aaai.org/Conferences/AAAI-18/)
-* 10/2017: Invited speaker at the [DARPA Safe ML workshop](https://simons.berkeley.edu/workshops/safe-m-l) at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
-* 04/2017: Invited speaker at the Melbourne CTO Club (comprising over a dozen CTOs of mid-sized tech firms).
-* 03/2017: Speaker at the [AMIRA](http://www.amira.com.au/) Exploration Managers Conference, RACV Club Healesville.
-* 01/2017: Speaking at Telstra (data science)
-* 11/2016: Speaker/panelist at the public lecture [Human and Machine Judgement and Interaction Symposium](https://events.unimelb.edu.au/events/7849-human-and-machine-judgement-and-interaction-symposium), Uni Melbourne
-* 05/2016: Invited speaker at the [National Fintech Cyber Security Summit](http://www.fintechcybersummit.com.au/) at the Ivy, Sydney hosted by Data61, Stone & Chalk, the Chief Scientist of Australia.
-* 04/2016: Speaking at Telstra (data science)
-* 02/2016: Speaking at Samsung Research America and UC Berkeley.
-* 02/2016: Speaking in two exciting panels at AAAI'2016 on [keeping AI beneficial](http://www.cse.unsw.edu.au/~tw/aiethics/AI_Ethics/Introduction.html) and [challenges for AI in cyber operations](http://www-bcf.usc.edu/~aruneshs/AICS2016/index.html).
-* 12/2015: Plenary at the 12th Engineering Mathematics and Applications Conference ([EMAC'2015](https://emac2015.unisa.edu.au/)) the biennial meeting of the EMG special interest group of ANZIAM
-* 07/2015: Keynote at the Australian Academy of Science Elizabeth and Frederick [White Research Conference](http://geoconference.wix.com/efwhite2015) on Mining Data for Detection and Prediction of Failure in Geomaterial
-* 11/2014: Facebook (Menlo Park) talk Data Integration through the Lens of Statistical Learning
+* Member (2020--), Conference and Journal Ranking Advisory Committee, Computing Research and Education Association of Australasia (CORE).
+* Member (2019--), Methodology Advisory Committee, Australian Bureau of Statistics.
+* Member (2015--), National Committee for Information and Communication Sciences, the Australian Academy of Science.
 
-### Strategic plan
+### Program committees
 
-As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) (2015--2020) contribued towards the development of the [Digital Futures strategic plan](https://www.science.org.au/support/analysis/decadal-plans/ics/preparing-australias-digital-future).
-
-### Program committee membership
-
-* **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17](https://2017.icml.cc/),['18](https://2017.icml.cc/),['19 (area chair)](https://icml.cc/Conferences/2019),['20 (area chair)](https://icml.cc/), **NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),['19](https://nips.cc/Conferences/2019/),['20 area chair](https://nips.cc/Conferences/2020/), [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
+* **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17-18 (PC)](https://2017.icml.cc/),['19-21 (area chair)](https://icml.cc/), **NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17](https://nips.cc/Conferences/2017/),['18](https://nips.cc/Conferences/2018/),['19 (PC)](https://nips.cc/Conferences/2019/),['20 (area chair)](https://nips.cc/Conferences/2020/), [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
 **ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
 [**AISTATS**'2017](http://www.aistats.org/), 
 [CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 
@@ -237,3 +230,24 @@ ACM AI & Security workshops (AISEC)['2011](http://www.flacp.fujitsulabs.com/~ais
 [Learning, Security & Privacy workshop](https://sites.google.com/site/learnsecprivacy2014/) (at ICML'2014)
 * Chair, Demonstration and Workshop Local Arrangements
 [SIGMOD'2015](http://www.sigmod2015.org/)
+
+### Speaking engagements
+
+* 06/2019: Invited speaker at the [Challenges and New Approaches for Protecting Privacy in Federal Statistical Programs](http://sites.nationalacademies.org/DBASSE/CNSTAT/challenges-and-new-approaches-for-protecting-privacy-in-federal-statistical-programs/index.htm) Workshop organised by the Committee on National Statistics (CNSTAT) at the U.S. National Acadmies of Sciences, Engineering, and Medicine, Washington D.C. [Talk videos](http://sites.nationalacademies.org/DBASSE/CNSTAT/DBASSE_193821)
+* 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley. [Talk video](https://www.youtube.com/watch?v=zgA9rzp1uRs).
+* 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
+* 06/2018: Panelist, Panel on Data Privacy, [Oxford-Melbourne Digital Marketing and Analytics Executive Program](https://www.sbs.ox.ac.uk/programmes/execed/dmap).
+* 02/2018: Invited speaker at Data61/DSTG [Cyber Summer School](https://research.csiro.au/csss/)
+* 02/2018: Session chairing _Security, Privacy & Trust_ at [AAAI2018](https://aaai.org/Conferences/AAAI-18/)
+* 10/2017: Invited speaker at the [DARPA Safe ML workshop](https://simons.berkeley.edu/workshops/safe-m-l) at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley.
+* 04/2017: Invited speaker at the Melbourne CTO Club (comprising over a dozen CTOs of mid-sized tech firms).
+* 03/2017: Speaker at the [AMIRA](http://www.amira.com.au/) Exploration Managers Conference, RACV Club Healesville.
+* 01/2017: Speaking at Telstra (data science)
+* 11/2016: Speaker/panelist at the public lecture [Human and Machine Judgement and Interaction Symposium](https://events.unimelb.edu.au/events/7849-human-and-machine-judgement-and-interaction-symposium), Uni Melbourne
+* 05/2016: Invited speaker at the [National Fintech Cyber Security Summit](http://www.fintechcybersummit.com.au/) at the Ivy, Sydney hosted by Data61, Stone & Chalk, the Chief Scientist of Australia.
+* 04/2016: Speaking at Telstra (data science)
+* 02/2016: Speaking at Samsung Research America and UC Berkeley.
+* 02/2016: Speaking in two exciting panels at AAAI'2016 on [keeping AI beneficial](http://www.cse.unsw.edu.au/~tw/aiethics/AI_Ethics/Introduction.html) and [challenges for AI in cyber operations](http://www-bcf.usc.edu/~aruneshs/AICS2016/index.html).
+* 12/2015: Plenary at the 12th Engineering Mathematics and Applications Conference ([EMAC'2015](https://emac2015.unisa.edu.au/)) the biennial meeting of the EMG special interest group of ANZIAM
+* 07/2015: Keynote at the Australian Academy of Science Elizabeth and Frederick [White Research Conference](http://geoconference.wix.com/efwhite2015) on Mining Data for Detection and Prediction of Failure in Geomaterial
+* 11/2014: Facebook (Menlo Park) talk Data Integration through the Lens of Statistical Learning
