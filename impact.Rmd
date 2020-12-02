@@ -46,6 +46,25 @@ With colleagues Ohrimenko, Culnane, Teague, I have contributed towards several t
 <img src="images/covidsafe-phone-image.jpg" style="width:200px; margin-right: 10px;" align="left"> 
 In 2020, the COVID-19 pandemic swept across the world with devistating consequences. An important strategy for slowing the spread of the coronavirus is contact tracing, which traditionally had been manual, laborious but accurate. Naturally many governments hoped that high uptake of Bluetooth-enabled smart phones could be leveraged for automated contact tracing, supporting over-burdened human contact traces if and when COVID-19 put strain on health systems. In March Australia opted to adopt and adapt Singapore's Bluetooth contact tracing system TraceTogether in its app called COVIDSafe. While the contact tracing [effectiveness](https://www.abc.net.au/news/2020-11-04/coronavirus-covidsafe-app-effectiveness-questioned-by-sa-police/12846556) [of](https://thenewdaily.com.au/news/coronavirus/2020/08/24/covid-safe-app-coronavirus/) [the](https://thenewdaily.com.au/news/national/2020/07/08/covidfail-app/) [system](https://www.innovationaus.com/time-for-a-covidsafe-review-edward-santow/) has since come in to focus, many tech commentators and researchers identified seemingly unnecessary compromise in the system's privacy provisions. I [reported of these privacy critiques](https://eng.unimelb.edu.au/ingenium/technology-and-society/on-the-privacy-of-tracetogether,-the-singaporean-covid-19-contact-tracing-mobile-app,-and-recommendations-for-australia) with colleagues Farokhi (Melbourne), Asghar and Kaafar (Macquarie), a report that was cited by the government's [COVIDSafe PIA](https://www.health.gov.au/sites/default/files/documents/2020/04/covidsafe-application-privacy-impact-assessment-covidsafe-application-privacy-impact-assessment.pdf). Like many other experts, we aimed to highlight the flexibility and greater privacy of decentralised approaches. With colleagues Leins and Culnane (Melbourne), we [wrote in the MJA](https://onlinelibrary.wiley.com/doi/full/10.5694/mja2.50669) on a broader range of issues on the techno-legal and ethical dilemma's for automated contact tracing. For more up to date detail on the COVIDSafe implementation interested readers should check out the thorough [posts by Vanessa et al.](https://github.com/vteague/contactTracing).
 
+### ABS & US Census linking
+
+<img src="images/d-blink.png" style="width:200px; margin-right: 10px;" align="left"> 
+Data linkage has many public interest uses which demand accuracy but also proper representation of uncertianty. The framework of Bayesian probability is ideal for incorporating uncertainty into data linking, however techniques in the framework are often different to scale to large or even moderate sized dataset. 
+With the Australian Bureau of Statistics and U.S. Census Bureau, student Marchant (Melbourne), colleagues Steorts (Duke), Kaplan (Colorado State) and I adapted the `blink` Bayesian model of Steorts for data linking, to be amenable to parallel inference. Our resulting unsupervised end-to-end Bayesian record linkage system `d-blink`, [open-sourced](https://github.com/ngmarchant/dblink) running on Apache Spark, enjoys efficiency gains of up to 300x. Maintaining uncertainty throughout the linkage process enables uncertainty propagation to downstream data analysis tasks potentially leading to accuracy gains. Tests on ABS and US Census (State of Wyoming: 2010 Decennial Census with administrative records from the Social Security Administration’s Numident) data are reported in the [JCGS paper](https://amstat.tandfonline.com/doi/full/10.1080/10618600.2020.1825451).
+
+### Microsoft data linking
+
+<img src="images/leibniz.jpg" style="width:250px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+Over 2010--13, I was one of two researchers and a small handful of developers, building a production system for data integration---an application of machine learning in databases that leveraged our research at Microsoft e.g., [[VLDB'12](http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf)]. The system shipped multiple times internally (resulting in 4x ShipIt! awards for sustained product transfer). Notable applications were to the Bing Search engine across multiple verticals, and the Xbox game console. After the 2011/12 refresh, in which our data integration was a key contribution from Research, Xbox revenue increased by several $100m (due to [increased](http://allthingsd.com/20120510/microsofts-sneaky-success-the-xbox-is-the-most-popular-video-player-in-the-u-s/) [sales](http://allthingsd.com/20120327/xbox-users-clocking-more-hours-gobbling-media-than-gaming-online/) of consoles and Xbox Live subscriptions). Within Microsoft Research, this impact was [attributed](http://www.bing.com/community/site_blogs/b/search/archive/2011/12/08/bing-on-xbox-team-don-t-be-shy-about-talking-to-the-tv.aspx) to our small team. In Bing’s social vertical, our system matched over 1b records daily. I continue to work on data integration at Melbourne.
+
+### Transplant failures
+
+<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Liver.svg-->
+<img src="images/liver.png" style="width:120px; margin-right: 10px; margin-bottom: -10px" align="left"> 
+
+Through 2016 my group with colleague Bailey collaborated with the Austin Hospital's transplantation unit, on predicting outcomes (graft failure) of liver transplantation for Australian demographics. With machine learning-based approaches, PhD student Yamuna Kankanige could improve by over 20% the predictive accuracy of the Donor Risk Index [[Transplantation'17](https://www.ncbi.nlm.nih.gov/pubmed/27941428)]---a risk score widely used by Australian surgeons today, in planning transplants and follow-up interventions.  
+
 ### Cheating at Kaggle
 
 <img src="images/k.png" style="width:60px; margin-right: 10px;" align="left"> 
@@ -63,19 +82,6 @@ to the stark reality of privacy attacks. Team member Narayanan subsequently [con
 <img src="images/firefox.png" style="width:80px; margin-right: 10px;" align="left"> 
 
 With a Berkeley group led by Dawn Song [[report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.html)], I helped improve the security of [Mozilla's](https://www.mozilla.org/) open-source development processes. While open-source projects tend to improve system security through the principle of 'many eyes', Mozilla was publishing security-related commits to the public [Firefox web browser](https://www.mozilla.org/en-US/firefox/) source repository, often a month before those commits would be automatically pushed to users. We trained a learning-based ranker to predict which commits were more likely security-related. An attacker could then easily sift through a few commits by hand to find zero-day exploits, on average a month prior to patching. As a result of our work Mozilla made security-related commits [private](https://www.mozilla.org/en-US/about/governance/policies/security-group/membership/) until they were published as patches.
-
-### Microsoft data linking
-
-<img src="images/leibniz.jpg" style="width:250px; margin-right: 10px; margin-bottom: -10px" align="left"> 
-
-Over 2010--13, I was one of two researchers and a small handful of developers, building a production system for data integration---an application of machine learning in databases that leveraged our research at Microsoft e.g., [[VLDB'12](http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf)]. The system shipped multiple times internally (resulting in 4x ShipIt! awards for sustained product transfer). Notable applications were to the Bing Search engine across multiple verticals, and the Xbox game console. After the 2011/12 refresh, in which our data integration was a key contribution from Research, Xbox revenue increased by several $100m (due to [increased](http://allthingsd.com/20120510/microsofts-sneaky-success-the-xbox-is-the-most-popular-video-player-in-the-u-s/) [sales](http://allthingsd.com/20120327/xbox-users-clocking-more-hours-gobbling-media-than-gaming-online/) of consoles and Xbox Live subscriptions). Within Microsoft Research, this impact was [attributed](http://www.bing.com/community/site_blogs/b/search/archive/2011/12/08/bing-on-xbox-team-don-t-be-shy-about-talking-to-the-tv.aspx) to our small team. In Bing’s social vertical, our system matched over 1b records daily. I continue to work on data integration at Melbourne.
-
-### Transplant failures
-
-<!--Public domain image source: https://commons.wikimedia.org/wiki/File:Liver.svg-->
-<img src="images/liver.png" style="width:120px; margin-right: 10px; margin-bottom: -10px" align="left"> 
-
-Through 2016 my group with colleague Bailey collaborated with the Austin Hospital's transplantation unit, on predicting outcomes (graft failure) of liver transplantation for Australian demographics. With machine learning-based approaches, PhD student Yamuna Kankanige could improve by over 20% the predictive accuracy of the Donor Risk Index [[Transplantation'17](https://www.ncbi.nlm.nih.gov/pubmed/27941428)]---a risk score widely used by Australian surgeons today, in planning transplants and follow-up interventions.  
 
 ## Media Coverage
 
@@ -172,9 +178,7 @@ for (i in seq(from=1,to=nrow(SUBS))) {
 }
 ```
 
-Further submissions: [Data Sharing and Release Consultation 2018](https://www.pmc.gov.au/public-data/data-sharing-and-release-reforms/submissions) (file 20697), [Parliamentary Inquiry into the My Health Record System 2018](https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Community_Affairs/MyHealthRecordsystem/Submissions) (submission #59), [ACCC Consumer Data Right draft rules 2019](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0/cdr-draft-rules-banking).
-
-As member of the Australian Academy of Science's [National Committee for Information and Communication Sciences](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) I contributed to the [Digital Futures strategic plan](https://www.science.org.au/support/analysis/decadal-plans/ics/preparing-australias-digital-future).
+As member of the Australian Academy of Science's [NCICS](https://www.science.org.au/supporting-science/national-committees-science/national-committee-information-and-communication) I contributed to the [Digital Futures strategic plan](https://www.science.org.au/support/analysis/decadal-plans/ics/preparing-australias-digital-future).
 
 ## Funding & Awards
 
