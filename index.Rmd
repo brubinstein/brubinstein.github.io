@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <img src="images/ben1.jpg" style="width:40%; border:12px solid; margin-right: 24px" align="left">
 
 **Benjamin I. P. Rubinstein**, PhD (Berkeley)<br> 
-<p style="font-size:16px">Associate Professor, _School of Computing & Information Systems_<br>
+<p style="font-size:16px">Professor & AI Co-lead, _School of Computing & Information Systems_<br>
 Associate Dean (Research), _Melbourne School of Engineering_<br>
 _University of Melbourne, Australia_</p>
 
