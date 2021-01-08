@@ -254,7 +254,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Institutional
 
-* Associate Dean Research (2020), Melbourne School of Engineering
+* Associate Dean Research (2020), Faculty of Engineering and Information Technology
 * Co-lead (2021--), AI Group, School of Computing and Information Systems
 * Member (2019--), School Executive, School of Computing and Information Systems
 * Member (2019--) and Chair (2020), Awards and Prizes Working Group, Melbourne School of Engineering
