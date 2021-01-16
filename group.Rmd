@@ -16,6 +16,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### PhD students
 
+* [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani 2021-- ). Certified robustness.
 * [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-- ). Adversarial learning for NLP.
 * [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020-- ). Distributed adversarial learning.
 * [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (2019-- ). Robustness in machine learning.
