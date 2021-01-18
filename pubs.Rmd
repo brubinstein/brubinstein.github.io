@@ -49,5 +49,5 @@ for (y in pub.years) {
     cat("\n")
   }
 }
-cat(paste("\n<!-- ranked total", counts[1], "aastar", counts[2]+counts[3], (counts[2]+counts[3])/counts[1], "-->\n", collapse=" "))
+cat(paste("\n<!-- ranked total", counts[1], "astar", counts[2], counts[2]/counts[1], "aastar", counts[2]+counts[3], (counts[2]+counts[3])/counts[1], "-->\n", collapse=" "))
 ```
