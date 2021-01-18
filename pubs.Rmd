@@ -23,6 +23,7 @@ See my [Google Scholar profile](https://scholar.google.com.au/citations?user=hMG
 
 ```{r pubs, echo=FALSE, results="asis"}
 pre.year <- FALSE
+counts <- c(all=0, astar=0, a=0)
 for (y in pub.years) {
   if (as.integer(y) >= start.year) {
     cat("\n### ",y,"\n\n", sep="")
@@ -44,7 +45,9 @@ for (y in pub.years) {
     cat(" ")
     #cat("\n")
     print.rmdnote(yb, append = bibtex.lnk(yb), bold = FALSE)
+    counts <- rank.count(yb, counts)
     cat("\n")
   }
 }
+cat(paste("\n<!-- ranked total", counts[1], "aastar", counts[2]+counts[3], (counts[2]+counts[3])/counts[1], "-->\n", collapse=" "))
 ```

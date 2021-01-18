@@ -103,3 +103,18 @@ bibtex.lnk <- function(bibent, lnk.txt = "BibTeX") {
   s4 <- paste(')">', lnk.txt, '</a><!--/html_preserve-->', sep="")
   paste(s1, s2, s3, s4, sep="")
 }
+
+# Checks for ranknote publication type for bean counting
+# - bibent    A bibentry extracted from RefManageR
+# - counts    numeric vector of counts, names used for pattern matching
+# Returns the counts incremented. Note the first entry is special, as it
+# is used to count all bibentries with a ranknote field.
+rank.count <- function(bibent, counts) {
+  if (!is.null(bibent$ranknote)) {
+    # there is a ranknote field
+    counts[1] <- counts[1] + 1
+    if (any(names(counts) == bibent$ranknote))
+      counts[bibent$ranknote] <- counts[bibent$ranknote] + 1
+  }
+  counts
+}
