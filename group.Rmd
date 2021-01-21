@@ -24,7 +24,7 @@ I am fortunate to supervise a brilliant group of researchers.
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Dongge Liu](https://www.linkedin.com/in/dongge-liu-9a957913a) (w Toby Murray, Thuan Pham, Gidon Ernst at LMU Munich 2018-- ). Software fuzzing with machine learning.
-* [Neil Marchant](https://www.linkedin.com/in/neil-marchant-466678aa/) (w Beka Steorts at Duke, Aurore Delaigle 2016-- ). Record linkage, adaptive importance sampling.
+* [Neil Marchant](https://www.ngmarchant.net/) (w Beka Steorts at Duke, Aurore Delaigle 2016-- ). Record linkage, adaptive importance sampling.
 
 ### PhD students---Completed
 
