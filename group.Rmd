@@ -9,6 +9,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### Postdocs
 
+* [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Machine learning in privacy and databases.
 * [Chang Xu](https://changxu.io/) (w Cohn 2020-- ). Adversarial learning for NLP.
 * [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (w Alpcan 2019-- ). Machine learning for spectrum management in contested environments.
 * [Sandamal Weerasinghe](https://cis.unimelb.edu.au/people/prameesha-weerasinghe) (w Leckie, Erfani, Alpcan 2019-- ). Adversarial machine learning.
