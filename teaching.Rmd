@@ -7,7 +7,7 @@
 
 ### Subject Teaching
 
-* [COMP90051 Statistical Machine Learning](https://handbook.unimelb.edu.au/view/2018/COMP90051): Semester 2, 2013--15, 2018--20
+* [COMP90051 Statistical Machine Learning](https://handbook.unimelb.edu.au/view/2018/COMP90051): Semester 2, 2013--15, 2018--21
 * [BUSA90501 Statistical Learning 2](https://handbook.unimelb.edu.au/view/2015/BUSA90501): Winter, 2015-16, 2019 (in Melbourne Business School)
 * [COMP10002 Foundations of Algorithms](https://handbook.unimelb.edu.au/view/2015/COMP10002): Semester 1, 2014-15
 
