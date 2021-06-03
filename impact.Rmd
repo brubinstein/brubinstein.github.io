@@ -248,9 +248,9 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Advisory
 
-* Member (2020--), Conference and Journal Ranking Advisory Committee, Computing Research and Education Association of Australasia (CORE).
 * Member (2019--), Methodology Advisory Committee, Australian Bureau of Statistics.
 * Member (2015--), National Committee for Information and Communication Sciences, the Australian Academy of Science.
+* Member (2020--21), Ranking Advisory Committee, Computing Research and Education Association of Australasia (CORE).
 
 ### Institutional
 
