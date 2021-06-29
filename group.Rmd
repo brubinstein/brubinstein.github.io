@@ -31,16 +31,16 @@ I am fortunate to supervise a brilliant group of researchers.
 ### PhD students---Completed
 
 * [Neil Marchant](https://www.ngmarchant.net/) (w Beka Steorts at Duke, Aurore Delaigle 2016--20). Bayesian record linkage, adaptive importance sampling for efficient evaluation → Postdoc at Univ Melbourne
-* [Leyla Roohi](https://au.linkedin.com/in/leyla-roohi-b4544a67) (w Vanessa Teague 2017--19). Secure storage and private querying for telecommunications metadata → Postdoc at Univ Melbourne
+* [Leyla Roohi](https://au.linkedin.com/in/leyla-roohi-b4544a67) (w Vanessa Teague 2017--19). Secure storage and private querying for telecommunications metadata → Postdoc at Univ Melbourne → Digital fraud analyst at ANZ Bank
 * [Yuan Li](https://scholar.google.com/citations?user=qDDC09EAAAAJ&hl=en) (w Trevor Cohn 2015--19). Crowd sourcing, Bayesian optimisation, NLP → Postdoc at Univ Melbourne
-* [Lingjuan Lyu](https://www.researchgate.net/profile/Lingjuan_Lyu) (w Marimuthu Palaniswami 2016--18). Privacy in distributed sensing → Postdoc at the ANU
-* [Safiollah Heidari](https://sites.google.com/site/safiheidari/) (w Raj Buyya 2015--18). Distributed graph processing → Founder, NeuroPhyte
-* [Xunyun Liu](https://xunyunliu.github.io/) (w Raj Buyya, Rodrigo Calheiros 2015--18). Stream computing → Assistant Prof at NUDT
-* [Zay Aye](https://www.researchgate.net/profile/Zay_Aye) - CompSci (w Rao Kotagiri 2014--18). Learning distance metrics → Postdoc at Univ Melbourne
+* [Lingjuan Lyu](https://www.researchgate.net/profile/Lingjuan_Lyu) (w Marimuthu Palaniswami 2016--18). Privacy in distributed sensing → Postdoc at the ANU → Privacy Expert at Alipay, China
+* [Safiollah Heidari](https://sites.google.com/site/safiheidari/) (w Raj Buyya 2015--18). Distributed graph processing → Founder of NeuroPhyte
+* [Xunyun Liu](https://xunyunliu.github.io/) (w Raj Buyya, Rodrigo Calheiros 2015--18). Stream computing → Assistant Prof at NUDT, China
+* [Zay Aye](https://www.researchgate.net/profile/Zay_Aye) - CompSci (w Rao Kotagiri 2014--18). Learning distance metrics → Postdoc at Univ Melbourne (Infrastructure Engineering)
 * [Yamuna Kankanige](https://www.linkedin.com/in/yamuna-kankanige-8b258a26/) (w James Bailey 2015--18). Predicting liver transplant outcomes with Austin Health → Bioinformatician at Peter MacCallum Cancer Centre
-* [Maryam Fanaeepour](https://scholar.google.com.au/citations?user=1EPDwbAAAAAJ&hl=en) - CompSci (w Lars Kulik, Egemen Tanin 2014--17). Location data privacy → Postdoc at Duke University
-* [Jiazhen He](https://scholar.google.com.au/citations?user=GtpWKiwAAAAJ&hl=en) - CompSci (w James Bailey, Rui Zhang 2014--17). Education analytics and MOOCs → Postdoc at Univ Melbourne
-* [Zuhe Zhang](https://www.researchgate.net/profile/Zuhe_Zhang) - Maths & Stats (w Sanming Zhou 2014--17). Differential privacy in Bayesian statistics → Data Scientist at ANZ Bank
+* [Maryam Fanaeepour](https://scholar.google.com.au/citations?user=1EPDwbAAAAAJ&hl=en) - CompSci (w Lars Kulik, Egemen Tanin 2014--17). Location data privacy → Postdoc at Duke University → Researcher at Ghent University
+* [Jiazhen He](https://scholar.google.com.au/citations?user=GtpWKiwAAAAJ&hl=en) - CompSci (w James Bailey, Rui Zhang 2014--17). Education analytics and MOOCs → Postdoc at Univ Melbourne → Postdoc at AstraZeneca
+* [Zuhe Zhang](https://www.researchgate.net/profile/Zuhe_Zhang) - Maths & Stats (w Sanming Zhou 2014--17). Differential privacy in Bayesian statistics → Data Scientist at ANZ Bank → Data Scientist at Melbourne Business School
 
 ### Other Alumni
 
