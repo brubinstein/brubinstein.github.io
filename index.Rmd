@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Associate Dean (Research), _Faculty of Engineering and Information Technology_<br>
 _The University of Melbourne, Australia_</p>
 
-I actively research topics in machine learning, security & privacy, databases such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in the research divisions of Microsoft, Google, Intel and Yahoo! (all in the United States), followed by a short stint at IBM Research Australia. As a full-time Researcher at Microsoft Research, Silicon Valley, I shipped production systems for entity resolution in Bing and the Xbox360; my research has helped identify and plug side-channel attacks against the popular Firefox browser, and deanonymise Victorian myki transport data and an  unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016. Since joining Melbourne in 2013, I have been awarded 
+I actively research topics in machine learning, security & privacy, databases such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in industry research labs including Microsoft Research Silicon Valley and IBM Research Australia, and received the PhD (Computer Science) from UC Berkeley in 2010. I have been part of teams that have: analysed privacy at the Australian Bureau of Statistics, a major bank, and Transport for NSW; developed scalable Bayesian approaches to record linkage tested by U.S. Census; shipped production systems for entity resolution in Bing and the Xbox360; helped identify and plug side-channel attacks against the popular Firefox browser; and that have deanonymised Victorian Myki transport data and an unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016. Since joining Melbourne in 2013, I have been awarded 
 ```{r funding, echo=FALSE, results="asis"}
 FT <- read.csv("funding/funding.csv")
 
@@ -36,4 +36,4 @@ for (i in seq(from=1,to=nrow(FT))) {
 cat("\\$", round(total.competitive/1000, 2), "m in competitive funding ", sep="")
 cat("(\\$", round(total.lead/1000, 2), "m as lead). ", sep="")
 ```
-My work has been recognised through an Australian Research Council DECRA award, and a Young Tall Poppy Science award.
+I co-lead the [CATCH Joint MURI-AUSMURI](https://catch-muri.org) which has been funded over AUD \$8m to convene a team of 16 experts across 7 universities for fundamental discovery in robust human-AI teams for cybersecurity. I have previously received an Australian Research Council DECRA award and a Young Tall Poppy Science award.
