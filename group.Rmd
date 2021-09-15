@@ -20,7 +20,6 @@ I am fortunate to supervise a brilliant group of researchers.
 * [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani 2021-- ). Certified robustness.
 * [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-- ). Adversarial learning for NLP.
 * [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020-- ). Distributed adversarial learning.
-* [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (2019-- ). Robustness in machine learning.
 * Ruihan Zhang (w Tim Miller, Kris Ehinger 2019-- ). Explainable AI and machine learning.
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018-- ). Self-driving databases.
@@ -43,6 +42,7 @@ I am fortunate to supervise a brilliant group of researchers.
 ### Other Alumni
 
 * [Sandamal Weerasinghe](https://cis.unimelb.edu.au/people/prameesha-weerasinghe) (postdoc 2019--21). Adversarial machine learning.
+* [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (student 2019--21). Robustness in machine learning.
 * [Chang Xu](https://changxu.io/) (postdoc 2020--21). Adversarial learning for NLP → Data Scientist, News Corp, Sydney.
 * [Thibaut Lienart](https://tlienart.github.io/) (postdoc 2018--19). Adversarial machine learning → Associate, Alan Turing Institute
 * [Yi Han](https://scholar.google.com/citations?user=e_mtK4kAAAAJ&hl=en) (postdoc 2016--19). Adversarial reinforcement learning → Postdoc at Melbourne
