@@ -231,11 +231,12 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Awards & Honours
 
+* Excellence in Research Award (2021), School of Computing and Information Systems, Univeristy of Melbourne
 * Best Reviewer Award (2018,2019), Conference on Neural Information Processing Systems (NeurIPS formerly NIPS)
 * WiE Best Postgrad Paper Prize (2017), IEEE Australia Council for PhD student Maryam Fanaeepour’s joint work
 * Victorian Young Tall Poppy Science Award (2016), Australian Institute of Policy & Science
 * Microsoft Azure ML Award (2015), Microsoft Research
-* Excellence in Research Award (2014), Dept CIS, University of Melbourne
+* Excellence in Research Award (2014), Dept. of Computing and Information Systems, University of Melbourne
 * Gold Star Award (2011), Microsoft Research, top employee accolade
 * ShipIt! Awards (2010--12, four times), Microsoft, each for sustained product transfer
 * Yahoo! Key Scientific Challenge Prize (2009), Adversarial Machine Learning
