@@ -291,6 +291,7 @@ ACM AI & Security workshops (AISEC)['2011](http://www.flacp.fujitsulabs.com/~ais
 
 ### Speaking engagements
 
+* 12/2021: Invited panelist at the [ABS Symposium on Data Access and Privacy](https://statsoc.org.au/event-4535120), Virtual.
 * 06/2019: Invited speaker at the [Challenges and New Approaches for Protecting Privacy in Federal Statistical Programs](http://sites.nationalacademies.org/DBASSE/CNSTAT/challenges-and-new-approaches-for-protecting-privacy-in-federal-statistical-programs/index.htm) Workshop organised by the Committee on National Statistics (CNSTAT) at the U.S. National Acadmies of Sciences, Engineering, and Medicine, Washington D.C. [Talk videos](http://sites.nationalacademies.org/DBASSE/CNSTAT/DBASSE_193821)
 * 04/2019: Invited speaker at the [Privacy and the Science of Data Analysis](https://simons.berkeley.edu/privacy2019-2) workshop at the [Simons Institute for the Theory of Computing](https://simons.berkeley.edu/), Berkeley. [Talk video](https://www.youtube.com/watch?v=zgA9rzp1uRs).
 * 08/2018: Keynote at the [GIScience'18](http://giscience.org/) [Location Privacy and Security Workshop (LoPaS)](https://ptal-io.github.io/lopas2018/)
