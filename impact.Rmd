@@ -231,6 +231,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Awards & Honours
 
+* Bug Bounty [Honorable Mention](https://bughunters.google.com/profile/1e5f9da7-e8d5-42dc-be8b-cc576152232a/awards) (2021), Google, [Attacks](https://arxiv.org/abs/2112.05307) on Google differential privacy library. Corresponding Facebook/Meta [Opacus patch](https://github.com/pytorch/opacus/pull/260)
 * Excellence in Research Award (2021), School of Computing and Information Systems, Univeristy of Melbourne
 * Best Reviewer Award (2018,2019), Conference on Neural Information Processing Systems (NeurIPS formerly NIPS)
 * WiE Best Postgrad Paper Prize (2017), IEEE Australia Council for PhD student Maryam Fanaeepour’s joint work
