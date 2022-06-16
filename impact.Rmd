@@ -220,7 +220,7 @@ for (i in seq(from=1,to=nrow(FT))) {
   cat(": ", paste(FT[i,"Sponsor"]), "** ", paste(FT[i,"Scheme"]), ", ", sep="")
   if (FT[i,"Title"]!="") cat("_", paste(FT[i,"Title"]), "_, ", sep="")
   CIs <- strsplit(paste(FT[i,"CIs"]), ", |,")[[1]]
-  if (length(CIs) < 5) {
+  if (length(CIs) < 6) {
     cat(CIs, sep=", ")
   } else {
     cat(CIs[1], " et al", sep="")
