@@ -1,6 +1,7 @@
 Amount,Start,End,Sponsor,Scheme,Title,CIs,Category,Notes
 405,2022,2024,Australian Research Council,Discovery Project,,Benjamin Rubinstein,1,
 304,2022,2023,Defence Science & Technology Group,Research Agreement,Adversarial Reinforcement Learning: Attacks and Defences,"Benjamin Rubinstein, Andrew Cullen, Chris Leckie, Tansu Alpcan, Sarah Erfani",2-4
+167,2022,2023,Data61/CSIRO,Collaboration Research Project,Adversarial Machine Learning for Cyber (extension),"Benjamin Rubinstein, Andrew Cullen, Chris Leckie, Tansu Alpcan, Sarah Erfani",2-4
 3000,2021,2024,"Department of Industry, Science, Energy and Resources",AUSMURI,Cybersecurity Assurance for Teams of Computers and Humans (CATCH),"Ben Rubinstein, Shlomo Berkovsky, Scott Brown, Ami Eidels, Dali Kaafar, Vassilis Kostakos, Toby Murray, Olga Ohrimenko",2-4,"Joint with AUD$5m ARO MURI co-led by Somesh Jha see [catch-muri.org](https://catch-muri.org) for full team"
 34,2020,2021,National Australia Bank,Consulting Services Agreement,Data privacy assessment,"Ben Rubinstein, Olga Ohrimenko",2-4,
 30,2020,2021,Australian Bureau of Statistics,Research Contract,Differential privay in a dynamic query environment,"Ben Rubinstein, Olga Ohrimenko",2-4,
