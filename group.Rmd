@@ -9,17 +9,18 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### Postdocs
 
-* [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Robustness, privacy, and generalisation in machine learning.
 * [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (2019-- ). Certified robustness of machine learning.
+* [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Robustness, privacy, and generalisation in machine learning.
+* [Aref Miri Rekavandi](https://arekavandi.github.io/) (2023-- ). Robust learning.
 
 ### PhD students
 
-* [Jiankai Jin](https://cis.unimelb.edu.au/people/students/jiankai-jin). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
-* [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021-- ). Certified robustness in computer security applications.
-* [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-- ). Certified robustness at training time.
-* [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-- ). Adversarial learning for NLP.
-* [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020-- ). Adversarial learning/game theory for autonomous systems.
 * [Ruihan Zhang](https://scholar.google.com/citations?user=gjSlsnQAAAAJ&hl=en) (w Tim Miller, Kris Ehinger 2019-- ). Explainable AI and machine learning.
+* [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020-- ). Adversarial learning/game theory for autonomous systems.
+* [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-- ). Adversarial learning for NLP.
+* [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-- ). Certified robustness at training time.
+* [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021-- ). Certified robustness in computer security applications.
+* [Jiankai Jin](https://cis.unimelb.edu.au/people/students/jiankai-jin). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
 
 ### PhD students---Completed
 
