@@ -11,26 +11,40 @@
 
 
 
-<title>pubs.utf8</title>
+<title>pubs.knit</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -79,10 +69,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -99,40 +85,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 64px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -160,7 +122,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -172,7 +134,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -182,11 +144,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -198,13 +177,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -212,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -265,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -314,7 +285,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -325,7 +296,13 @@ $(document).ready(function () {
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
 <script type="text/javascript" src="js/download.js"></script>
 <p><br></p>
-<p>See my <a href="https://scholar.google.com.au/citations?user=hMG_gR4AAAAJ&amp;oi=ao">Google Scholar profile</a> for bibliometrics, or <a href="http://arxiv.org/a/rubinstein_b_1">arXiv</a> for preprints. If you’re having trouble accessing any paper at a publisher’s site, just contact me for a PDF by email. My responses to government consultations are <a href="impact.html#policy_submissions">here</a>.</p>
+<p>See my <a
+href="https://scholar.google.com.au/citations?user=hMG_gR4AAAAJ&amp;oi=ao">Google
+Scholar profile</a> for bibliometrics, or <a
+href="http://arxiv.org/a/rubinstein_b_1">arXiv</a> for preprints. If
+you’re having trouble accessing any paper at a publisher’s site, just
+contact me for a PDF by email. My responses to government consultations
+are <a href="impact.html#policy_submissions">here</a>.</p>
 <div id="section" class="section level3">
 <h3>2024</h3>
 
@@ -341,7 +318,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah Erfani, and Benjamin I. P. Rubinstein. “It’s Simplex! Disaggregating Measures to Improve Certified Robustness”. In: <em>2024 IEEE Symposium on Security and Privacy (SP)</em>. Accepted. 2024 [<a href="https://arxiv.org/abs/2309.11005">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cullen2023its.bib', 'bibtex-cullen2023its')">BibTeX</a>]</li>
+<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah Erfani, and
+Benjamin I. P. Rubinstein. “It’s Simplex! Disaggregating Measures to
+Improve Certified Robustness”. In: <em>2024 IEEE Symposium on Security
+and Privacy (SP)</em>. Accepted. 2024 [<a
+href="https://arxiv.org/abs/2309.11005">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('cullen2023its.bib', 'bibtex-cullen2023its')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-1" class="section level3">
@@ -360,7 +342,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Huang, Zhuoqun, Neil G Marchant, Keane Lucas, Lujo Bauer, Olga Ohrimenko, and Benjamin I. P. Rubinstein. “RS-Del: Edit Distance Robustness Certificates for Sequence Classifiers via Randomized Deletion”. In: <em>Advances in Neural Information Processing Systems</em>. NeurIPS. Accepted. 2023 [<a href="https://arxiv.org/abs/2302.01757">PDF</a>; <a href="https://neurips.cc/virtual/2023/poster/70896">publisher link</a>; <a href="https://github.com/Dovermore/randomized-deletion">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('huang2023rsdel.bib', 'bibtex-huang2023rsdel')">BibTeX</a>]</li>
+<li>Huang, Zhuoqun, Neil G Marchant, Keane Lucas, Lujo Bauer, Olga
+Ohrimenko, and Benjamin I. P. Rubinstein. “RS-Del: Edit Distance
+Robustness Certificates for Sequence Classifiers via Randomized
+Deletion”. In: <em>Advances in Neural Information Processing
+Systems</em>. NeurIPS. Accepted. 2023 [<a
+href="https://arxiv.org/abs/2302.01757">PDF</a>; <a
+href="https://neurips.cc/virtual/2023/poster/70896">publisher link</a>;
+<a href="https://github.com/Dovermore/randomized-deletion">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('huang2023rsdel.bib', 'bibtex-huang2023rsdel')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -376,7 +366,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>He, Xuanli, Qiongkai Xu, Jun Wang, Benjamin I. P. Rubinstein, and Trevor Cohn. “Mitigating Backdoor Poisoning Attacks through the Lens of Spurious Correlation”. In: <em>The 2023 Conference on Empirical Methods in Natural Language Processing</em>. EMNLP. Accepted. 2023 [<a href="https://arxiv.org/abs/2305.11596">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('he2023mitigating.bib', 'bibtex-he2023mitigating')">BibTeX</a>]</li>
+<li>He, Xuanli, Qiongkai Xu, Jun Wang, Benjamin I. P. Rubinstein, and
+Trevor Cohn. “Mitigating Backdoor Poisoning Attacks through the Lens of
+Spurious Correlation”. In: <em>The 2023 Conference on Empirical Methods
+in Natural Language Processing</em>. EMNLP. Accepted. 2023 [<a
+href="https://arxiv.org/abs/2305.11596">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('he2023mitigating.bib', 'bibtex-he2023mitigating')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -392,7 +387,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Shijie, Andrew C. Cullen, Paul Montague, Sarah Monazam Erfani, and Benjamin I. P. Rubinstein. “Enhancing the Antidote: Improved Pointwise Certifications against Poisoning Attacks”. In: <em>Proceedings of the 37th AAAI Conference on Artificial Intelligence</em>. AAAI. 2023, pp. 8861-8869 [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26065">publisher link</a>; <a href="https://arxiv.org/abs/2308.07553">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2023enhancing.bib', 'bibtex-liu2023enhancing')">BibTeX</a>]</li>
+<li>Liu, Shijie, Andrew C. Cullen, Paul Montague, Sarah Monazam Erfani,
+and Benjamin I. P. Rubinstein. “Enhancing the Antidote: Improved
+Pointwise Certifications against Poisoning Attacks”. In: <em>Proceedings
+of the 37th AAAI Conference on Artificial Intelligence</em>. AAAI. 2023,
+pp. 8861-8869 [<a
+href="https://ojs.aaai.org/index.php/AAAI/article/view/26065">publisher
+link</a>; <a href="https://arxiv.org/abs/2308.07553">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('liu2023enhancing.bib', 'bibtex-liu2023enhancing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -408,7 +410,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and Renata Borovica-Gajic. “No DBA? No regret! Multi-armed bandits for index tuning of analytical and HTAP workloads with provable guarantees”. In: <em>IEEE Transactions on Knowledge and Data Engineering</em> (2023). Accepted, p. 18 [<a href="https://ieeexplore.ieee.org/document/10113193">publisher link</a>; <a href="https://arxiv.org/abs/2108.10130">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('perera2023nodba.bib', 'bibtex-perera2023nodba')">BibTeX</a>]</li>
+<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and
+Renata Borovica-Gajic. “No DBA? No regret! Multi-armed bandits for index
+tuning of analytical and HTAP workloads with provable guarantees”. In:
+<em>IEEE Transactions on Knowledge and Data Engineering</em> (2023).
+Accepted, p. 18 [<a
+href="https://ieeexplore.ieee.org/document/10113193">publisher link</a>;
+<a href="https://arxiv.org/abs/2108.10130">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('perera2023nodba.bib', 'bibtex-perera2023nodba')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -427,7 +436,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Marchant, Neil G., Benjamin I. P. Rubinstein, and Rebecca C. Steorts. “Bayesian Graphical Entity Resolution using Exchangeable Random Partition Priors”. In: <em>Journal of Survey Statistics and Methodology</em> 11.3 (Jun. 2023), pp. 569-596 [<a href="https://doi.org/10.1093/jssam/smac030">publisher link</a>; <a href="https://arxiv.org/abs/2301.02962">full</a>; <a href="https://github.com/cleanzr/exchanger-experiments">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2023bayesian.bib', 'bibtex-marchant2023bayesian')">BibTeX</a>]</li>
+<li>Marchant, Neil G., Benjamin I. P. Rubinstein, and Rebecca C.
+Steorts. “Bayesian Graphical Entity Resolution using Exchangeable Random
+Partition Priors”. In: <em>Journal of Survey Statistics and
+Methodology</em> 11.3 (Jun. 2023), pp. 569-596 [<a
+href="https://doi.org/10.1093/jssam/smac030">publisher link</a>; <a
+href="https://arxiv.org/abs/2301.02962">full</a>; <a
+href="https://github.com/cleanzr/exchanger-experiments">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('marchant2023bayesian.bib', 'bibtex-marchant2023bayesian')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -443,7 +459,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Oetomo, Bastian Saputra, R. Malinga Perera, Renata Borovica-Gajic, and Benjamin I. P. Rubinstein. “Cutting to the Chase with Warm-Start Contextual Bandits”. In: <em>Knowledge and Information Systems</em> 65 (2023), pp. 3533-3565 [<a href="https://link.springer.com/article/10.1007/s10115-023-01861-2">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('oetomo2023cutting.bib', 'bibtex-oetomo2023cutting')">BibTeX</a>]</li>
+<li>Oetomo, Bastian Saputra, R. Malinga Perera, Renata Borovica-Gajic,
+and Benjamin I. P. Rubinstein. “Cutting to the Chase with Warm-Start
+Contextual Bandits”. In: <em>Knowledge and Information Systems</em> 65
+(2023), pp. 3533-3565 [<a
+href="https://link.springer.com/article/10.1007/s10115-023-01861-2">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('oetomo2023cutting.bib', 'bibtex-oetomo2023cutting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -459,7 +480,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit Camtepe. “To Act or Not To Act: An Adversarial Game for Securing Vehicle Platoons”. In: <em>IEEE Transactions on Information Forensics and Security</em> 19 (2023), pp. 164-177 [<a href="https://ieeexplore.ieee.org/document/10266364">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('sun2023to.bib', 'bibtex-sun2023to')">BibTeX</a>]</li>
+<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit
+Camtepe. “To Act or Not To Act: An Adversarial Game for Securing Vehicle
+Platoons”. In: <em>IEEE Transactions on Information Forensics and
+Security</em> 19 (2023), pp. 164-177 [<a
+href="https://ieeexplore.ieee.org/document/10266364">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('sun2023to.bib', 'bibtex-sun2023to')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -475,7 +501,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cullen, Andrew C., Benjamin I. P. Rubinstein, Sithamparanathan Kandeepan, Barry Flower, and Philip H. W. Leong. “Predicting dynamic spectrum allocation: a review covering simulation, modelling, and prediction”. In: <em>Artificial Intelligence Review</em> 56 (2023), pp. 10921-10959 [<a href="https://doi.org/10.1007/s10462-023-10449-9">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cullen2023predicting.bib', 'bibtex-cullen2023predicting')">BibTeX</a>]</li>
+<li>Cullen, Andrew C., Benjamin I. P. Rubinstein, Sithamparanathan
+Kandeepan, Barry Flower, and Philip H. W. Leong. “Predicting dynamic
+spectrum allocation: a review covering simulation, modelling, and
+prediction”. In: <em>Artificial Intelligence Review</em> 56 (2023), pp.
+10921-10959 [<a
+href="https://doi.org/10.1007/s10462-023-10449-9">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('cullen2023predicting.bib', 'bibtex-cullen2023predicting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -491,7 +523,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>He, Xuanli, Jun Wang, Benjamin Rubinstein, and Trevor Cohn. “IMBERT: Making BERT Immune to Insertion-based Backdoor Attacks”. In: <em>Proceedings of the 3rd Workshop on Trustworthy Natural Language Processing</em>. TrustNLP. Co-located with ACL. 2023, pp. 287-301 [<a href="https://aclanthology.org/2023.trustnlp-1.25/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('he2023imbert.bib', 'bibtex-he2023imbert')">BibTeX</a>]</li>
+<li>He, Xuanli, Jun Wang, Benjamin Rubinstein, and Trevor Cohn. “IMBERT:
+Making BERT Immune to Insertion-based Backdoor Attacks”. In:
+<em>Proceedings of the 3rd Workshop on Trustworthy Natural Language
+Processing</em>. TrustNLP. Co-located with ACL. 2023, pp. 287-301 [<a
+href="https://aclanthology.org/2023.trustnlp-1.25/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('he2023imbert.bib', 'bibtex-he2023imbert')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -508,7 +545,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sun, Guoxin, Tansu Alpcan, Andrew C. Cullen, Seyit Camtepe, and Benjamin I. P. Rubinstein. “An Adversarial Strategic Game for Machine Learning as a Service using System Features”. In: <em>Proceedings of the 2023 International Conference on Autonomous Agents and Multiagent Systems</em>. AAMAS. Extended abstract. 2023, pp. 2508-2510 [<a href="https://dl.acm.org/doi/10.5555/3545946.3598984">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('sun2023an.bib', 'bibtex-sun2023an')">BibTeX</a>]</li>
+<li>Sun, Guoxin, Tansu Alpcan, Andrew C. Cullen, Seyit Camtepe, and
+Benjamin I. P. Rubinstein. “An Adversarial Strategic Game for Machine
+Learning as a Service using System Features”. In: <em>Proceedings of the
+2023 International Conference on Autonomous Agents and Multiagent
+Systems</em>. AAMAS. Extended abstract. 2023, pp. 2508-2510 [<a
+href="https://dl.acm.org/doi/10.5555/3545946.3598984">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('sun2023an.bib', 'bibtex-sun2023an')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -523,7 +566,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Guanli, Jianzhong Qi, Lars Kulik, Kazuya Soga, Renata Borovica-Gajic, and Benjamin I. P. Rubinstein. “Efficient Index Learning via Model Reuse and Fine-tuning”. In: <em>International Workshop on Databases and Machine Learning</em>. DBML. Co-located with ICDE. Accepted. 2023 [<a style="cursor: pointer;" onclick="DownloadToFile('liu2023efficient.bib', 'bibtex-liu2023efficient')">BibTeX</a>]</li>
+<li>Liu, Guanli, Jianzhong Qi, Lars Kulik, Kazuya Soga, Renata
+Borovica-Gajic, and Benjamin I. P. Rubinstein. “Efficient Index Learning
+via Model Reuse and Fine-tuning”. In: <em>International Workshop on
+Databases and Machine Learning</em>. DBML. Co-located with ICDE.
+Accepted. 2023 [<a style="cursor: pointer;" onclick="DownloadToFile('liu2023efficient.bib', 'bibtex-liu2023efficient')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -539,7 +586,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Gao, Wentao, Van-Thuan Pham, Dongge Liu, Oliver Chang, Toby Murray, and Benjamin I.P. Rubinstein. “Beyond the Coverage Plateau: A Comprehensive Study of Fuzz Blockers (Registered Report)”. In: <em>Proceedings of the 2nd International Fuzzing Workshop</em>. FUZZING. 2023, pp. 47-55 [<a href="https://doi.org/10.1145/3605157.3605177">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('gao2023beyond.bib', 'bibtex-gao2023beyond')">BibTeX</a>]</li>
+<li>Gao, Wentao, Van-Thuan Pham, Dongge Liu, Oliver Chang, Toby Murray,
+and Benjamin I.P. Rubinstein. “Beyond the Coverage Plateau: A
+Comprehensive Study of Fuzz Blockers (Registered Report)”. In:
+<em>Proceedings of the 2nd International Fuzzing Workshop</em>. FUZZING.
+2023, pp. 47-55 [<a
+href="https://doi.org/10.1145/3605157.3605177">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('gao2023beyond.bib', 'bibtex-gao2023beyond')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -553,7 +606,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhang, Ruihan, Tim Miller, Krista Ehinger, and Benjamin Rubinstein. “Make Predictions Predictable: Fast Concept-based Counterfactual Explanations for Images”. In: <em>Proceedings of the IJCAI 2023 Workshop on XAI</em>. Co-located with IJCAI. Accepted. 2023 [<a href="https://drive.google.com/file/d/1YCm5xVpvbMzfOoiiEWpTffuhkhKZsI7O/view?usp=sharing">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2023make.bib', 'bibtex-zhang2023make')">BibTeX</a>]</li>
+<li>Zhang, Ruihan, Tim Miller, Krista Ehinger, and Benjamin Rubinstein.
+“Make Predictions Predictable: Fast Concept-based Counterfactual
+Explanations for Images”. In: <em>Proceedings of the IJCAI 2023 Workshop
+on XAI</em>. Co-located with IJCAI. Accepted. 2023 [<a
+href="https://drive.google.com/file/d/1YCm5xVpvbMzfOoiiEWpTffuhkhKZsI7O/view?usp=sharing">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2023make.bib', 'bibtex-zhang2023make')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -567,7 +625,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhang, Ruihan, Tim Miller, Krista Ehinger, and Benjamin Rubinstein. “Comparison of Supervised and Unsupervised Concepts in Concept-based Interpretable Models”. In: <em>Proceedings of the IJCAI 2023 Workshop on XAI</em>. Co-located with IJCAI. Accepted. 2023 [<a href="https://drive.google.com/file/d/13MPWLMARWIKMJqeL2mazfQvOK6-QcmEG/view?usp=sharing">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2023comparison.bib', 'bibtex-zhang2023comparison')">BibTeX</a>]</li>
+<li>Zhang, Ruihan, Tim Miller, Krista Ehinger, and Benjamin Rubinstein.
+“Comparison of Supervised and Unsupervised Concepts in Concept-based
+Interpretable Models”. In: <em>Proceedings of the IJCAI 2023 Workshop on
+XAI</em>. Co-located with IJCAI. Accepted. 2023 [<a
+href="https://drive.google.com/file/d/13MPWLMARWIKMJqeL2mazfQvOK6-QcmEG/view?usp=sharing">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2023comparison.bib', 'bibtex-zhang2023comparison')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -582,7 +645,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah M. Erfani, and Benjamin I. P. Rubinstein. <em>Exploiting Certified Defences to Attack Randomised Smoothing</em>. arXiv:2302.04379 [cs.LG]. Feb. 2023 [<a href="https://arxiv.org/abs/2302.04379">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cullen2023exploiting.bib', 'bibtex-cullen2023exploiting')">BibTeX</a>]</li>
+<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah M. Erfani, and
+Benjamin I. P. Rubinstein. <em>Exploiting Certified Defences to Attack
+Randomised Smoothing</em>. arXiv:2302.04379 [cs.LG]. Feb. 2023 [<a
+href="https://arxiv.org/abs/2302.04379">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('cullen2023exploiting.bib', 'bibtex-cullen2023exploiting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -598,7 +665,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Jin, Jiankai, Olga Ohrimenko, and Benjamin I. P. Rubinstein. <em>Getting a-Round Guarantees: Floating-Point Attacks on Certified Robustness</em>. arXiv:2205.10159 [cs.CR]. Feb. 2023 [<a href="https://arxiv.org/abs/2205.10159">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('jin2022getting.bib', 'bibtex-jin2022getting')">BibTeX</a>]</li>
+<li>Jin, Jiankai, Olga Ohrimenko, and Benjamin I. P. Rubinstein.
+<em>Getting a-Round Guarantees: Floating-Point Attacks on Certified
+Robustness</em>. arXiv:2205.10159 [cs.CR]. Feb. 2023 [<a
+href="https://arxiv.org/abs/2205.10159">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('jin2022getting.bib', 'bibtex-jin2022getting')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-2" class="section level3">
@@ -617,7 +688,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah Monazam Erfani, and Benjamin I. P. Rubinstein. “Double Bubble, Toil and Trouble: Enhancing Certified Robustness through Transitivity”. In: <em>Advances in Neural Information Processing Systems</em>. NeurIPS. Accepted. 2022 [<span style="color:red">Selected as Oral (7% of papers)</span>; <a href="https://arxiv.org/abs/2210.06077">full</a>; <a href="https://github.com/andrew-cullen/DoubleBubble">code</a>; <a href="https://recorder-v3.slideslive.com/#/share?share=74042&amp;s=8b0cbca4-1e05-445d-a46b-c33fae65a4f8">video</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cullen2022double.bib', 'bibtex-cullen2022double')">BibTeX</a>]</li>
+<li>Cullen, Andrew C., Paul Montague, Shijie Liu, Sarah Monazam Erfani,
+and Benjamin I. P. Rubinstein. “Double Bubble, Toil and Trouble:
+Enhancing Certified Robustness through Transitivity”. In: <em>Advances
+in Neural Information Processing Systems</em>. NeurIPS. Accepted. 2022
+[<span style="color:red">Selected as Oral (7% of papers)</span>; <a
+href="https://arxiv.org/abs/2210.06077">full</a>; <a
+href="https://github.com/andrew-cullen/DoubleBubble">code</a>; <a
+href="https://recorder-v3.slideslive.com/#/share?share=74042&amp;s=8b0cbca4-1e05-445d-a46b-c33fae65a4f8">video</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('cullen2022double.bib', 'bibtex-cullen2022double')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -633,7 +712,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, J. Hyam and Benjamin I. P. Rubinstein. “Unlabelled Sample Compression Schemes for Intersection-Closed Classes and Extremal Classes”. In: <em>Advances in Neural Information Processing Systems</em>. NeurIPS. Accepted. 2022 [<a href="https://arxiv.org/abs/2210.05455">full</a>; <a href="https://recorder-v3.slideslive.com/#/share?share=76156&amp;s=b89c0ea6-8bc0-4472-aa51-c1632814b669">video</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2022unlabelled.bib', 'bibtex-rubinstein2022unlabelled')">BibTeX</a>]</li>
+<li>Rubinstein, J. Hyam and Benjamin I. P. Rubinstein. “Unlabelled
+Sample Compression Schemes for Intersection-Closed Classes and Extremal
+Classes”. In: <em>Advances in Neural Information Processing
+Systems</em>. NeurIPS. Accepted. 2022 [<a
+href="https://arxiv.org/abs/2210.05455">full</a>; <a
+href="https://recorder-v3.slideslive.com/#/share?share=76156&amp;s=b89c0ea6-8bc0-4472-aa51-c1632814b669">video</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2022unlabelled.bib', 'bibtex-rubinstein2022unlabelled')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -648,7 +733,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Jin, Jiankai, Eleanor McMurtry, Benjamin I. P. Rubinstein, and Olga Ohrimenko. “Are We There Yet? Timing and Floating-Point Attacks on Differential Privacy Systems”. In: <em>2022 IEEE Symposium on Security and Privacy (SP)</em>. 2022, pp. 1547-1547 [<a href="https://arxiv.org/abs/2112.05307">full</a>; <a href="https://www.computer.org/csdl/proceedings-article/sp/2022/131600b547/1CIO7Ty2xr2">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('jin2022are.bib', 'bibtex-jin2022are')">BibTeX</a>]</li>
+<li>Jin, Jiankai, Eleanor McMurtry, Benjamin I. P. Rubinstein, and Olga
+Ohrimenko. “Are We There Yet? Timing and Floating-Point Attacks on
+Differential Privacy Systems”. In: <em>2022 IEEE Symposium on Security
+and Privacy (SP)</em>. 2022, pp. 1547-1547 [<a
+href="https://arxiv.org/abs/2112.05307">full</a>; <a
+href="https://www.computer.org/csdl/proceedings-article/sp/2022/131600b547/1CIO7Ty2xr2">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('jin2022are.bib', 'bibtex-jin2022are')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -666,7 +757,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and Renata Borovica-Gajic. “HMAB: Self-Driving Hierarchy of Bandits for Integrated Physical Database Design Tuning”. In: <em>Proceedings of the VLDB Endowment</em> 16.2 (2022), pp. 216-229 [<a href="http://vldb.org/pvldb/volumes/16/paper/HMAB%3A%20Self-Driving%20Hierarchy%20of%20Bandits%20for%20Integrated%20Physical%20Database%20Design%20Tuning">publisher link</a>; <a href="https://github.com/malingaperera/HMAB">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('perera2022hmab.bib', 'bibtex-perera2022hmab')">BibTeX</a>]</li>
+<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and
+Renata Borovica-Gajic. “HMAB: Self-Driving Hierarchy of Bandits for
+Integrated Physical Database Design Tuning”. In: <em>Proceedings of the
+VLDB Endowment</em> 16.2 (2022), pp. 216-229 [<a
+href="http://vldb.org/pvldb/volumes/16/paper/HMAB%3A%20Self-Driving%20Hierarchy%20of%20Bandits%20for%20Integrated%20Physical%20Database%20Design%20Tuning">publisher
+link</a>; <a href="https://github.com/malingaperera/HMAB">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('perera2022hmab.bib', 'bibtex-perera2022hmab')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -684,7 +781,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Marchant, Neil G., Benjamin I. P. Rubinstein, and Scott Alfeld. “Hard to Forget: Poisoning Attacks on Certified Machine Unlearning”. In: <em>Proceedings of the 36th AAAI Conference on Artificial Intelligence</em>. AAAI 36.7 (2022), pp. 7691-7700 [<a href="https://arxiv.org/abs/2109.08266">full</a>; <a href="https://github.com/ngmarchant/attack-unlearning">code</a>; <a href="https://doi.org/10.1609/aaai.v36i7.20736">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2022hard.bib', 'bibtex-marchant2022hard')">BibTeX</a>]</li>
+<li>Marchant, Neil G., Benjamin I. P. Rubinstein, and Scott Alfeld.
+“Hard to Forget: Poisoning Attacks on Certified Machine Unlearning”. In:
+<em>Proceedings of the 36th AAAI Conference on Artificial
+Intelligence</em>. AAAI 36.7 (2022), pp. 7691-7700 [<a
+href="https://arxiv.org/abs/2109.08266">full</a>; <a
+href="https://github.com/ngmarchant/attack-unlearning">code</a>; <a
+href="https://doi.org/10.1609/aaai.v36i7.20736">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('marchant2022hard.bib', 'bibtex-marchant2022hard')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -701,7 +805,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Edwards, Tobias, Benjamin I. P. Rubinstein, Zuhe Zhang, and Sanming Zhou. “A Graph Symmetrisation Bound on Channel Information Leakage under Blowfish Privacy”. In: <em>IEEE Transactions on Information Theory</em> 68.1 (2022), pp. 538-548 [<a href="https://arxiv.org/abs/2007.05975">full</a>; <a href="https://ieeexplore.ieee.org/document/9576501">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('edwards2020a.bib', 'bibtex-edwards2020a')">BibTeX</a>]</li>
+<li>Edwards, Tobias, Benjamin I. P. Rubinstein, Zuhe Zhang, and Sanming
+Zhou. “A Graph Symmetrisation Bound on Channel Information Leakage under
+Blowfish Privacy”. In: <em>IEEE Transactions on Information Theory</em>
+68.1 (2022), pp. 538-548 [<a
+href="https://arxiv.org/abs/2007.05975">full</a>; <a
+href="https://ieeexplore.ieee.org/document/9576501">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('edwards2020a.bib', 'bibtex-edwards2020a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -717,7 +827,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Wang, Jun, Benjamin I. P. Rubinstein, and Trevor Cohn. “Measuring and Mitigating Name Biases in Neural Machine Translation”. In: <em>Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em>. ACL. 2022, pp. 2576-2590 [<a href="https://aclanthology.org/2022.acl-long.184/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('wang2022a.bib', 'bibtex-wang2022a')">BibTeX</a>]</li>
+<li>Wang, Jun, Benjamin I. P. Rubinstein, and Trevor Cohn. “Measuring
+and Mitigating Name Biases in Neural Machine Translation”. In:
+<em>Proceedings of the 60th Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers)</em>. ACL. 2022,
+pp. 2576-2590 [<a
+href="https://aclanthology.org/2022.acl-long.184/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('wang2022a.bib', 'bibtex-wang2022a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -732,7 +848,10 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Wang, Jun, Xuanli He, Benjamin I. P. Rubinstein, and Trevor Cohn. “Foiling Training-Time Attacks on Neural Machine Translation Systems”. In: <em>Findings of the Association for Computational Linguistics: EMNLP 2022</em>. Accepted. 2022 [<a style="cursor: pointer;" onclick="DownloadToFile('wang2022foiling.bib', 'bibtex-wang2022foiling')">BibTeX</a>]</li>
+<li>Wang, Jun, Xuanli He, Benjamin I. P. Rubinstein, and Trevor Cohn.
+“Foiling Training-Time Attacks on Neural Machine Translation Systems”.
+In: <em>Findings of the Association for Computational Linguistics: EMNLP
+2022</em>. Accepted. 2022 [<a style="cursor: pointer;" onclick="DownloadToFile('wang2022foiling.bib', 'bibtex-wang2022foiling')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -748,7 +867,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Weerasinghe, Sandamal, Tansu Alpcan, Sarah M. Erfani, Christopher Leckie, and Benjamin I. P. Rubinstein. “Local Intrinsic Dimensionality Signals Adversarial Perturbations”. In: <em>2022 IEEE 61st Conference on Decision and Control</em>. CDC. Accepted. In invited session Resilience, Security, and Privacy for Intelligent and Interconnected Systems. 2022 [<a href="https://arxiv.org/abs/2109.11803">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('weera2021local.bib', 'bibtex-weera2021local')">BibTeX</a>]</li>
+<li>Weerasinghe, Sandamal, Tansu Alpcan, Sarah M. Erfani, Christopher
+Leckie, and Benjamin I. P. Rubinstein. “Local Intrinsic Dimensionality
+Signals Adversarial Perturbations”. In: <em>2022 IEEE 61st Conference on
+Decision and Control</em>. CDC. Accepted. In invited session Resilience,
+Security, and Privacy for Intelligent and Interconnected Systems. 2022
+[<a href="https://arxiv.org/abs/2109.11803">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('weera2021local.bib', 'bibtex-weera2021local')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -764,7 +889,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit Camtepe. “Securing Cyber-Physical Systems: Physics-Enhanced Adversarial Learning for Autonomous Platoons”. In: <em>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases</em>. ECML-PKDD. Accepted. 2022 [<a href="https://github.com/garrisonsun/Securing-Cyber-Physical-Systems">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('sun2022securing.bib', 'bibtex-sun2022securing')">BibTeX</a>]</li>
+<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit
+Camtepe. “Securing Cyber-Physical Systems: Physics-Enhanced Adversarial
+Learning for Autonomous Platoons”. In: <em>European Conference on
+Machine Learning and Principles and Practice of Knowledge Discovery in
+Databases</em>. ECML-PKDD. Accepted. 2022 [<a
+href="https://github.com/garrisonsun/Securing-Cyber-Physical-Systems">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('sun2022securing.bib', 'bibtex-sun2022securing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -781,7 +912,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Dongge, Van-Thuan Pham, Gidon Ernst, Toby Murray, and Benjamin I.P. Rubinstein. “State Selection Algorithms and Their Impact on The Performance of Stateful Network Protocol Fuzzing”. In: <em>2022 IEEE International Conference on Software Analysis, Evolution and Reengineering</em>. SANER. REproducibility Studies and NEgative Results (RENE) Track. 2022, pp. 720-730 [<a href="https://arxiv.org/abs/2112.15498">full</a>; <a href="https://ieeexplore.ieee.org/document/9825758">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2022state.bib', 'bibtex-liu2022state')">BibTeX</a>]</li>
+<li>Liu, Dongge, Van-Thuan Pham, Gidon Ernst, Toby Murray, and Benjamin
+I.P. Rubinstein. “State Selection Algorithms and Their Impact on The
+Performance of Stateful Network Protocol Fuzzing”. In: <em>2022 IEEE
+International Conference on Software Analysis, Evolution and
+Reengineering</em>. SANER. REproducibility Studies and NEgative Results
+(RENE) Track. 2022, pp. 720-730 [<a
+href="https://arxiv.org/abs/2112.15498">full</a>; <a
+href="https://ieeexplore.ieee.org/document/9825758">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('liu2022state.bib', 'bibtex-liu2022state')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -796,7 +935,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Bachfischer, Matthias, Renata Borovica-Gajic, and Benjamin I. P. Rubinstein. <em>Testing the Robustness of Learned Index Structures</em>. arXiv:2207.11575 [cs.DB]. Jul. 2022 [<a href="https://arxiv.org/abs/2207.11575">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('bachfischer22testing.bib', 'bibtex-bachfischer22testing')">BibTeX</a>]</li>
+<li>Bachfischer, Matthias, Renata Borovica-Gajic, and Benjamin I. P.
+Rubinstein. <em>Testing the Robustness of Learned Index Structures</em>.
+arXiv:2207.11575 [cs.DB]. Jul. 2022 [<a
+href="https://arxiv.org/abs/2207.11575">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('bachfischer22testing.bib', 'bibtex-bachfischer22testing')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-3" class="section level3">
@@ -816,7 +959,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Yang, Zhuolin, Linyi Li, Xiaojun Xu, Shiliang Zuo, Qian Chen, Pan Zhou, Benjamin Rubinstein, Ce Zhang, and Bo Li. “TRS: Transferability Reduced Ensemble via Promoting Gradient Diversity and Model Smoothness”. In: <em>Advances in Neural Information Processing Systems</em>. Vol. 34. NeurIPS. 2021, pp. 17642-17655 [<a href="https://papers.nips.cc/paper/2021/hash/937936029af671cf479fa893db91cbdd-Abstract.html">publisher link</a>; <a href="https://arxiv.org/abs/2104.00671">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('yang2021characterizing.bib', 'bibtex-yang2021characterizing')">BibTeX</a>]</li>
+<li>Yang, Zhuolin, Linyi Li, Xiaojun Xu, Shiliang Zuo, Qian Chen, Pan
+Zhou, Benjamin Rubinstein, Ce Zhang, and Bo Li. “TRS: Transferability
+Reduced Ensemble via Promoting Gradient Diversity and Model Smoothness”.
+In: <em>Advances in Neural Information Processing Systems</em>. Vol. 34.
+NeurIPS. 2021, pp. 17642-17655 [<a
+href="https://papers.nips.cc/paper/2021/hash/937936029af671cf479fa893db91cbdd-Abstract.html">publisher
+link</a>; <a href="https://arxiv.org/abs/2104.00671">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('yang2021characterizing.bib', 'bibtex-yang2021characterizing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -832,7 +982,16 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Marchant, Neil G. and Benjamin I. P. Rubinstein. “Needle in a Haystack: Label-Efficient Evaluation under Extreme Class Imbalance”. In: <em>Proceedings of the 27th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining</em>. KDD. 2021, pp. 1180-1190 [<a href="https://arxiv.org/abs/2006.06963">full</a>; <a href="https://dl.acm.org/doi/10.1145/3447548.3467435">publisher link</a>; <a href="https://github.com/ngmarchant/activeeval">code</a>; <a href="https://dl.acm.org/doi/10.1145/3447548.3467435#video_stream_uuid%3Aeff6337b-7642-4147-a135-8d0dac98bbce">video</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2021needle.bib', 'bibtex-marchant2021needle')">BibTeX</a>]</li>
+<li>Marchant, Neil G. and Benjamin I. P. Rubinstein. “Needle in a
+Haystack: Label-Efficient Evaluation under Extreme Class Imbalance”. In:
+<em>Proceedings of the 27th ACM SIGKDD International Conference on
+Knowledge Discovery &amp; Data Mining</em>. KDD. 2021, pp. 1180-1190 [<a
+href="https://arxiv.org/abs/2006.06963">full</a>; <a
+href="https://dl.acm.org/doi/10.1145/3447548.3467435">publisher
+link</a>; <a href="https://github.com/ngmarchant/activeeval">code</a>;
+<a
+href="https://dl.acm.org/doi/10.1145/3447548.3467435#video_stream_uuid%3Aeff6337b-7642-4147-a135-8d0dac98bbce">video</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('marchant2021needle.bib', 'bibtex-marchant2021needle')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -848,7 +1007,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Xu, Chang, Jun Wang, Yuqing Tang, Francisco Guzmán, Benjamin I. P. Rubinstein, and Trevor Cohn. “A Targeted Attack on Black-Box Neural Machine Translation with Parallel Data Poisoning”. In: <em>Proceedings of the Web Conference 2021</em>. WWW. 2021, pp. 3638-3650 [<a href="https://arxiv.org/abs/2011.00675">PDF</a>; <a href="https://dl.acm.org/doi/abs/10.1145/3442381.3450034">publisher link</a>; <a href="https://www.youtube.com/watch?v=PDt5Dgxe2y0">video</a>; <a style="cursor: pointer;" onclick="DownloadToFile('xu2021a.bib', 'bibtex-xu2021a')">BibTeX</a>]</li>
+<li>Xu, Chang, Jun Wang, Yuqing Tang, Francisco Guzmán, Benjamin I. P.
+Rubinstein, and Trevor Cohn. “A Targeted Attack on Black-Box Neural
+Machine Translation with Parallel Data Poisoning”. In: <em>Proceedings
+of the Web Conference 2021</em>. WWW. 2021, pp. 3638-3650 [<a
+href="https://arxiv.org/abs/2011.00675">PDF</a>; <a
+href="https://dl.acm.org/doi/abs/10.1145/3442381.3450034">publisher
+link</a>; <a
+href="https://www.youtube.com/watch?v=PDt5Dgxe2y0">video</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('xu2021a.bib', 'bibtex-xu2021a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -864,7 +1031,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and Renata Borovica-Gajic. “DBA bandits: Self-driving index tuning under ad-hoc, analytical workloads with safety guarantees”. In: <em>2021 IEEE 37th International Conference on Data Engineering</em>. ICDE. 2021, pp. 600-611 [<a href="https://arxiv.org/abs/2010.09208">full</a>; <a href="https://ieeexplore.ieee.org/abstract/document/9458699">publisher link</a>; <a href="https://youtu.be/7PohjU29Hjk">video</a>; <a style="cursor: pointer;" onclick="DownloadToFile('perera2020.bib', 'bibtex-perera2020')">BibTeX</a>]</li>
+<li>Perera, R. Malinga, Bastian Oetomo, Benjamin I. P. Rubinstein, and
+Renata Borovica-Gajic. “DBA bandits: Self-driving index tuning under
+ad-hoc, analytical workloads with safety guarantees”. In: <em>2021 IEEE
+37th International Conference on Data Engineering</em>. ICDE. 2021, pp.
+600-611 [<a href="https://arxiv.org/abs/2010.09208">full</a>; <a
+href="https://ieeexplore.ieee.org/abstract/document/9458699">publisher
+link</a>; <a href="https://youtu.be/7PohjU29Hjk">video</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('perera2020.bib', 'bibtex-perera2020')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -881,7 +1055,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Marchant, Neil G., Rebecca C. Steorts, Andee Kaplan, Benjamin I. P. Rubinstein, and Daniel N. Elazar. “d-blink: Distributed End-to-End Bayesian Entity Resolution”. In: <em>Journal of Computational and Graphical Statistics</em> 30.2 (2021), pp. 406-421 [<a href="https://arxiv.org/abs/1909.06039">full</a>; <a href="https://github.com/ngmarchant/dblink">code</a>; <a href="https://www.tandfonline.com/doi/full/10.1080/10618600.2020.1825451">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2020dblink.bib', 'bibtex-marchant2020dblink')">BibTeX</a>]</li>
+<li>Marchant, Neil G., Rebecca C. Steorts, Andee Kaplan, Benjamin I. P.
+Rubinstein, and Daniel N. Elazar. “d-blink: Distributed End-to-End
+Bayesian Entity Resolution”. In: <em>Journal of Computational and
+Graphical Statistics</em> 30.2 (2021), pp. 406-421 [<a
+href="https://arxiv.org/abs/1909.06039">full</a>; <a
+href="https://github.com/ngmarchant/dblink">code</a>; <a
+href="https://www.tandfonline.com/doi/full/10.1080/10618600.2020.1825451">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2020dblink.bib', 'bibtex-marchant2020dblink')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -897,7 +1078,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Weerasinghe, Sandamal, Benjamin I. P. Rubinstein, Tansu Alpcan, Sarah Erfani, Christopher Leckie, and Tamas Abraham. “Closing the BIG-LID: An Effective Local Intrinsic Dimensionality Defense for Nonlinear Regression Poisoning”. In: <em>Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence</em>. IJCAI. 2021, pp. 3176-3184 [<a href="https://www.ijcai.org/proceedings/2021/0437.pdf">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('weerasinghe2021closing.bib', 'bibtex-weerasinghe2021closing')">BibTeX</a>]</li>
+<li>Weerasinghe, Sandamal, Benjamin I. P. Rubinstein, Tansu Alpcan,
+Sarah Erfani, Christopher Leckie, and Tamas Abraham. “Closing the
+BIG-LID: An Effective Local Intrinsic Dimensionality Defense for
+Nonlinear Regression Poisoning”. In: <em>Proceedings of the Thirtieth
+International Joint Conference on Artificial Intelligence</em>. IJCAI.
+2021, pp. 3176-3184 [<a
+href="https://www.ijcai.org/proceedings/2021/0437.pdf">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('weerasinghe2021closing.bib', 'bibtex-weerasinghe2021closing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -913,7 +1101,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhang, Ruihan, Prashan Madumal, Tim Miller, Kris Ehinger, and Benjamin Rubinstein. “Invertible Concept-Based Explanations for CNN Models with Non-Negative Concept Activation Vectors”. In: <em>Proceedings of the 35th AAAI Conference on Artificial Intelligence</em>. AAAI. 2021, pp. 11682-11690 [<a href="https://arxiv.org/abs/2006.15417">full</a>; <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17389">publisher link</a>; <a href="https://github.com/zhangrh93/InvertibleCE">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2021improving.bib', 'bibtex-zhang2021improving')">BibTeX</a>]</li>
+<li>Zhang, Ruihan, Prashan Madumal, Tim Miller, Kris Ehinger, and
+Benjamin Rubinstein. “Invertible Concept-Based Explanations for CNN
+Models with Non-Negative Concept Activation Vectors”. In:
+<em>Proceedings of the 35th AAAI Conference on Artificial
+Intelligence</em>. AAAI. 2021, pp. 11682-11690 [<a
+href="https://arxiv.org/abs/2006.15417">full</a>; <a
+href="https://ojs.aaai.org/index.php/AAAI/article/view/17389">publisher
+link</a>; <a href="https://github.com/zhangrh93/InvertibleCE">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('zhang2021improving.bib', 'bibtex-zhang2021improving')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -929,7 +1125,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Oetomo, Bastian, R. Malinga Perera, Renata Borovica-Gajic, and Benjamin I. P. Rubinstein. “Cutting to the Chase with Warm-Start Contextual Bandits”. In: <em>2021 IEEE 21th International Conference on Data Mining</em>. ICDM. 2021, pp. 459-468 [<a href="https://ieeexplore.ieee.org/document/9679034">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('oetomo2021cutting.bib', 'bibtex-oetomo2021cutting')">BibTeX</a>]</li>
+<li>Oetomo, Bastian, R. Malinga Perera, Renata Borovica-Gajic, and
+Benjamin I. P. Rubinstein. “Cutting to the Chase with Warm-Start
+Contextual Bandits”. In: <em>2021 IEEE 21th International Conference on
+Data Mining</em>. ICDM. 2021, pp. 459-468 [<a
+href="https://ieeexplore.ieee.org/document/9679034">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('oetomo2021cutting.bib', 'bibtex-oetomo2021cutting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -945,7 +1146,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit Camtepe. “A Communication Security Game on Switched Systems for Autonomous Vehicle Platoons”. In: <em>2021 60th IEEE Conference on Decision and Control</em>. CDC. 2021, pp. 2690-2695 [<a href="http://arxiv.org/abs/2109.14208">full</a>; <a href="https://ieeexplore.ieee.org/document/9683543">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('Sun2021A.bib', 'bibtex-Sun2021A')">BibTeX</a>]</li>
+<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit
+Camtepe. “A Communication Security Game on Switched Systems for
+Autonomous Vehicle Platoons”. In: <em>2021 60th IEEE Conference on
+Decision and Control</em>. CDC. 2021, pp. 2690-2695 [<a
+href="http://arxiv.org/abs/2109.14208">full</a>; <a
+href="https://ieeexplore.ieee.org/document/9683543">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('Sun2021A.bib', 'bibtex-Sun2021A')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -960,7 +1167,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Wang, Jun, Chang Xu, Francisco Guzmán, Ahmed El-Kishky, Yuqing Tang, Benjamin I. P. Rubinstein, and Trevor Cohn. “Putting words into the system’s mouth: A targeted attack on neural machine translation using monolingual data poisoning”. In: <em>Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021</em>. 2021, pp. 1463-1473 [<a href="https://arxiv.org/abs/2107.05243">full</a>; <a href="https://github.com/JunW15/Monolingual-Attack">code</a>; <a href="https://aclanthology.org/2021.findings-acl.127">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('wang2021putting.bib', 'bibtex-wang2021putting')">BibTeX</a>]</li>
+<li>Wang, Jun, Chang Xu, Francisco Guzmán, Ahmed El-Kishky, Yuqing Tang,
+Benjamin I. P. Rubinstein, and Trevor Cohn. “Putting words into the
+system’s mouth: A targeted attack on neural machine translation using
+monolingual data poisoning”. In: <em>Findings of the Association for
+Computational Linguistics: ACL-IJCNLP 2021</em>. 2021, pp. 1463-1473 [<a
+href="https://arxiv.org/abs/2107.05243">full</a>; <a
+href="https://github.com/JunW15/Monolingual-Attack">code</a>; <a
+href="https://aclanthology.org/2021.findings-acl.127">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('wang2021putting.bib', 'bibtex-wang2021putting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -975,7 +1190,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Wang, Jun, Chang Xu, Francisco Guzmán, Ahmed El-Kishky, Yuqing Tang, Benjamin I. P. Rubinstein, and Trevor Cohn. “As Easy as 1, 2, 3: Behavioural Testing of NMT Systems for Numerical Translation”. In: <em>Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021</em>. 2021, pp. 4711-4717 [<a href="https://arxiv.org/abs/2107.08357">full</a>; <a href="https://github.com/JunW15/NumberTest">code</a>; <a href="https://aclanthology.org/2021.findings-acl.415">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('xu2021as.bib', 'bibtex-xu2021as')">BibTeX</a>]</li>
+<li>Wang, Jun, Chang Xu, Francisco Guzmán, Ahmed El-Kishky, Yuqing Tang,
+Benjamin I. P. Rubinstein, and Trevor Cohn. “As Easy as 1, 2, 3:
+Behavioural Testing of NMT Systems for Numerical Translation”. In:
+<em>Findings of the Association for Computational Linguistics:
+ACL-IJCNLP 2021</em>. 2021, pp. 4711-4717 [<a
+href="https://arxiv.org/abs/2107.08357">full</a>; <a
+href="https://github.com/JunW15/NumberTest">code</a>; <a
+href="https://aclanthology.org/2021.findings-acl.415">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('xu2021as.bib', 'bibtex-xu2021as')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -991,7 +1214,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit Camtepe. “Strategic mitigation against wireless attacks on autonomous platoons”. In: <em>European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases</em>. ECML-PKDD. 2021, pp. 69-84 [<a href="https://garrisonsun.github.io/End-to-end-atttack-detection-and-mitigation-framework/">code</a>; <a href="https://link.springer.com/chapter/10.1007/978-3-030-86514-6_5">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('Sun2021strategic.bib', 'bibtex-Sun2021strategic')">BibTeX</a>]</li>
+<li>Sun, Guoxin, Tansu Alpcan, Benjamin I. P. Rubinstein, and Seyit
+Camtepe. “Strategic mitigation against wireless attacks on autonomous
+platoons”. In: <em>European Conference on Machine Learning and
+Principles and Practice of Knowledge Discovery in Databases</em>.
+ECML-PKDD. 2021, pp. 69-84 [<a
+href="https://garrisonsun.github.io/End-to-end-atttack-detection-and-mitigation-framework/">code</a>;
+<a
+href="https://link.springer.com/chapter/10.1007/978-3-030-86514-6_5">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('Sun2021strategic.bib', 'bibtex-Sun2021strategic')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1008,7 +1239,16 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Pham, Van-Thuan, Manh-Dung Nguyen, Quang-Trung Ta, Toby Murray, and Benjamin I. P. Rubinstein. “Towards Systematic and Dynamic Task Allocation for Collaborative Parallel Fuzzing”. In: <em>Proceedings of the 36th IEEE/ACM International Conference on Automated Software Engineering</em>. ASE. New Ideas and Emerging Results (NIER) track. 2021, pp. 1337-1341 [<a href="https://github.com/MelbourneFuzzingHub/aflteam?s=09">code</a>; <a href="https://thuanpv.github.io/publications/AFLTeam-ASE21-NIER.pdf">full</a>; <a href="https://ieeexplore.ieee.org/document/9678810">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('pham2021towards.bib', 'bibtex-pham2021towards')">BibTeX</a>]</li>
+<li>Pham, Van-Thuan, Manh-Dung Nguyen, Quang-Trung Ta, Toby Murray, and
+Benjamin I. P. Rubinstein. “Towards Systematic and Dynamic Task
+Allocation for Collaborative Parallel Fuzzing”. In: <em>Proceedings of
+the 36th IEEE/ACM International Conference on Automated Software
+Engineering</em>. ASE. New Ideas and Emerging Results (NIER) track.
+2021, pp. 1337-1341 [<a
+href="https://github.com/MelbourneFuzzingHub/aflteam?s=09">code</a>; <a
+href="https://thuanpv.github.io/publications/AFLTeam-ASE21-NIER.pdf">full</a>;
+<a href="https://ieeexplore.ieee.org/document/9678810">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('pham2021towards.bib', 'bibtex-pham2021towards')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1023,7 +1263,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Xu, Chang, Jun Wang, Francisco Guzmán, Benjamin I. P. Rubinstein, and Trevor Cohn. “Mitigating Data Poisoning in Text Classification with Differential Privacy”. In: <em>Findings of the Association for Computational Linguistics: EMNLP 2021</em>. 2021, pp. 4348-4356 [<a href="https://aclanthology.org/2021.findings-emnlp.369">publisher link</a>; <a href="https://aclanthology.org/2021.findings-emnlp.369.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('xu2021mitigating.bib', 'bibtex-xu2021mitigating')">BibTeX</a>]</li>
+<li>Xu, Chang, Jun Wang, Francisco Guzmán, Benjamin I. P. Rubinstein,
+and Trevor Cohn. “Mitigating Data Poisoning in Text Classification with
+Differential Privacy”. In: <em>Findings of the Association for
+Computational Linguistics: EMNLP 2021</em>. 2021, pp. 4348-4356 [<a
+href="https://aclanthology.org/2021.findings-emnlp.369">publisher
+link</a>; <a
+href="https://aclanthology.org/2021.findings-emnlp.369.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('xu2021mitigating.bib', 'bibtex-xu2021mitigating')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1039,7 +1286,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Wang, Song, Juan Balarezo, Sithamparanathan Kandeepan, Akram Al-Hourani, Karina Gomez, and Ben Rubinstein. “Machine Learning in Network Anomaly Detection: A Survey”. In: <em>IEEE Access</em> 9 (2021), pp. 152379-152396 [<a href="https://ieeexplore.ieee.org/document/9610045">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('wang2021machine.bib', 'bibtex-wang2021machine')">BibTeX</a>]</li>
+<li>Wang, Song, Juan Balarezo, Sithamparanathan Kandeepan, Akram
+Al-Hourani, Karina Gomez, and Ben Rubinstein. “Machine Learning in
+Network Anomaly Detection: A Survey”. In: <em>IEEE Access</em> 9 (2021),
+pp. 152379-152396 [<a
+href="https://ieeexplore.ieee.org/document/9610045">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('wang2021machine.bib', 'bibtex-wang2021machine')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-4" class="section level3">
@@ -1059,7 +1311,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fish, Benjamin, Lev Reyzin, and Benjamin I. P. Rubinstein. “Sampling Without Compromising Accuracy in Adaptive Data Analysis”. In: <em>Proceedings of the 31st International Conference on Algorithmic Learning Theory</em>. ALT. PMLR. 2020, pp. 297-318 [<a href="http://proceedings.mlr.press/v117/fish20a/fish20a.pdf">PDF</a>; <a href="http://proceedings.mlr.press/v117/fish20a.html">publisher link</a>; <a href="https://arxiv.org/abs/1709.09778">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fish2020sampling.bib', 'bibtex-fish2020sampling')">BibTeX</a>]</li>
+<li>Fish, Benjamin, Lev Reyzin, and Benjamin I. P. Rubinstein. “Sampling
+Without Compromising Accuracy in Adaptive Data Analysis”. In:
+<em>Proceedings of the 31st International Conference on Algorithmic
+Learning Theory</em>. ALT. PMLR. 2020, pp. 297-318 [<a
+href="http://proceedings.mlr.press/v117/fish20a/fish20a.pdf">PDF</a>; <a
+href="http://proceedings.mlr.press/v117/fish20a.html">publisher
+link</a>; <a href="https://arxiv.org/abs/1709.09778">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('fish2020sampling.bib', 'bibtex-fish2020sampling')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1077,7 +1336,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Leins, Kobi, Chris Culnane, and Benjamin I. P. Rubinstein. “Tracking, tracing, trust: Contemplating mitigating the impact of COVID-19 through technological interventions”. In: <em>Medical Journal of Australia</em> 213.1 (Jul. 2020), pp. 6-8 [<a href="https://doi.org/10.5694/mja2.50669">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('leins2020tracking.bib', 'bibtex-leins2020tracking')">BibTeX</a>]</li>
+<li>Leins, Kobi, Chris Culnane, and Benjamin I. P. Rubinstein.
+“Tracking, tracing, trust: Contemplating mitigating the impact of
+COVID-19 through technological interventions”. In: <em>Medical Journal
+of Australia</em> 213.1 (Jul. 2020), pp. 6-8 [<a
+href="https://doi.org/10.5694/mja2.50669">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('leins2020tracking.bib', 'bibtex-leins2020tracking')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1094,7 +1358,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhou, Shuo, Howard Bondell, Antoinette Tordesillas, Benjamin I. P. Rubinstein, and James Bailey. “Early identification of an impending rockslide location via a spatially-aided Gaussian mixture model”. In: <em>Annals of Applied Statistics</em> 14.2 (2020), pp. 977-992 [<a href="papers/aoas_v3.pdf">PDF</a>; <a href="http://dx.doi.org/10.1214/20-AOAS1326">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('Zhou2020early.bib', 'bibtex-Zhou2020early')">BibTeX</a>]</li>
+<li>Zhou, Shuo, Howard Bondell, Antoinette Tordesillas, Benjamin I. P.
+Rubinstein, and James Bailey. “Early identification of an impending
+rockslide location via a spatially-aided Gaussian mixture model”. In:
+<em>Annals of Applied Statistics</em> 14.2 (2020), pp. 977-992 [<a
+href="papers/aoas_v3.pdf">PDF</a>; <a
+href="http://dx.doi.org/10.1214/20-AOAS1326">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('Zhou2020early.bib', 'bibtex-Zhou2020early')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1109,7 +1379,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and David Watts. <em>Not fit for Purpose: A critical analysis of the ‘Five Safes’</em>. arXiv:2011.02142 [cs.CR]. Nov. 2020 [<a href="https://arxiv.org/abs/2011.02142">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2020a.bib', 'bibtex-culnane2020a')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and David Watts. <em>Not
+fit for Purpose: A critical analysis of the ‘Five Safes’</em>.
+arXiv:2011.02142 [cs.CR]. Nov. 2020 [<a
+href="https://arxiv.org/abs/2011.02142">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('culnane2020a.bib', 'bibtex-culnane2020a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1125,7 +1399,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Dongge, Gidon Ernst, Toby Murray, and Benjamin I. P. Rubinstein. “Legion: Best-First Concolic Testing”. In: <em>2020 35th IEEE/ACM International Conference on Automated Software Engineering</em>. ASE. 2020, pp. 54-65 [<a href="https://github.com/Alan32Liu/Legion">code</a>; <a href="https://arxiv.org/abs/2002.06311">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2020legionb.bib', 'bibtex-liu2020legionb')">BibTeX</a>]</li>
+<li>Liu, Dongge, Gidon Ernst, Toby Murray, and Benjamin I. P.
+Rubinstein. “Legion: Best-First Concolic Testing”. In: <em>2020 35th
+IEEE/ACM International Conference on Automated Software
+Engineering</em>. ASE. 2020, pp. 54-65 [<a
+href="https://github.com/Alan32Liu/Legion">code</a>; <a
+href="https://arxiv.org/abs/2002.06311">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('liu2020legionb.bib', 'bibtex-liu2020legionb')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1142,7 +1422,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Dongge, Gidon Ernst, Toby Murray, and Benjamin I. P. Rubinstein. “Legion: Best-First Concolic Testing”. In: <em>Proceedings of the 23rd International Conference on Fundamental Approaches to Software Engineering</em>. FASE. Test-Comp session. 2020, pp. 545-549 [<a href="https://github.com/Alan32Liu/Legion">code</a>; <a href="https://link.springer.com/chapter/10.1007/978-3-030-45234-6_31">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2020legion.bib', 'bibtex-liu2020legion')">BibTeX</a>]</li>
+<li>Liu, Dongge, Gidon Ernst, Toby Murray, and Benjamin I. P.
+Rubinstein. “Legion: Best-First Concolic Testing”. In: <em>Proceedings
+of the 23rd International Conference on Fundamental Approaches to
+Software Engineering</em>. FASE. Test-Comp session. 2020, pp. 545-549
+[<a href="https://github.com/Alan32Liu/Legion">code</a>; <a
+href="https://link.springer.com/chapter/10.1007/978-3-030-45234-6_31">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2020legion.bib', 'bibtex-liu2020legion')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1159,7 +1445,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Setiawan, Naufal Fikri, Benjamin I. P. Rubinstein, and Renata Borovica-Gajic. “Function Interpolation for Learned Index Structures”. In: <em>Databases Theory and Applications</em>. ADC. 31st Australasian Database Conference. 2020, pp. 68-80 [<a href="https://link.springer.com/book/10.1007/978-3-030-39469-1">publisher link</a>; <span style="color:red">Best Student Paper Honorable Mention</span>; <a style="cursor: pointer;" onclick="DownloadToFile('setiawan2020function.bib', 'bibtex-setiawan2020function')">BibTeX</a>]</li>
+<li>Setiawan, Naufal Fikri, Benjamin I. P. Rubinstein, and Renata
+Borovica-Gajic. “Function Interpolation for Learned Index Structures”.
+In: <em>Databases Theory and Applications</em>. ADC. 31st Australasian
+Database Conference. 2020, pp. 68-80 [<a
+href="https://link.springer.com/book/10.1007/978-3-030-39469-1">publisher
+link</a>; <span style="color:red">Best Student Paper Honorable
+Mention</span>; <a style="cursor: pointer;" onclick="DownloadToFile('setiawan2020function.bib', 'bibtex-setiawan2020function')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1173,7 +1465,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Yang, Zhuolin, Linyi Li, Xiaojun Xu, Shiliang Zuo, Qian Chen, Benjamin Rubinstein, Ce Zhang, and Bo Li. <em>Characterizing Adversarial Transferability via Gradient Orthogonality and Smoothness</em>. Appeared at ICML2020 Workshop on Uncertainty &amp; Robustness in Deep Learning. 2020 [<a href="http://www.gatsby.ucl.ac.uk/~balaji/udl2020/accepted-papers/UDL2020-paper-071.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('yang2020characterizing.bib', 'bibtex-yang2020characterizing')">BibTeX</a>]</li>
+<li>Yang, Zhuolin, Linyi Li, Xiaojun Xu, Shiliang Zuo, Qian Chen,
+Benjamin Rubinstein, Ce Zhang, and Bo Li. <em>Characterizing Adversarial
+Transferability via Gradient Orthogonality and Smoothness</em>. Appeared
+at ICML2020 Workshop on Uncertainty &amp; Robustness in Deep Learning.
+2020 [<a
+href="http://www.gatsby.ucl.ac.uk/~balaji/udl2020/accepted-papers/UDL2020-paper-071.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('yang2020characterizing.bib', 'bibtex-yang2020characterizing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1189,7 +1487,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Roohi, Leyla, Benjamin I. P. Rubinstein, and Vanessa Teague. “Assessing Centrality Without Knowing Connections”. In: <em>24th Pacific-Asia Conference on Knowledge Discovery and Data Mining</em>. PAKDD. 2020, pp. 152-163 [<a href="https://arxiv.org/abs/2005.13787">full</a>; <a href="https://doi.org/10.1007/978-3-030-47436-2_12">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('roohi2020assessing.bib', 'bibtex-roohi2020assessing')">BibTeX</a>]</li>
+<li>Roohi, Leyla, Benjamin I. P. Rubinstein, and Vanessa Teague.
+“Assessing Centrality Without Knowing Connections”. In: <em>24th
+Pacific-Asia Conference on Knowledge Discovery and Data Mining</em>.
+PAKDD. 2020, pp. 152-163 [<a
+href="https://arxiv.org/abs/2005.13787">full</a>; <a
+href="https://doi.org/10.1007/978-3-030-47436-2_12">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('roohi2020assessing.bib', 'bibtex-roohi2020assessing')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1205,7 +1509,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Han, Yi, David Hubczenko, Paul Montague, Olivier De Vel, Tamas Abraham, Benjamin I. P. Rubinstein, Christopher Leckie, Tansu Alpcan, and Sarah Erfani. “Adversarial Reinforcement Learning under Partial Observability in Autonomous Computer Network Defence”. In: <em>2020 International Joint Conference on Neural Networks</em>. IJCNN. 2020, pp. 1-8 [<a href="https://arxiv.org/abs/1902.09062">full</a>; <a href="https://ieeexplore.ieee.org/abstract/document/9206634">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2020adversarial.bib', 'bibtex-han2020adversarial')">BibTeX</a>]</li>
+<li>Han, Yi, David Hubczenko, Paul Montague, Olivier De Vel, Tamas
+Abraham, Benjamin I. P. Rubinstein, Christopher Leckie, Tansu Alpcan,
+and Sarah Erfani. “Adversarial Reinforcement Learning under Partial
+Observability in Autonomous Computer Network Defence”. In: <em>2020
+International Joint Conference on Neural Networks</em>. IJCNN. 2020,
+pp. 1-8 [<a href="https://arxiv.org/abs/1902.09062">full</a>; <a
+href="https://ieeexplore.ieee.org/abstract/document/9206634">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2020adversarial.bib', 'bibtex-han2020adversarial')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1220,7 +1531,10 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Gelbhart, Roei and Benjamin I. P. Rubinstein. <em>Discrete Few-Shot Learning for Pan Privacy</em>. arXiv:2006.13120 [cs.LG]. Jun. 2020 [<a href="https://arxiv.org/abs/2006.13120">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('gelbhart2020discrete.bib', 'bibtex-gelbhart2020discrete')">BibTeX</a>]</li>
+<li>Gelbhart, Roei and Benjamin I. P. Rubinstein. <em>Discrete Few-Shot
+Learning for Pan Privacy</em>. arXiv:2006.13120 [cs.LG]. Jun. 2020 [<a
+href="https://arxiv.org/abs/2006.13120">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('gelbhart2020discrete.bib', 'bibtex-gelbhart2020discrete')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-5" class="section level3">
@@ -1240,7 +1554,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Li, Yuan, Benjamin I. P. Rubinstein, and Trevor Cohn. “Exploiting Worker Correlation for Label Aggregation in Crowdsourcing”. In: <em>Proceedings of the 36th International Conference on Machine Learning</em>. ICML. PMLR, 2019, pp. 3886-3895 [<a href="http://proceedings.mlr.press/v97/li19i.html">PDF</a>; <a href="https://github.com/yuan-li/truth-inference-at-scale">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('li2019exploiting.bib', 'bibtex-li2019exploiting')">BibTeX</a>]</li>
+<li>Li, Yuan, Benjamin I. P. Rubinstein, and Trevor Cohn. “Exploiting
+Worker Correlation for Label Aggregation in Crowdsourcing”. In:
+<em>Proceedings of the 36th International Conference on Machine
+Learning</em>. ICML. PMLR, 2019, pp. 3886-3895 [<a
+href="http://proceedings.mlr.press/v97/li19i.html">PDF</a>; <a
+href="https://github.com/yuan-li/truth-inference-at-scale">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('li2019exploiting.bib', 'bibtex-li2019exploiting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1256,7 +1576,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Li, Yuan, Benjamin I. P. Rubinstein, and Trevor Cohn. “Truth inference at scale: A Bayesian model for adjudicating highly redundant crowd annotations”. In: <em>Proceedings of the Web Conference 2019</em>. WWW. 2019, pp. 1028-1038 [<a href="http://arxiv.org/abs/1902.08918">full</a>; <a href="https://doi.org/10.1145/3308558.3313459">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('li2019truth.bib', 'bibtex-li2019truth')">BibTeX</a>]</li>
+<li>Li, Yuan, Benjamin I. P. Rubinstein, and Trevor Cohn. “Truth
+inference at scale: A Bayesian model for adjudicating highly redundant
+crowd annotations”. In: <em>Proceedings of the Web Conference 2019</em>.
+WWW. 2019, pp. 1028-1038 [<a
+href="http://arxiv.org/abs/1902.08918">full</a>; <a
+href="https://doi.org/10.1145/3308558.3313459">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('li2019truth.bib', 'bibtex-li2019truth')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1272,7 +1598,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Roohi, Leyla, Benjamin I. P. Rubinstein, and Vanessa Teague. “Differentially-Private Two-Party Egocentric Betweenness Centrality”. In: <em>The 38th Annual IEEE International Conference on Computer Communications</em>. INFOCOM. 2019, pp. 2233-2241 [<a href="https://arxiv.org/abs/1901.05562">full</a>; <a href="https://doi.org/10.1109/INFOCOM.2019.8737405">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('roohi2019differentiallyprivate.bib', 'bibtex-roohi2019differentiallyprivate')">BibTeX</a>]</li>
+<li>Roohi, Leyla, Benjamin I. P. Rubinstein, and Vanessa Teague.
+“Differentially-Private Two-Party Egocentric Betweenness Centrality”.
+In: <em>The 38th Annual IEEE International Conference on Computer
+Communications</em>. INFOCOM. 2019, pp. 2233-2241 [<a
+href="https://arxiv.org/abs/1901.05562">full</a>; <a
+href="https://doi.org/10.1109/INFOCOM.2019.8737405">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('roohi2019differentiallyprivate.bib', 'bibtex-roohi2019differentiallyprivate')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1288,7 +1620,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Alfeld, Scott, Ara Vartanian, Lucas Newman-Johnson, and Benjamin I.P Rubinstein. “Attacking Data Transforming Learners at Training Time”. In: <em>Proceedings of the 33rd AAAI Conference on Artificial Intelligence</em>. AAAI. 2019, pp. 3167-3174 [<a href="https://aaai.org/ojs/index.php/AAAI/article/view/4183">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alfeld2019attacking.bib', 'bibtex-alfeld2019attacking')">BibTeX</a>]</li>
+<li>Alfeld, Scott, Ara Vartanian, Lucas Newman-Johnson, and Benjamin I.P
+Rubinstein. “Attacking Data Transforming Learners at Training Time”. In:
+<em>Proceedings of the 33rd AAAI Conference on Artificial
+Intelligence</em>. AAAI. 2019, pp. 3167-3174 [<a
+href="https://aaai.org/ojs/index.php/AAAI/article/view/4183">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alfeld2019attacking.bib', 'bibtex-alfeld2019attacking')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1302,7 +1639,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Joseph, Anthony D., Blaine Nelson, Benjamin I. P. Rubinstein, and J. D. Tygar. <em>Adversarial Machine Learning</em>. Cambridge University Press, 2019 [<a href="https://www.cambridge.org/core/books/adversarial-machine-learning/C42A9D49CBC626DF7B8E54E72974AA3B">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('joseph2019adversarial.bib', 'bibtex-joseph2019adversarial')">BibTeX</a>]</li>
+<li>Joseph, Anthony D., Blaine Nelson, Benjamin I. P. Rubinstein, and J.
+D. Tygar. <em>Adversarial Machine Learning</em>. Cambridge University
+Press, 2019 [<a
+href="https://www.cambridge.org/core/books/adversarial-machine-learning/C42A9D49CBC626DF7B8E54E72974AA3B">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('joseph2019adversarial.bib', 'bibtex-joseph2019adversarial')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1319,7 +1660,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. “Data Security and AI”. In: <em>Closer to the machine: Technical, social, and legal aspects of AI</em>. Ed. by Cliff Betram, Asher Gibson and Adriana Nugent. Office of the Victorian Information Commissioner, 2019, pp. 105-119 [<a href="https://ovic.vic.gov.au/closer-to-the-machine-ai-publication/">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2019data.bib', 'bibtex-rubinstein2019data')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. “Data Security and AI”. In: <em>Closer to
+the machine: Technical, social, and legal aspects of AI</em>. Ed. by
+Cliff Betram, Asher Gibson and Adriana Nugent. Office of the Victorian
+Information Commissioner, 2019, pp. 105-119 [<a
+href="https://ovic.vic.gov.au/closer-to-the-machine-ai-publication/">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2019data.bib', 'bibtex-rubinstein2019data')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1336,7 +1682,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague. <em>Stop the Open Data Bus, We Want to Get Off</em>. Aug. 2019. arXiv: 1908.05004 [cs.CR]. [<a href="https://arxiv.org/pdf/1908.05004">PDF</a>; <a href="https://pursuit.unimelb.edu.au/articles/two-data-points-enough-to-spot-you-in-open-transport-records">pop article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2019stop.bib', 'bibtex-culnane2019stop')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague.
+<em>Stop the Open Data Bus, We Want to Get Off</em>. Aug. 2019. arXiv:
+1908.05004 [cs.CR]. [<a href="https://arxiv.org/pdf/1908.05004">PDF</a>;
+<a
+href="https://pursuit.unimelb.edu.au/articles/two-data-points-enough-to-spot-you-in-open-transport-records">pop
+article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2019stop.bib', 'bibtex-culnane2019stop')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1353,7 +1704,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Oetomo, Bastian, Malinga Perera, Renata Borovica-Gajic, and Benjamin I. P. Rubinstein. <em>A Note on Bounding Regret of the C<span class="math inline">\(^2\)</span>UCB Contextual Combinatorial Bandit</em>. Feb. 2019. arXiv: 1902.07500 [cs.LG]. [<a href="https://arxiv.org/pdf/1902.07500">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('oetomo2019a.bib', 'bibtex-oetomo2019a')">BibTeX</a>]</li>
+<li>Oetomo, Bastian, Malinga Perera, Renata Borovica-Gajic, and Benjamin
+I. P. Rubinstein. <em>A Note on Bounding Regret of the C<span
+class="math inline">\(^2\)</span>UCB Contextual Combinatorial
+Bandit</em>. Feb. 2019. arXiv: 1902.07500 [cs.LG]. [<a
+href="https://arxiv.org/pdf/1902.07500">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('oetomo2019a.bib', 'bibtex-oetomo2019a')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-6" class="section level3">
@@ -1374,7 +1730,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Histogramming Privately Ever After: Differentially-Private Data-Dependent Error Bound Optimisation”. In: <em>2018 IEEE 34th International Conference on Data Engineering</em>. ICDE. IEEE. Apr. 2018, pp. 1204-1207 [<a href="https://arxiv.org/abs/1702.05607">full</a>; <a href="http://doi.ieeecomputersociety.org/10.1109/ICDE.2018.00111">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2018histogramming.bib', 'bibtex-fanaeepour2018histogramming')">BibTeX</a>]</li>
+<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Histogramming
+Privately Ever After: Differentially-Private Data-Dependent Error Bound
+Optimisation”. In: <em>2018 IEEE 34th International Conference on Data
+Engineering</em>. ICDE. IEEE. Apr. 2018, pp. 1204-1207 [<a
+href="https://arxiv.org/abs/1702.05607">full</a>; <a
+href="http://doi.ieeecomputersociety.org/10.1109/ICDE.2018.00111">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2018histogramming.bib', 'bibtex-fanaeepour2018histogramming')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1391,7 +1753,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Han, Yi, Benjamin I. P. Rubinstein, Tamas Abraham, Tansu Alpcan, Olivier De Vel, Sarah Erfani, David Hubczenko, Christopher Leckie, and Paul Montague. “Reinforcement Learning for Autonomous Defence in Software-Defined Networking”. In: <em>9th International Conference on Decision and Game Theory for Security</em>. GameSec. Springer. 2018, pp. 145-165 [<a href="https://arxiv.org/abs/1808.05770">full</a>; <a href="https://link.springer.com/book/10.1007/978-3-030-01554-1">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2018reinforcement.bib', 'bibtex-han2018reinforcement')">BibTeX</a>]</li>
+<li>Han, Yi, Benjamin I. P. Rubinstein, Tamas Abraham, Tansu Alpcan,
+Olivier De Vel, Sarah Erfani, David Hubczenko, Christopher Leckie, and
+Paul Montague. “Reinforcement Learning for Autonomous Defence in
+Software-Defined Networking”. In: <em>9th International Conference on
+Decision and Game Theory for Security</em>. GameSec. Springer. 2018, pp.
+145-165 [<a href="https://arxiv.org/abs/1808.05770">full</a>; <a
+href="https://link.springer.com/book/10.1007/978-3-030-01554-1">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2018reinforcement.bib', 'bibtex-han2018reinforcement')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1410,7 +1779,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Differentially private counting of users’ spatial regions”. In: <em>Knowledge and Information Systems</em> 54.1 (Jan. 2018), pp. 1-28 [<a href="https://link.springer.com/article/10.1007/s10115-017-1113-6">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2018differentially.bib', 'bibtex-fanaeepour2018differentially')">BibTeX</a>]</li>
+<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Differentially
+private counting of users’ spatial regions”. In: <em>Knowledge and
+Information Systems</em> 54.1 (Jan. 2018), pp. 1-28 [<a
+href="https://link.springer.com/article/10.1007/s10115-017-1113-6">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2018differentially.bib', 'bibtex-fanaeepour2018differentially')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1428,7 +1801,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Lyu, Lingjuan, Karthik Nandakumar, Benjamin I. P. Rubinstein, Jiong Jin, Justin Bedo, and Marimuthu Palaniswami. “PPFA: Privacy-Preserving Fog-enabled Aggregation in Smart Grid”. In: <em>IEEE Transactions on Industrial Informatics</em> 14.8 (Aug. 2018), pp. 3733-3744 [<a href="https://ieeexplore.ieee.org/document/8286939/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('lyu2018ppfa.bib', 'bibtex-lyu2018ppfa')">BibTeX</a>]</li>
+<li>Lyu, Lingjuan, Karthik Nandakumar, Benjamin I. P. Rubinstein, Jiong
+Jin, Justin Bedo, and Marimuthu Palaniswami. “PPFA: Privacy-Preserving
+Fog-enabled Aggregation in Smart Grid”. In: <em>IEEE Transactions on
+Industrial Informatics</em> 14.8 (Aug. 2018), pp. 3733-3744 [<a
+href="https://ieeexplore.ieee.org/document/8286939/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('lyu2018ppfa.bib', 'bibtex-lyu2018ppfa')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1445,7 +1823,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague. <em>Options for encoding names for data linking at the Australian Bureau of Statistics</em>. Feb. 2018. arXiv: 1802.07975 [cs.CR]. [<a href="https://arxiv.org/pdf/1802.07975">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2018options.bib', 'bibtex-culnane2018options')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague.
+<em>Options for encoding names for data linking at the Australian Bureau
+of Statistics</em>. Feb. 2018. arXiv: 1802.07975 [cs.CR]. [<a
+href="https://arxiv.org/pdf/1802.07975">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('culnane2018options.bib', 'bibtex-culnane2018options')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1462,7 +1844,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Aye, Zay Maung Maung, Kotagiri Ramamohanaro, and Benjamin I. P. Rubinstein. “Fast Manifold Landmarking with Locality Sensitive Hashing”. In: <em>22nd Pacific-Asia Conference on Knowledge Discovery and Data Mining</em>. PAKDD. Feb. 2018, pp. 452-464 [<a href="https://link.springer.com/chapter/10.1007/978-3-319-93040-4_36">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('aye2018fast.bib', 'bibtex-aye2018fast')">BibTeX</a>]</li>
+<li>Aye, Zay Maung Maung, Kotagiri Ramamohanaro, and Benjamin I. P.
+Rubinstein. “Fast Manifold Landmarking with Locality Sensitive Hashing”.
+In: <em>22nd Pacific-Asia Conference on Knowledge Discovery and Data
+Mining</em>. PAKDD. Feb. 2018, pp. 452-464 [<a
+href="https://link.springer.com/chapter/10.1007/978-3-319-93040-4_36">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('aye2018fast.bib', 'bibtex-aye2018fast')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1479,7 +1866,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Han, Yi and Benjamin I. P. Rubinstein. “Adequacy of the Gradient-Descent Method for Classifier Evasion Attacks”. In: <em>AAAI-18 Workshop on Artificial Intelligence for Cyber Security</em>. AICS. Jan. 2018, pp. 237-244 [<a href="https://arxiv.org/pdf/1704.01704">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2018adequacy.bib', 'bibtex-han2018adequacy')">BibTeX</a>]</li>
+<li>Han, Yi and Benjamin I. P. Rubinstein. “Adequacy of the
+Gradient-Descent Method for Classifier Evasion Attacks”. In: <em>AAAI-18
+Workshop on Artificial Intelligence for Cyber Security</em>. AICS. Jan.
+2018, pp. 237-244 [<a href="https://arxiv.org/pdf/1704.01704">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('han2018adequacy.bib', 'bibtex-han2018adequacy')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-7" class="section level3">
@@ -1501,7 +1892,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Marchant, Neil G. and Benjamin I. P. Rubinstein. “In Search of an Entity Resolution OASIS: Optimal Asymptotic Sequential Importance Sampling”. In: <em>Proceedings of the VLDB Endowment</em> 10.11 (Feb. 2017), pp. 1322-1333 [<a href="http://www.vldb.org/pvldb/vol10/p1322-rubinstein.pdf">PDF</a>; <a href="https://arxiv.org/abs/1703.00617">full</a>; <a href="http://git.io/OASIS">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2017in.bib', 'bibtex-marchant2017in')">BibTeX</a>]</li>
+<li>Marchant, Neil G. and Benjamin I. P. Rubinstein. “In Search of an
+Entity Resolution OASIS: Optimal Asymptotic Sequential Importance
+Sampling”. In: <em>Proceedings of the VLDB Endowment</em> 10.11
+(Feb. 2017), pp. 1322-1333 [<a
+href="http://www.vldb.org/pvldb/vol10/p1322-rubinstein.pdf">PDF</a>; <a
+href="https://arxiv.org/abs/1703.00617">full</a>; <a
+href="http://git.io/OASIS">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('marchant2017in.bib', 'bibtex-marchant2017in')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1519,7 +1916,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. and Francesco Alda. “Pain-Free Random Differential Privacy with Sensitivity Sampling”. In: <em>Proceedings of the 34th International Conference on Machine Learning</em>. ICML. PMLR. May. 2017, pp. 2950-2959 [<a href="http://proceedings.mlr.press/v70/rubinstein17a/rubinstein17a.pdf">PDF</a>; <a href="https://arxiv.org/abs/1706.02562">full</a>; <a href="https://brubinstein.github.io/diffpriv">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2017painfree.bib', 'bibtex-rubinstein2017painfree')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. and Francesco Alda. “Pain-Free Random
+Differential Privacy with Sensitivity Sampling”. In: <em>Proceedings of
+the 34th International Conference on Machine Learning</em>. ICML. PMLR.
+May. 2017, pp. 2950-2959 [<a
+href="http://proceedings.mlr.press/v70/rubinstein17a/rubinstein17a.pdf">PDF</a>;
+<a href="https://arxiv.org/abs/1706.02562">full</a>; <a
+href="https://brubinstein.github.io/diffpriv">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2017painfree.bib', 'bibtex-rubinstein2017painfree')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1536,7 +1940,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Alda, Francesco and Benjamin I. P. Rubinstein. “The Bernstein mechanism: Function release under differential privacy”. In: <em>Proceedings of the 31st AAAI Conference on Artificial Intelligence</em>. AAAI. Feb. 2017, pp. 1705-1711 [<a href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">PDF</a>; <a href="https://arxiv.org/abs/1507.04499">full</a>; <a href="https://brubinstein.github.io/diffpriv">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alda2017the.bib', 'bibtex-alda2017the')">BibTeX</a>]</li>
+<li>Alda, Francesco and Benjamin I. P. Rubinstein. “The Bernstein
+mechanism: Function release under differential privacy”. In:
+<em>Proceedings of the 31st AAAI Conference on Artificial
+Intelligence</em>. AAAI. Feb. 2017, pp. 1705-1711 [<a
+href="http://www.aaai.org/Conferences/AAAI/2017/PreliminaryPapers/12-Alda-14735.pdf">PDF</a>;
+<a href="https://arxiv.org/abs/1507.04499">full</a>; <a
+href="https://brubinstein.github.io/diffpriv">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('alda2017the.bib', 'bibtex-alda2017the')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1554,7 +1965,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Dimitrakakis, Christos, Blaine Nelson, Zuhe Zhang, Aikateirni Mitrokotsa, and Benjamin I. P. Rubinstein. “Differential privacy for Bayesian inference through posterior sampling”. In: <em>Journal of Machine Learning Research</em> 18.11 (Mar. 2017), pp. 1-39 [<a href="http://www.jmlr.org/papers/volume18/15-257/15-257.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2017differential.bib', 'bibtex-dimitrakakis2017differential')">BibTeX</a>]</li>
+<li>Dimitrakakis, Christos, Blaine Nelson, Zuhe Zhang, Aikateirni
+Mitrokotsa, and Benjamin I. P. Rubinstein. “Differential privacy for
+Bayesian inference through posterior sampling”. In: <em>Journal of
+Machine Learning Research</em> 18.11 (Mar. 2017), pp. 1-39 [<a
+href="http://www.jmlr.org/papers/volume18/15-257/15-257.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2017differential.bib', 'bibtex-dimitrakakis2017differential')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1573,7 +1989,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Lau, Lawrence, Yamuna Kankanige, Benjamin Rubinstein, Robert Jones, Christopher Christophi, Vijayaragavan Muralidharan, and James Bailey. “Machine-learning algorithms predict graft failure after liver transplantation”. In: <em>Transplantation</em> 101.4 (Apr. 2017), pp. 125-132 [<a href="https://www.ncbi.nlm.nih.gov/pubmed/27941428">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('lau2017machinelearning.bib', 'bibtex-lau2017machinelearning')">BibTeX</a>]</li>
+<li>Lau, Lawrence, Yamuna Kankanige, Benjamin Rubinstein, Robert Jones,
+Christopher Christophi, Vijayaragavan Muralidharan, and James Bailey.
+“Machine-learning algorithms predict graft failure after liver
+transplantation”. In: <em>Transplantation</em> 101.4 (Apr. 2017),
+pp. 125-132 [<a
+href="https://www.ncbi.nlm.nih.gov/pubmed/27941428">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('lau2017machinelearning.bib', 'bibtex-lau2017machinelearning')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1587,7 +2009,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Verkade, Heather, Terrence D. Mulhern, Jason M. Lodge, Kristine Elliott, Simon Cropper, Benjamin I. P. Rubinstein, Allen Espinosa, Michelle Livett, Laura Dooley, Sarah Frankland, and Raoul Mulder. <em>Misconceptions as a trigger for enhancing student learning in higher education: A handbook for educators</em>. Published by The University of Melbourne, 2017. ISBN: 978 0 7340 5410 4 [<a href="http://hdl.handle.net/11343/197958">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('verkade2017misconceptions.bib', 'bibtex-verkade2017misconceptions')">BibTeX</a>]</li>
+<li>Verkade, Heather, Terrence D. Mulhern, Jason M. Lodge, Kristine
+Elliott, Simon Cropper, Benjamin I. P. Rubinstein, Allen Espinosa,
+Michelle Livett, Laura Dooley, Sarah Frankland, and Raoul Mulder.
+<em>Misconceptions as a trigger for enhancing student learning in higher
+education: A handbook for educators</em>. Published by The University of
+Melbourne, 2017. ISBN: 978 0 7340 5410 4 [<a
+href="http://hdl.handle.net/11343/197958">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('verkade2017misconceptions.bib', 'bibtex-verkade2017misconceptions')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1604,7 +2033,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin Rubinstein, and Rajkumar Buyya. “E-storm: Replication-based state management in distributed stream processing systems”. In: <em>46th International Conference on Parallel Processing</em>. ICPP. IEEE. 2017, pp. 571-580 [<a href="papers/E-Storm2017.pdf">PDF</a>; <a href="https://ieeexplore.ieee.org/document/8025331/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('liu2017estorm.bib', 'bibtex-liu2017estorm')">BibTeX</a>]</li>
+<li>Liu, Xunyun, Aaron Harwood, Shanika Karunasekera, Benjamin
+Rubinstein, and Rajkumar Buyya. “E-storm: Replication-based state
+management in distributed stream processing systems”. In: <em>46th
+International Conference on Parallel Processing</em>. ICPP. IEEE. 2017,
+pp. 571-580 [<a href="papers/E-Storm2017.pdf">PDF</a>; <a
+href="https://ieeexplore.ieee.org/document/8025331/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('liu2017estorm.bib', 'bibtex-liu2017estorm')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1621,7 +2056,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague. <em>Privacy Assessment of De-identified Opal Data: A report for Transport for NSW</em>. May. 2017. arXiv: 1704.08547 [cs.CR]. [<a href="https://arxiv.org/pdf/1704.08547">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2017privacy.bib', 'bibtex-culnane2017privacy')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague.
+<em>Privacy Assessment of De-identified Opal Data: A report for
+Transport for NSW</em>. May. 2017. arXiv: 1704.08547 [cs.CR]. [<a
+href="https://arxiv.org/pdf/1704.08547">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('culnane2017privacy.bib', 'bibtex-culnane2017privacy')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1637,7 +2076,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague. <em>Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK Office for National Statistics’ Privacy-Preserving Record Linkage</em>. 2017. arXiv: 1712.00871 [cs.CR]. [<a href="https://arxiv.org/pdf/1712.00871">PDF</a>; <a href="https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem">pop article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2017vulnerabilities.bib', 'bibtex-culnane2017vulnerabilities')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague.
+<em>Vulnerabilities in the use of similarity tables in combination with
+pseudonymisation to preserve data privacy in the UK Office for National
+Statistics’ Privacy-Preserving Record Linkage</em>. 2017. arXiv:
+1712.00871 [cs.CR]. [<a href="https://arxiv.org/pdf/1712.00871">PDF</a>;
+<a
+href="https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem">pop
+article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2017vulnerabilities.bib', 'bibtex-culnane2017vulnerabilities')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1654,7 +2100,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague. <em>Health Data in an Open World</em>. Dec. 2017. arXiv: 1712.05627 [cs.CY]. [<a href="https://arxiv.org/pdf/1712.05627">PDF</a>; <a href="https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem">pop article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2017health.bib', 'bibtex-culnane2017health')">BibTeX</a>]</li>
+<li>Culnane, Chris, Benjamin I. P. Rubinstein, and Vanessa Teague.
+<em>Health Data in an Open World</em>. Dec. 2017. arXiv: 1712.05627
+[cs.CY]. [<a href="https://arxiv.org/pdf/1712.05627">PDF</a>; <a
+href="https://pursuit.unimelb.edu.au/articles/how-small-details-can-create-a-big-problem">pop
+article</a>; <a style="cursor: pointer;" onclick="DownloadToFile('culnane2017health.bib', 'bibtex-culnane2017health')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1671,7 +2121,15 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Verkade, Heather, Jason M. Lodge, Kristine Elliott, Terrence D. Mulhern, Allen A. Espinosa, Simon J. Cropper, and Benjamin I. P. Rubinstein. “Exploring misconceptions as a trigger for enhancing student learning”. In: <em>Higher Education Research and Development Society of Australasia</em>. HERDSA. Apr. 2017, pp. 392-401 [<a href="http://www.herdsa.org.au/system/files/Verkade_et_al_HERDSA2017.pdf">PDF</a>; <a href="http://www.herdsa.org.au/research-and-development-higher-education-vol-40-392">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('verkade2017exploring.bib', 'bibtex-verkade2017exploring')">BibTeX</a>]</li>
+<li>Verkade, Heather, Jason M. Lodge, Kristine Elliott, Terrence D.
+Mulhern, Allen A. Espinosa, Simon J. Cropper, and Benjamin I. P.
+Rubinstein. “Exploring misconceptions as a trigger for enhancing student
+learning”. In: <em>Higher Education Research and Development Society of
+Australasia</em>. HERDSA. Apr. 2017, pp. 392-401 [<a
+href="http://www.herdsa.org.au/system/files/Verkade_et_al_HERDSA2017.pdf">PDF</a>;
+<a
+href="http://www.herdsa.org.au/research-and-development-higher-education-vol-40-392">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('verkade2017exploring.bib', 'bibtex-verkade2017exploring')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-8" class="section level3">
@@ -1691,7 +2149,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhang, Zuhe, Benjamin I. P. Rubinstein, and Christos Dimitrakakis. “On the differential privacy of Bayesian inference”. In: <em>Proceedings of the 30th AAAI Conference on Artificial Intelligence</em>. AAAI. Feb. 2016, pp. 2365-2371 [<a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/12129/11885">PDF</a>; <a href="http://arxiv.org/abs/1512.06992">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2016on.bib', 'bibtex-zhang2016on')">BibTeX</a>]</li>
+<li>Zhang, Zuhe, Benjamin I. P. Rubinstein, and Christos Dimitrakakis.
+“On the differential privacy of Bayesian inference”. In: <em>Proceedings
+of the 30th AAAI Conference on Artificial Intelligence</em>. AAAI.
+Feb. 2016, pp. 2365-2371 [<a
+href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/12129/11885">PDF</a>;
+<a href="http://arxiv.org/abs/1512.06992">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('zhang2016on.bib', 'bibtex-zhang2016on')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1708,7 +2172,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang, Sandra Milligan, and Jeffrey Chan. “MOOCs meet measurement theory: A topic-modelling approach”. In: <em>Proceedings of the 30th AAAI Conference on Artificial Intelligence</em>. AAAI. Feb. 2016, pp. 1195-1201 [<a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/11970/11722">PDF</a>; <a href="http://arxiv.org/abs/1511.07961">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('he2016moocs.bib', 'bibtex-he2016moocs')">BibTeX</a>]</li>
+<li>He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang,
+Sandra Milligan, and Jeffrey Chan. “MOOCs meet measurement theory: A
+topic-modelling approach”. In: <em>Proceedings of the 30th AAAI
+Conference on Artificial Intelligence</em>. AAAI. Feb. 2016,
+pp. 1195-1201 [<a
+href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/11970/11722">PDF</a>;
+<a href="http://arxiv.org/abs/1511.07961">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('he2016moocs.bib', 'bibtex-he2016moocs')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1726,7 +2197,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Beyond points and paths: counting private bodies”. In: <em>2016 IEEE 16th International Conference on Data Mining</em>. ICDM. IEEE. Dec. 2016, pp. 131-140 [<a href="http://arxiv.org/abs/1609.07983">full</a>; <a href="http://ieeexplore.ieee.org/document/7837837/">publisher link</a>; <span style="color:red">Winner, WiE Best Postgraduate Student Paper, IEEE Australia Council</span>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2016beyond.bib', 'bibtex-fanaeepour2016beyond')">BibTeX</a>]</li>
+<li>Fanaeepour, Maryam and Benjamin I. P. Rubinstein. “Beyond points and
+paths: counting private bodies”. In: <em>2016 IEEE 16th International
+Conference on Data Mining</em>. ICDM. IEEE. Dec. 2016, pp. 131-140 [<a
+href="http://arxiv.org/abs/1609.07983">full</a>; <a
+href="http://ieeexplore.ieee.org/document/7837837/">publisher link</a>;
+<span style="color:red">Winner, WiE Best Postgraduate Student Paper,
+IEEE Australia Council</span>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2016beyond.bib', 'bibtex-fanaeepour2016beyond')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1744,7 +2221,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Alpcan, Tansu, Benjamin I. P. Rubinstein, and Christopher Leckie. “Large-scale strategic games and adversarial machine learning”. In: <em>2016 IEEE 55th Conference on Decision and Control</em>. CDC. IEEE. Dec. 2016, pp. 4420-4426 [<a href="http://arxiv.org/abs/1609.06438">full</a>; <a href="http://ieeexplore.ieee.org/abstract/document/7798940/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alpcan2016largescale.bib', 'bibtex-alpcan2016largescale')">BibTeX</a>]</li>
+<li>Alpcan, Tansu, Benjamin I. P. Rubinstein, and Christopher Leckie.
+“Large-scale strategic games and adversarial machine learning”. In:
+<em>2016 IEEE 55th Conference on Decision and Control</em>. CDC. IEEE.
+Dec. 2016, pp. 4420-4426 [<a
+href="http://arxiv.org/abs/1609.06438">full</a>; <a
+href="http://ieeexplore.ieee.org/abstract/document/7798940/">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('alpcan2016largescale.bib', 'bibtex-alpcan2016largescale')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1763,7 +2246,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Han, Yi, Tansu Alpcan, Jeffrey Chan, Christopher Leckie, and Benjamin I. P. Rubinstein. “A game theoretical approach to defend against co-resident attacks in cloud computing: Preventing co-residence using semi-supervised learning”. In: <em>IEEE Transactions on information Forensics and Security</em> 11.3 (Mar. 2016), pp. 556-570 [<a href="http://dx.doi.org/10.1109/TIFS.2015.2505680">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2016a.bib', 'bibtex-han2016a')">BibTeX</a>]</li>
+<li>Han, Yi, Tansu Alpcan, Jeffrey Chan, Christopher Leckie, and
+Benjamin I. P. Rubinstein. “A game theoretical approach to defend
+against co-resident attacks in cloud computing: Preventing co-residence
+using semi-supervised learning”. In: <em>IEEE Transactions on
+information Forensics and Security</em> 11.3 (Mar. 2016), pp. 556-570
+[<a href="http://dx.doi.org/10.1109/TIFS.2015.2505680">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('han2016a.bib', 'bibtex-han2016a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1781,7 +2270,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Aye, Zay Maung Maung, Kotagiri Ramamohanarao, and Benjamin I. P. Rubinstein. “Large Scale Metric learning”. In: <em>2016 International Joint Conference on Neural Networks</em>. IJCNN. IEEE. Jul. 2016, pp. 1442-1449 [<a href="http://ieeexplore.ieee.org/document/7727368/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('aye2016large.bib', 'bibtex-aye2016large')">BibTeX</a>]</li>
+<li>Aye, Zay Maung Maung, Kotagiri Ramamohanarao, and Benjamin I. P.
+Rubinstein. “Large Scale Metric learning”. In: <em>2016 International
+Joint Conference on Neural Networks</em>. IJCNN. IEEE. Jul. 2016, pp.
+1442-1449 [<a
+href="http://ieeexplore.ieee.org/document/7727368/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('aye2016large.bib', 'bibtex-aye2016large')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1799,7 +2293,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Sanchez, Ivan, Zay Maung Maung Aye, Benjamin I. P. Rubinstein, and Kotagiri Ramamohanarao. “Fast trajectory clustering using Hashing methods”. In: <em>2016 International Joint Conference on Neural Networks</em>. IJCNN. IEEE. Jul. 2016, pp. 3689-3696 [<a href="http://ieeexplore.ieee.org/document/7727674/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('sanchez2016fast.bib', 'bibtex-sanchez2016fast')">BibTeX</a>]</li>
+<li>Sanchez, Ivan, Zay Maung Maung Aye, Benjamin I. P. Rubinstein, and
+Kotagiri Ramamohanarao. “Fast trajectory clustering using Hashing
+methods”. In: <em>2016 International Joint Conference on Neural
+Networks</em>. IJCNN. IEEE. Jul. 2016, pp. 3689-3696 [<a
+href="http://ieeexplore.ieee.org/document/7727674/">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('sanchez2016fast.bib', 'bibtex-sanchez2016fast')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1817,7 +2316,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Milligan, Sandra, Jiazhen He, James Bailey, Rui Zhang, and Benjamin I. P. Rubinstein. “Validity: a framework for cross-disciplinary collaboration in mining indicators of learning from MOOC forums”. In: <em>Proceedings of the Sixth International Conference on Learning Analytics &amp; Knowledge</em>. LAK. ACM. Apr. 2016, pp. 546-547 [<a href="https://doi.org/10.1145/2883851.2883956">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('milligan2016validity.bib', 'bibtex-milligan2016validity')">BibTeX</a>]</li>
+<li>Milligan, Sandra, Jiazhen He, James Bailey, Rui Zhang, and Benjamin
+I. P. Rubinstein. “Validity: a framework for cross-disciplinary
+collaboration in mining indicators of learning from MOOC forums”. In:
+<em>Proceedings of the Sixth International Conference on Learning
+Analytics &amp; Knowledge</em>. LAK. ACM. Apr. 2016, pp. 546-547 [<a
+href="https://doi.org/10.1145/2883851.2883956">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('milligan2016validity.bib', 'bibtex-milligan2016validity')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1833,7 +2338,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang, and Sandra Milligan. <em>TopicResponse: A Marriage of Topic Modelling and Rasch Modelling for Automatic Measurement in MOOCs</em>. 2016. arXiv: 1607.08720 [cs.LG]. [<a href="https://arxiv.org/pdf/1607.08720">PDF</a>; <a href="https://bitbucket.org/jiazhenhe/topicresponse">code</a>; <a style="cursor: pointer;" onclick="DownloadToFile('he2016topicresponse.bib', 'bibtex-he2016topicresponse')">BibTeX</a>]</li>
+<li>He, Jiazhen, Benjamin I. P. Rubinstein, James Bailey, Rui Zhang, and
+Sandra Milligan. <em>TopicResponse: A Marriage of Topic Modelling and
+Rasch Modelling for Automatic Measurement in MOOCs</em>. 2016. arXiv:
+1607.08720 [cs.LG]. [<a href="https://arxiv.org/pdf/1607.08720">PDF</a>;
+<a href="https://bitbucket.org/jiazhenhe/topicresponse">code</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('he2016topicresponse.bib', 'bibtex-he2016topicresponse')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-9" class="section level3">
@@ -1852,7 +2362,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>He, Jiazhen, James Bailey, Benjamin I. P. Rubinstein, and Rui Zhang. “Identifying At-Risk Students in Massive Open Online Courses”. In: <em>Proceedings of the 29th AAAI Conference on Artificial Intelligence</em>. AAAI. 2015, pp. 1749-1755 [<a href="http://www.aaai.org/Papers/AAAI/2015/13He.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('he2015identifying.bib', 'bibtex-he2015identifying')">BibTeX</a>]</li>
+<li>He, Jiazhen, James Bailey, Benjamin I. P. Rubinstein, and Rui Zhang.
+“Identifying At-Risk Students in Massive Open Online Courses”. In:
+<em>Proceedings of the 29th AAAI Conference on Artificial
+Intelligence</em>. AAAI. 2015, pp. 1749-1755 [<a
+href="http://www.aaai.org/Papers/AAAI/2015/13He.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('he2015identifying.bib', 'bibtex-he2015identifying')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1869,7 +2384,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Lim, Zhe and Benjamin I. P. Rubinstein. “Sub-Merge: Diving Down to the Attribute-Value Level in Statistical Schema Matching.” In: <em>Proceedings of the 29th AAAI Conference on Artificial Intelligence</em>. AAAI. Jan. 2015, pp. 1791-1797 [<a href="http://www.aaai.org/Papers/AAAI/2015/13Lim.pdf">PDF</a>; <a href="http://people.eng.unimelb.edu.au/brubinstein/data">dataset</a>; <a style="cursor: pointer;" onclick="DownloadToFile('lim2015submerge.bib', 'bibtex-lim2015submerge')">BibTeX</a>]</li>
+<li>Lim, Zhe and Benjamin I. P. Rubinstein. “Sub-Merge: Diving Down to
+the Attribute-Value Level in Statistical Schema Matching.” In:
+<em>Proceedings of the 29th AAAI Conference on Artificial
+Intelligence</em>. AAAI. Jan. 2015, pp. 1791-1797 [<a
+href="http://www.aaai.org/Papers/AAAI/2015/13Lim.pdf">PDF</a>; <a
+href="http://people.eng.unimelb.edu.au/brubinstein/data">dataset</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('lim2015submerge.bib', 'bibtex-lim2015submerge')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1888,7 +2409,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhang, Duo, Benjamin I. P. Rubinstein, and Jim Gemmell. “Principled graph matching algorithms for integrating multiple data sources”. In: <em>IEEE Transactions on Knowledge and Data Engineering</em> 27.10 (Apr. 2015), pp. 2784-2796 [<a href="https://arxiv.org/pdf/1402.0282">full</a>; <a href="http://ieeexplore.ieee.org/abstract/document/7095602/">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2015principled.bib', 'bibtex-zhang2015principled')">BibTeX</a>]</li>
+<li>Zhang, Duo, Benjamin I. P. Rubinstein, and Jim Gemmell. “Principled
+graph matching algorithms for integrating multiple data sources”. In:
+<em>IEEE Transactions on Knowledge and Data Engineering</em> 27.10 (Apr.
+2015), pp. 2784-2796 [<a
+href="https://arxiv.org/pdf/1402.0282">full</a>; <a
+href="http://ieeexplore.ieee.org/abstract/document/7095602/">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhang2015principled.bib', 'bibtex-zhang2015principled')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1905,7 +2432,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, J. Hyam, Benjamin I. P. Rubinstein, and Peter L. Bartlett. “Bounding embeddings of VC classes into maximum classes”. In: <em>Measures of Complexity: Festschrift of Alexey Chervonenkis</em>. Ed. by V. Vovk, H. Papadopoulos and A. Gammerman. Springer, 2015, pp. 303-325 [<a href="https://arxiv.org/pdf/1401.7388">PDF</a>; <a href="http://www.springer.com/us/book/9783319218519">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2015bounding.bib', 'bibtex-rubinstein2015bounding')">BibTeX</a>]</li>
+<li>Rubinstein, J. Hyam, Benjamin I. P. Rubinstein, and Peter L.
+Bartlett. “Bounding embeddings of VC classes into maximum classes”. In:
+<em>Measures of Complexity: Festschrift of Alexey Chervonenkis</em>. Ed.
+by V. Vovk, H. Papadopoulos and A. Gammerman. Springer, 2015,
+pp. 303-325 [<a href="https://arxiv.org/pdf/1401.7388">PDF</a>; <a
+href="http://www.springer.com/us/book/9783319218519">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2015bounding.bib', 'bibtex-rubinstein2015bounding')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1924,7 +2457,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Fanaeepour, Maryam, Lars Kulik, Egemen Tanin, and Benjamin I. P. Rubinstein. “The CASE histogram: Privacy-aware processing of trajectory data using aggregates”. In: <em>GeoInformatica</em> 19.4 (Jul. 2015), pp. 747-798 [<a href="http://link.springer.com/article/10.1007/s10707-015-0228-8">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2015the.bib', 'bibtex-fanaeepour2015the')">BibTeX</a>]</li>
+<li>Fanaeepour, Maryam, Lars Kulik, Egemen Tanin, and Benjamin I. P.
+Rubinstein. “The CASE histogram: Privacy-aware processing of trajectory
+data using aggregates”. In: <em>GeoInformatica</em> 19.4 (Jul. 2015),
+pp. 747-798 [<a
+href="http://link.springer.com/article/10.1007/s10707-015-0228-8">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('fanaeepour2015the.bib', 'bibtex-fanaeepour2015the')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-10" class="section level3">
@@ -1945,7 +2483,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Dimitrakakis, Christos, Blaine Nelson, Aikaterini Mitrokotsa, and Benjamin I. P. Rubinstein. “Robust and private Bayesian inference”. In: <em>25th International Conference on Algorithmic Learning Theory</em>. ALT. Springer. Oct. 2014, pp. 291-305 [<a href="https://arxiv.org/pdf/1306.1066v3">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2014robust.bib', 'bibtex-dimitrakakis2014robust')">BibTeX</a>]</li>
+<li>Dimitrakakis, Christos, Blaine Nelson, Aikaterini Mitrokotsa, and
+Benjamin I. P. Rubinstein. “Robust and private Bayesian inference”. In:
+<em>25th International Conference on Algorithmic Learning Theory</em>.
+ALT. Springer. Oct. 2014, pp. 291-305 [<a
+href="https://arxiv.org/pdf/1306.1066v3">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2014robust.bib', 'bibtex-dimitrakakis2014robust')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1963,7 +2506,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Biggio, Battista, Igino Corona, Blaine Nelson, Benjamin I. P. Rubinstein, Davide Maiorca, Giorgio Fumera, Giorgio Giacinto, and Fabio Roli. “Security evaluation of support vector machines in adversarial environments”. In: <em>Support Vector Machines Applications</em>. Ed. by Y. Ma and G. Guo. Springer, Feb. 2014, pp. 105-153 [<a href="http://arxiv.org/abs/1401.7727">full</a>; <a href="http://dx.doi.org/10.1007/978-3-319-02300-7_4">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('biggio2014security.bib', 'bibtex-biggio2014security')">BibTeX</a>]</li>
+<li>Biggio, Battista, Igino Corona, Blaine Nelson, Benjamin I. P.
+Rubinstein, Davide Maiorca, Giorgio Fumera, Giorgio Giacinto, and Fabio
+Roli. “Security evaluation of support vector machines in adversarial
+environments”. In: <em>Support Vector Machines Applications</em>. Ed. by
+Y. Ma and G. Guo. Springer, Feb. 2014, pp. 105-153 [<a
+href="http://arxiv.org/abs/1401.7727">full</a>; <a
+href="http://dx.doi.org/10.1007/978-3-319-02300-7_4">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('biggio2014security.bib', 'bibtex-biggio2014security')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -1980,7 +2530,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Dimitrakakis, Christos, Aikaterini Mitrokotsa, and Benjamin I. P. Rubinstein. “Proceedings of the 7th Workshop on Artificial Intelligence and Security (AISec)”. In: <em>Proceedings of the 2014 ACM Conference on Computer and Communications Security</em>. CCS. ACM Press, 2014, pp. 1-124 [<a href="https://dl.acm.org/citation.cfm?id=2666652&amp;picked=prox">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2014proceedings.bib', 'bibtex-dimitrakakis2014proceedings')">BibTeX</a>]</li>
+<li>Dimitrakakis, Christos, Aikaterini Mitrokotsa, and Benjamin I. P.
+Rubinstein. “Proceedings of the 7th Workshop on Artificial Intelligence
+and Security (AISec)”. In: <em>Proceedings of the 2014 ACM Conference on
+Computer and Communications Security</em>. CCS. ACM Press, 2014,
+pp. 1-124 [<a
+href="https://dl.acm.org/citation.cfm?id=2666652&amp;picked=prox">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('dimitrakakis2014proceedings.bib', 'bibtex-dimitrakakis2014proceedings')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-11" class="section level3">
@@ -2002,7 +2558,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Zhao, Bo, Benjamin I. P. Rubinstein, Jim Gemmell, and Jiawei Han. “A Bayesian approach to discovering truth from conflicting sources for data integration”. In: <em>Proceedings of the VLDB Endowment</em> 5.6 (Feb. 2012), pp. 550-561 [<a href="http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('zhao2012a.bib', 'bibtex-zhao2012a')">BibTeX</a>]</li>
+<li>Zhao, Bo, Benjamin I. P. Rubinstein, Jim Gemmell, and Jiawei Han. “A
+Bayesian approach to discovering truth from conflicting sources for data
+integration”. In: <em>Proceedings of the VLDB Endowment</em> 5.6 (Feb.
+2012), pp. 550-561 [<a
+href="http://vldb.org/pvldb/vol5/p550_bozhao_vldb2012.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('zhao2012a.bib', 'bibtex-zhao2012a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2021,7 +2582,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. and Aleksandr Simma. “On the stability of empirical risk minimization in the presence of multiple risk minimizers”. In: <em>IEEE Transactions on Information Theory</em> 58.7 (Jul. 2012), pp. 4160-4163 [<a href="https://arxiv.org/pdf/1002.2044">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012on.bib', 'bibtex-rubinstein2012on')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. and Aleksandr Simma. “On the stability of
+empirical risk minimization in the presence of multiple risk
+minimizers”. In: <em>IEEE Transactions on Information Theory</em> 58.7
+(Jul. 2012), pp. 4160-4163 [<a
+href="https://arxiv.org/pdf/1002.2044">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012on.bib', 'bibtex-rubinstein2012on')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2039,7 +2605,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, Steven J. Lee, Satish Rao, and J. D. Tygar. “Query strategies for evading convex-inducing classifiers”. In: <em>Journal of Machine Learning Research</em> 13.May (2012), pp. 1293-1332 [<a href="http://www.jmlr.org/papers/v13/nelson12a.html">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2012query.bib', 'bibtex-nelson2012query')">BibTeX</a>]</li>
+<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D.
+Joseph, Steven J. Lee, Satish Rao, and J. D. Tygar. “Query strategies
+for evading convex-inducing classifiers”. In: <em>Journal of Machine
+Learning Research</em> 13.May (2012), pp. 1293-1332 [<a
+href="http://www.jmlr.org/papers/v13/nelson12a.html">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('nelson2012query.bib', 'bibtex-nelson2012query')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2057,7 +2628,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. and J. Hyam Rubinstein. “A geometric approach to sample compression”. In: <em>Journal of Machine Learning Research</em> 13.Apr (2012), pp. 1221-1261 [<a href="http://www.jmlr.org/papers/volume13/rubinstein12a/rubinstein12a.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012a.bib', 'bibtex-rubinstein2012a')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. and J. Hyam Rubinstein. “A geometric
+approach to sample compression”. In: <em>Journal of Machine Learning
+Research</em> 13.Apr (2012), pp. 1221-1261 [<a
+href="http://www.jmlr.org/papers/volume13/rubinstein12a/rubinstein12a.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012a.bib', 'bibtex-rubinstein2012a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2076,7 +2651,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, Ling Huang, and Nina Taft. “Learning in a large function space: Privacy-preserving mechanisms for SVM learning”. In: <em>Journal of Privacy and Confidentiality</em> 4.1 (Aug. 2012). Special Issue on Statistical and Learning-Theoretic Challenges in Data Privacy, pp. 65-100 [<a href="https://journalprivacyconfidentiality.org/index.php/jpc/article/view/612/595">PDF</a>; <a href="https://arxiv.org/pdf/0911.5708">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012learning.bib', 'bibtex-rubinstein2012learning')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, Ling Huang, and Nina
+Taft. “Learning in a large function space: Privacy-preserving mechanisms
+for SVM learning”. In: <em>Journal of Privacy and Confidentiality</em>
+4.1 (Aug. 2012). Special Issue on Statistical and Learning-Theoretic
+Challenges in Data Privacy, pp. 65-100 [<a
+href="https://journalprivacyconfidentiality.org/index.php/jpc/article/view/612/595">PDF</a>;
+<a href="https://arxiv.org/pdf/0911.5708">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2012learning.bib', 'bibtex-rubinstein2012learning')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2095,7 +2677,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C Mitchell, Dawn Song, and Peter L. Bartlett. “A learning-based approach to reactive security”. In: <em>IEEE Transactions on Dependable and Secure Computing</em> 9.4 (Jul. 2012), pp. 482-493 [<a href="http://doi.ieeecomputersociety.org/10.1109/TDSC.2011.42">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2012a.bib', 'bibtex-barth2012a')">BibTeX</a>]</li>
+<li>Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C
+Mitchell, Dawn Song, and Peter L. Bartlett. “A learning-based approach
+to reactive security”. In: <em>IEEE Transactions on Dependable and
+Secure Computing</em> 9.4 (Jul. 2012), pp. 482-493 [<a
+href="http://doi.ieeecomputersociety.org/10.1109/TDSC.2011.42">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2012a.bib', 'bibtex-barth2012a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2113,7 +2700,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Negahban, Sahand N., Benjamin I. P. Rubinstein, and Jim Gemmell. “Scaling multiple-source entity resolution using statistically efficient transfer learning”. In: <em>Proceedings of the 21st ACM International Conference on Information and Knowledge Management</em>. CIKM. ACM. Oct. 2012, pp. 2224-2228 [<a href="http://arxiv.org/abs/1208.1860">full</a>; <a href="http://dx.doi.org/10.1145/2396761.2398606">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('negahban2012scaling.bib', 'bibtex-negahban2012scaling')">BibTeX</a>]</li>
+<li>Negahban, Sahand N., Benjamin I. P. Rubinstein, and Jim Gemmell.
+“Scaling multiple-source entity resolution using statistically efficient
+transfer learning”. In: <em>Proceedings of the 21st ACM International
+Conference on Information and Knowledge Management</em>. CIKM. ACM.
+Oct. 2012, pp. 2224-2228 [<a
+href="http://arxiv.org/abs/1208.1860">full</a>; <a
+href="http://dx.doi.org/10.1145/2396761.2398606">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('negahban2012scaling.bib', 'bibtex-negahban2012scaling')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2131,7 +2725,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cardenas, Alvaro A., Blaine Nelson, and Benjamin I. P. Rubinstein. “Fifth ACM Workshop on Artificial Intelligence and Security (AISec)”. In: <em>Proceedings of the 2012 ACM Conference on Computer and Communications Security</em>. CCS. ACM. Oct. 2012, pp. 1-110 [<a href="http://dx.doi.org/10.1145/2382196.2382327">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cardenas2012fifth.bib', 'bibtex-cardenas2012fifth')">BibTeX</a>]</li>
+<li>Cardenas, Alvaro A., Blaine Nelson, and Benjamin I. P. Rubinstein.
+“Fifth ACM Workshop on Artificial Intelligence and Security (AISec)”.
+In: <em>Proceedings of the 2012 ACM Conference on Computer and
+Communications Security</em>. CCS. ACM. Oct. 2012, pp. 1-110 [<a
+href="http://dx.doi.org/10.1145/2382196.2382327">publisher link</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('cardenas2012fifth.bib', 'bibtex-cardenas2012fifth')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-12" class="section level3">
@@ -2151,7 +2750,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Huang, Ling, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein, and J. D. Tygar. “Adversarial machine learning”. In: <em>Proceedings of the 4th ACM Workshop on Security and Artificial Intelligence</em>. ACM. Oct. 2011, pp. 43-58 [<a href="papers/aisec2011-camera-ready.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('huang2011adversarial.bib', 'bibtex-huang2011adversarial')">BibTeX</a>]</li>
+<li>Huang, Ling, Anthony D. Joseph, Blaine Nelson, Benjamin I. P.
+Rubinstein, and J. D. Tygar. “Adversarial machine learning”. In:
+<em>Proceedings of the 4th ACM Workshop on Security and Artificial
+Intelligence</em>. ACM. Oct. 2011, pp. 43-58 [<a
+href="papers/aisec2011-camera-ready.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('huang2011adversarial.bib', 'bibtex-huang2011adversarial')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2169,7 +2773,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Narayanan, Arvind, Elaine Shi, and Benjamin I. P. Rubinstein. “Link prediction by de-anonymization: How we won the Kaggle social network challenge”. In: <em>The 2011 International Joint Conference on Neural Networks</em>. IJCNN. IEEE. Feb. 2011, pp. 1825-1834 [<a href="https://arxiv.org/pdf/1102.4374">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('narayanan2011link.bib', 'bibtex-narayanan2011link')">BibTeX</a>]</li>
+<li>Narayanan, Arvind, Elaine Shi, and Benjamin I. P. Rubinstein. “Link
+prediction by de-anonymization: How we won the Kaggle social network
+challenge”. In: <em>The 2011 International Joint Conference on Neural
+Networks</em>. IJCNN. IEEE. Feb. 2011, pp. 1825-1834 [<a
+href="https://arxiv.org/pdf/1102.4374">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('narayanan2011link.bib', 'bibtex-narayanan2011link')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2186,7 +2795,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Barth, Adam, Saung Li, Benjamin I. P. Rubinstein, and Dawn Song. <em>How Open Should Open Source Be?</em> technical report UCB/EECS-2011-98. Department of Electrical Engineering &amp; Computer Sciences, UC Berkeley, Aug. 2011 [<a href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2011how.bib', 'bibtex-barth2011how')">BibTeX</a>]</li>
+<li>Barth, Adam, Saung Li, Benjamin I. P. Rubinstein, and Dawn Song.
+<em>How Open Should Open Source Be?</em> technical report
+UCB/EECS-2011-98. Department of Electrical Engineering &amp; Computer
+Sciences, UC Berkeley, Aug. 2011 [<a
+href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-98.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('barth2011how.bib', 'bibtex-barth2011how')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2203,7 +2817,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Gemmell, Jim, Benjamin I. P. Rubinstein, and Ashok K. Chandra. <em>Improving entity resolution with global constraints</em>. technical report MSR-TR-2011-100. Microsoft Research, Aug. 2011 [<a href="https://arxiv.org/abs/1108.6016">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('gemmell2011improving.bib', 'bibtex-gemmell2011improving')">BibTeX</a>]</li>
+<li>Gemmell, Jim, Benjamin I. P. Rubinstein, and Ashok K. Chandra.
+<em>Improving entity resolution with global constraints</em>. technical
+report MSR-TR-2011-100. Microsoft Research, Aug. 2011 [<a
+href="https://arxiv.org/abs/1108.6016">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('gemmell2011improving.bib', 'bibtex-gemmell2011improving')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2221,7 +2839,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Cardenas, Alvaro A., Rachel Greenstadt, and Benjamin I. P. Rubinstein. “Proceedings of the 4th Workshop on Artificial Intelligence and Security (AISec)”. In: <em>Proceedings of the 2011 ACM Conference on Computer and Communications Security</em>. CCS. ACM Press, Oct. 2011, pp. 1-116 [<a href="http://dl.acm.org/citation.cfm?id=2046684&amp;coll=DL&amp;dl=GUIDE&amp;CFID=49909398&amp;CFTOKEN=70172951">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cardenas2011proceedings.bib', 'bibtex-cardenas2011proceedings')">BibTeX</a>]</li>
+<li>Cardenas, Alvaro A., Rachel Greenstadt, and Benjamin I. P.
+Rubinstein. “Proceedings of the 4th Workshop on Artificial Intelligence
+and Security (AISec)”. In: <em>Proceedings of the 2011 ACM Conference on
+Computer and Communications Security</em>. CCS. ACM Press, Oct. 2011,
+pp. 1-116 [<a
+href="http://dl.acm.org/citation.cfm?id=2046684&amp;coll=DL&amp;dl=GUIDE&amp;CFID=49909398&amp;CFTOKEN=70172951">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('cardenas2011proceedings.bib', 'bibtex-cardenas2011proceedings')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-13" class="section level3">
@@ -2240,7 +2864,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Steven J. Lee, Satish Rao, Anthony Tran, and J. Doug Tygar. “Near-Optimal Evasion of Convex-Inducing Classifiers.” In: <em>Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics</em>. AISTATS. 2010, pp. 549-556 [<a href="http://jmlr.csail.mit.edu/proceedings/papers/v9/nelson10a/nelson10a.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2010nearoptimal.bib', 'bibtex-nelson2010nearoptimal')">BibTeX</a>]</li>
+<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D.
+Joseph, Shing-hon Lau, Steven J. Lee, Satish Rao, Anthony Tran, and J.
+Doug Tygar. “Near-Optimal Evasion of Convex-Inducing Classifiers.” In:
+<em>Proceedings of the Thirteenth International Conference on Artificial
+Intelligence and Statistics</em>. AISTATS. 2010, pp. 549-556 [<a
+href="http://jmlr.csail.mit.edu/proceedings/papers/v9/nelson10a/nelson10a.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('nelson2010nearoptimal.bib', 'bibtex-nelson2010nearoptimal')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2256,7 +2886,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C. Mitchell, Dawn Song, and Peter L. Bartlett. “A learning-based approach to reactive security”. In: <em>Proceedings of the Fourteenth International Conference on Financial Cryptography and Data Security</em>. FC. 2010, pp. 192-206 [<a href="papers/react-short.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2010a.bib', 'bibtex-barth2010a')">BibTeX</a>]</li>
+<li>Barth, Adam, Benjamin I. P. Rubinstein, Mukund Sundararajan, John C.
+Mitchell, Dawn Song, and Peter L. Bartlett. “A learning-based approach
+to reactive security”. In: <em>Proceedings of the Fourteenth
+International Conference on Financial Cryptography and Data
+Security</em>. FC. 2010, pp. 192-206 [<a
+href="papers/react-short.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barth2010a.bib', 'bibtex-barth2010a')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2272,7 +2907,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D. Joseph, and J. D. Tygar. “Classifier evasion: Models and open problems”. In: <em>International Workshop on Privacy and Security Issues in Data Mining and Machine Learning</em>. PSDML. 2010, pp. 92-98 [<a href="papers/ecml2010.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2010classifier.bib', 'bibtex-nelson2010classifier')">BibTeX</a>]</li>
+<li>Nelson, Blaine, Benjamin I. P. Rubinstein, Ling Huang, Anthony D.
+Joseph, and J. D. Tygar. “Classifier evasion: Models and open problems”.
+In: <em>International Workshop on Privacy and Security Issues in Data
+Mining and Machine Learning</em>. PSDML. 2010, pp. 92-98 [<a
+href="papers/ecml2010.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2010classifier.bib', 'bibtex-nelson2010classifier')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2288,7 +2927,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. “Secure Learning and Learning for Security: Research in the Intersection”. PhD dissertation. Department of Electrical Engineering &amp; Computer Sciences, University of California, Berkeley, May. 2010 [<a href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-71.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2010secure.bib', 'bibtex-rubinstein2010secure')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. “Secure Learning and Learning for
+Security: Research in the Intersection”. PhD dissertation. Department of
+Electrical Engineering &amp; Computer Sciences, University of
+California, Berkeley, May. 2010 [<a
+href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-71.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2010secure.bib', 'bibtex-rubinstein2010secure')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-14" class="section level3">
@@ -2308,7 +2952,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Ghosh, Arpita, Benjamin I. P. Rubinstein, Sergei Vassilvitskii, and Martin Zinkevich. “Adaptive bidding for display advertising”. In: <em>Proceedings of the 18th International Conference on World Wide Web</em>. WWW. ACM. 2009, pp. 251-260 [<a href="papers/WWW09.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('ghosh2009adaptive.bib', 'bibtex-ghosh2009adaptive')">BibTeX</a>]</li>
+<li>Ghosh, Arpita, Benjamin I. P. Rubinstein, Sergei Vassilvitskii, and
+Martin Zinkevich. “Adaptive bidding for display advertising”. In:
+<em>Proceedings of the 18th International Conference on World Wide
+Web</em>. WWW. ACM. 2009, pp. 251-260 [<a
+href="papers/WWW09.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('ghosh2009adaptive.bib', 'bibtex-ghosh2009adaptive')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2325,7 +2973,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, and J. Hyam Rubinstein. “Shifting: One-inclusion mistake bounds and sample compression”. In: <em>Journal of Computer and System Sciences</em> 75.1 (2009), pp. 37-59 [<a href="papers/RBR07-JCSS.pdf">PDF</a>; <a href="papers/JCSS09-erratum.pdf">corrigendum</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009shifting.bib', 'bibtex-rubinstein2009shifting')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, and J. Hyam
+Rubinstein. “Shifting: One-inclusion mistake bounds and sample
+compression”. In: <em>Journal of Computer and System Sciences</em> 75.1
+(2009), pp. 37-59 [<a href="papers/RBR07-JCSS.pdf">PDF</a>; <a
+href="papers/JCSS09-erratum.pdf">corrigendum</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009shifting.bib', 'bibtex-rubinstein2009shifting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2342,7 +2995,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Satish Rao, Nina Taft, and J. D. Tygar. “ANTIDOTE: Understanding and defending against poisoning of anomaly detectors”. In: <em>Proceedings of the 9th ACM SIGCOMM Internet Measurement Conference</em>. IMC. ACM. 2009, pp. 1-14 [<a href="papers/imc206-rubinstein.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009antidote.bib', 'bibtex-rubinstein2009antidote')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D.
+Joseph, Shing-hon Lau, Satish Rao, Nina Taft, and J. D. Tygar.
+“ANTIDOTE: Understanding and defending against poisoning of anomaly
+detectors”. In: <em>Proceedings of the 9th ACM SIGCOMM Internet
+Measurement Conference</em>. IMC. ACM. 2009, pp. 1-14 [<a
+href="papers/imc206-rubinstein.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009antidote.bib', 'bibtex-rubinstein2009antidote')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2360,7 +3019,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Satish Rao, Nina Taft, and J. D. Tygar. “Stealthy poisoning attacks on PCA-based anomaly detectors”. In: <em>ACM SIGMETRICS Performance Evaluation Review</em> 37.2 (2009), pp. 73-74 [<a href="papers/RNHJLRTT09-SIGMETRICS09.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009stealthy.bib', 'bibtex-rubinstein2009stealthy')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D.
+Joseph, Shing-hon Lau, Satish Rao, Nina Taft, and J. D. Tygar. “Stealthy
+poisoning attacks on PCA-based anomaly detectors”. In: <em>ACM
+SIGMETRICS Performance Evaluation Review</em> 37.2 (2009), pp. 73-74 [<a
+href="papers/RNHJLRTT09-SIGMETRICS09.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009stealthy.bib', 'bibtex-rubinstein2009stealthy')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2376,7 +3040,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph, Benjamin I. P. Rubinstein, Udam Saini, Charles Sutton, J. D. Tygar, and Kai Xia. “Misleading learners: Co-opting your spam filter”. In: <em>Machine Learning in Cyber Trust: Security, Privacy, and Reliability</em>. Springer, 2009, pp. 17-51 [<a href="http://www.springer.com/computer/security+and+cryptology/book/978-0-387-88734-0">publisher link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2009misleading.bib', 'bibtex-nelson2009misleading')">BibTeX</a>]</li>
+<li>Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph,
+Benjamin I. P. Rubinstein, Udam Saini, Charles Sutton, J. D. Tygar, and
+Kai Xia. “Misleading learners: Co-opting your spam filter”. In:
+<em>Machine Learning in Cyber Trust: Security, Privacy, and
+Reliability</em>. Springer, 2009, pp. 17-51 [<a
+href="http://www.springer.com/computer/security+and+cryptology/book/978-0-387-88734-0">publisher
+link</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2009misleading.bib', 'bibtex-nelson2009misleading')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2391,7 +3061,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. “Shifting in the n-Cube: Online Mistake Bounds and the Sample Compression Conjecture”. MCompSci thesis. Faculty of Engineering, University of Melbourne, 2009 [<a href="http://repository.unimelb.edu.au/10187/5774">full</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009bshifting.bib', 'bibtex-rubinstein2009bshifting')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. “Shifting in the n-Cube: Online Mistake
+Bounds and the Sample Compression Conjecture”. MCompSci thesis. Faculty
+of Engineering, University of Melbourne, 2009 [<a
+href="http://repository.unimelb.edu.au/10187/5774">full</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2009bshifting.bib', 'bibtex-rubinstein2009bshifting')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-15" class="section level3">
@@ -2410,7 +3084,11 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, J. Hyam and Benjamin I. P. Rubinstein. “Geometric &amp; Topological Representations of Maximum Classes with Applications to Sample Compression”. In: <em>Proceedings of the 21st Annual Conference on Learning Theory</em>. COLT. 2008, pp. 299-310 [<a href="papers/RR08-COLT08.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008geometric.bib', 'bibtex-rubinstein2008geometric')">BibTeX</a>]</li>
+<li>Rubinstein, J. Hyam and Benjamin I. P. Rubinstein. “Geometric &amp;
+Topological Representations of Maximum Classes with Applications to
+Sample Compression”. In: <em>Proceedings of the 21st Annual Conference
+on Learning Theory</em>. COLT. 2008, pp. 299-310 [<a
+href="papers/RR08-COLT08.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008geometric.bib', 'bibtex-rubinstein2008geometric')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2426,7 +3104,14 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Nina Taft, and J. Doug Tygar. “Evading anomaly detection through variance injection attacks on PCA”. In: <em>Proceedings of the 11th International Symposium on Recent Advances in Intrusion Detection</em>. RAID. 2008, pp. 394-395 [<a href="papers/RNHJLTT08-RAID08.pdf">PDF</a>; <span style="color:red">Winner of RAID08 best poster award</span>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008evading.bib', 'bibtex-rubinstein2008evading')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D.
+Joseph, Shing-hon Lau, Nina Taft, and J. Doug Tygar. “Evading anomaly
+detection through variance injection attacks on PCA”. In:
+<em>Proceedings of the 11th International Symposium on Recent Advances
+in Intrusion Detection</em>. RAID. 2008, pp. 394-395 [<a
+href="papers/RNHJLTT08-RAID08.pdf">PDF</a>; <span
+style="color:red">Winner of RAID08 best poster award</span>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008evading.bib', 'bibtex-rubinstein2008evading')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2442,7 +3127,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph, Benjamin I. P. Rubinstein, Udam Saini, Charles A. Sutton, J. Doug Tygar, and Kai Xia. “Exploiting Machine Learning to Subvert Your Spam Filter.” In: <em>First USENIX Workshop on Large-scale Exploits and Emergent Threats</em>. LEET. 2008, pp. 1-9 [<a href="papers/leet08.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('nelson2008exploiting.bib', 'bibtex-nelson2008exploiting')">BibTeX</a>]</li>
+<li>Nelson, Blaine, Marco Barreno, Fuching Jack Chi, Anthony D. Joseph,
+Benjamin I. P. Rubinstein, Udam Saini, Charles A. Sutton, J. Doug Tygar,
+and Kai Xia. “Exploiting Machine Learning to Subvert Your Spam Filter.”
+In: <em>First USENIX Workshop on Large-scale Exploits and Emergent
+Threats</em>. LEET. 2008, pp. 1-9 [<a href="papers/leet08.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('nelson2008exploiting.bib', 'bibtex-nelson2008exploiting')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2459,7 +3149,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Barreno, Marco, Peter L. Bartlett, Fuching Jack Chi, Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein, Udam Saini, and J. Doug Tygar. “Open problems in the security of learning”. In: <em>Proceedings of the 1st ACM Workshop on Artificial Intelligence &amp; Security</em>. AISec. ACM. 2008, pp. 19-26 [<a href="papers/BBCJNRST08-AISEC08.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('barreno2008open.bib', 'bibtex-barreno2008open')">BibTeX</a>]</li>
+<li>Barreno, Marco, Peter L. Bartlett, Fuching Jack Chi, Anthony D.
+Joseph, Blaine Nelson, Benjamin I. P. Rubinstein, Udam Saini, and J.
+Doug Tygar. “Open problems in the security of learning”. In:
+<em>Proceedings of the 1st ACM Workshop on Artificial Intelligence &amp;
+Security</em>. AISec. ACM. 2008, pp. 19-26 [<a
+href="papers/BBCJNRST08-AISEC08.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('barreno2008open.bib', 'bibtex-barreno2008open')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2475,7 +3171,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D. Joseph, Shing-hon Lau, Nina Taft, and Doug Tygar. <em>Compromising PCA-based anomaly detectors for network-wide traffic</em>. technical report UCB/EECS-2008-73. EECS Department, University of California, Berkeley, 2008 [<a href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-73.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008compromising.bib', 'bibtex-rubinstein2008compromising')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Blaine Nelson, Ling Huang, Anthony D.
+Joseph, Shing-hon Lau, Nina Taft, and Doug Tygar. <em>Compromising
+PCA-based anomaly detectors for network-wide traffic</em>. technical
+report UCB/EECS-2008-73. EECS Department, University of California,
+Berkeley, 2008 [<a
+href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-73.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2008compromising.bib', 'bibtex-rubinstein2008compromising')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="section-16" class="section level3">
@@ -2494,7 +3196,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, and J. Hyam Rubinstein. “Shifting, one-inclusion mistake bounds and tight multiclass expected risk bounds”. In: <em>Advances in Neural Information Processing Systems 19</em>. NIPS. 2007, pp. 1193-1200 [<a href="http://papers.nips.cc/paper/2982-shifting-one-inclusion-mistake-bounds-and-tight-multiclass-expected-risk-bounds.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2007shifting.bib', 'bibtex-rubinstein2007shifting')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Peter L. Bartlett, and J. Hyam
+Rubinstein. “Shifting, one-inclusion mistake bounds and tight multiclass
+expected risk bounds”. In: <em>Advances in Neural Information Processing
+Systems 19</em>. NIPS. 2007, pp. 1193-1200 [<a
+href="http://papers.nips.cc/paper/2982-shifting-one-inclusion-mistake-bounds-and-tight-multiclass-expected-risk-bounds.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2007shifting.bib', 'bibtex-rubinstein2007shifting')">BibTeX</a>]</li>
 </ul>
 </div>
 <div id="pre-2007" class="section level3">
@@ -2512,7 +3219,10 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li><em>Proceedings of the Second Australian Students’ Computing Conference</em>. AUSCC. 175 pages. 2004. ISBN: 0-975-71730-8 [<a href="http://auscc.bipr.net/auscc04">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('abraham2004proceedings.bib', 'bibtex-abraham2004proceedings')">BibTeX</a>]</li>
+<li><em>Proceedings of the Second Australian Students’ Computing
+Conference</em>. AUSCC. 175 pages. 2004. ISBN: 0-975-71730-8 [<a
+href="http://auscc.bipr.net/auscc04">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('abraham2004proceedings.bib', 'bibtex-abraham2004proceedings')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2527,7 +3237,10 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li><em>Proceedings of the First Australian Undergraduate Students’ Computer Conference</em>. AUSCC. 126 pages. 2003. ISBN: 0-646-42751-2 [<a href="http://auscc.bipr.net/auscc03">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2003proceedings.bib', 'bibtex-rubinstein2003proceedings')">BibTeX</a>]</li>
+<li><em>Proceedings of the First Australian Undergraduate Students’
+Computer Conference</em>. AUSCC. 126 pages. 2003. ISBN: 0-646-42751-2
+[<a href="http://auscc.bipr.net/auscc03">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2003proceedings.bib', 'bibtex-rubinstein2003proceedings')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2546,7 +3259,12 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P., Jon McAuliffe, Simon Cawley, Marimuthu Palaniswami, Kotagiri Ramamohanarao, and Terence P. Speed. “Machine learning in low-level microarray analysis”. In: <em>ACM SIGKDD Explorations Newsletter</em> 5.2 (2003). Special Issue on Microarray Data Mining, pp. 130-139 [<a href="papers/sigkdd03.pdf">PDF</a>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2003machine.bib', 'bibtex-rubinstein2003machine')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P., Jon McAuliffe, Simon Cawley, Marimuthu
+Palaniswami, Kotagiri Ramamohanarao, and Terence P. Speed. “Machine
+learning in low-level microarray analysis”. In: <em>ACM SIGKDD
+Explorations Newsletter</em> 5.2 (2003). Special Issue on Microarray
+Data Mining, pp. 130-139 [<a href="papers/sigkdd03.pdf">PDF</a>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2003machine.bib', 'bibtex-rubinstein2003machine')">BibTeX</a>]</li>
 </ul>
 
 <div class="bibox" style="display: none;">
@@ -2563,7 +3281,13 @@ $(document).ready(function () {
 </code></pre></div>
 
 <ul>
-<li>Rubinstein, Benjamin I. P. “Evolving quantum circuits using genetic programming”. In: <em>Proceedings of the 2001 Congress on Evolutionary Computation</em>. CEC. IEEE. 2001, pp. 144-151 [<a href="papers/cec01.pdf">PDF</a>; <span style="color:red">Winner of IEEE Computer Society’s Lance Stafford Larson Scholarship for best undergraduate student paper worldwide</span>; <a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2001evolving.bib', 'bibtex-rubinstein2001evolving')">BibTeX</a>]</li>
+<li>Rubinstein, Benjamin I. P. “Evolving quantum circuits using genetic
+programming”. In: <em>Proceedings of the 2001 Congress on Evolutionary
+Computation</em>. CEC. IEEE. 2001, pp. 144-151 [<a
+href="papers/cec01.pdf">PDF</a>; <span style="color:red">Winner of IEEE
+Computer Society’s Lance Stafford Larson Scholarship for best
+undergraduate student paper worldwide</span>;
+<a style="cursor: pointer;" onclick="DownloadToFile('rubinstein2001evolving.bib', 'bibtex-rubinstein2001evolving')">BibTeX</a>]</li>
 </ul>
 <!-- ranked total 60 astar 32 0.533333333333333 aastar 48 0.8 -->
 </div>
@@ -2577,7 +3301,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -2595,7 +3319,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

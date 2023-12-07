@@ -11,26 +11,40 @@
 
 
 
-<title>group.utf8</title>
+<title>group.knit</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -79,10 +69,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -99,40 +85,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 64px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -160,7 +122,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -172,7 +134,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -182,11 +144,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -198,13 +177,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -212,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -265,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -314,7 +285,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -328,59 +299,142 @@ $(document).ready(function () {
 <div id="postdocs" class="section level3">
 <h3>Postdocs</h3>
 <ul>
-<li><a href="https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au">Andrew Cullen</a> (2019– ). Certified robustness of machine learning.</li>
-<li><a href="https://www.ngmarchant.net/">Neil Marchant</a> (2021– ). Robustness, privacy, and generalisation in machine learning.</li>
-<li><a href="https://arekavandi.github.io/">Aref Miri Rekavandi</a> (2023– ). Robust learning.</li>
+<li><a
+href="https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au">Andrew
+Cullen</a> (2019– ). Certified robustness of machine learning.</li>
+<li><a href="https://www.ngmarchant.net/">Neil Marchant</a> (2021– ).
+Robustness, privacy, and generalisation in machine learning.</li>
+<li><a href="https://arekavandi.github.io/">Aref Miri Rekavandi</a>
+(2023– ). Robust learning.</li>
 </ul>
 </div>
 <div id="phd-students" class="section level3">
 <h3>PhD students</h3>
 <ul>
-<li><a href="https://scholar.google.com/citations?user=gjSlsnQAAAAJ&amp;hl=en">Ruihan Zhang</a> (w Tim Miller, Kris Ehinger 2019– ). Explainable AI and machine learning.</li>
-<li><a href="https://www.linkedin.com/in/guoxin-sun-338888162/">Guoxin Sun</a>. (w Tansu Alpcan, Seyit Camtepe 2020– ). Adversarial learning/game theory for autonomous systems.</li>
-<li><a href="https://www.linkedin.com/in/jun-wang-15065b170/">Jun Wang</a>. (w Trevor Cohn 2020– ). Adversarial learning for NLP.</li>
-<li><a href="https://www.linkedin.com/in/shijie-liu-9162b8151/">Shijie Liu</a>. (w Sarah Erfani, Paul Montague, Andrew Cullen 2021– ). Certified robustness at training time.</li>
-<li><a href="https://github.com/Dovermore">Zhuoqun (Calvin) Huang</a>. (w Olya Ohrimenko, Neil Marchant 2021– ). Certified robustness in computer security applications.</li>
-<li><a href="https://jason-jiankai.github.io/">Jiankai Jin</a>. (w Olya Ohrimenko 2021– ). Systems security of differential privacy.</li>
+<li><a
+href="https://scholar.google.com/citations?user=gjSlsnQAAAAJ&amp;hl=en">Ruihan
+Zhang</a> (w Tim Miller, Kris Ehinger 2019– ). Explainable AI and
+machine learning.</li>
+<li><a href="https://www.linkedin.com/in/guoxin-sun-338888162/">Guoxin
+Sun</a>. (w Tansu Alpcan, Seyit Camtepe 2020– ). Adversarial
+learning/game theory for autonomous systems.</li>
+<li><a href="https://www.linkedin.com/in/jun-wang-15065b170/">Jun
+Wang</a>. (w Trevor Cohn 2020– ). Adversarial learning for NLP.</li>
+<li><a href="https://www.linkedin.com/in/shijie-liu-9162b8151/">Shijie
+Liu</a>. (w Sarah Erfani, Paul Montague, Andrew Cullen 2021– ).
+Certified robustness at training time.</li>
+<li><a href="https://github.com/Dovermore">Zhuoqun (Calvin) Huang</a>.
+(w Olya Ohrimenko, Neil Marchant 2021– ). Certified robustness in
+computer security applications.</li>
+<li><a href="https://jason-jiankai.github.io/">Jiankai Jin</a>. (w Olya
+Ohrimenko 2021– ). Systems security of differential privacy.</li>
 </ul>
 </div>
 <div id="phd-studentscompleted" class="section level3">
 <h3>PhD students—Completed</h3>
 <ul>
-<li><a href="http://www.malinga.me/">Malinga Perera</a> (w Renata Borovica-Gajic 2018–23). Self-driving databases → Software engineer at Amazon Web Services</li>
-<li><a href="https://www.linkedin.com/in/bastian-oetomo-34300856/">Bastian Oetomo</a> (w Renata Borovica-Gajic 2018–23). Multi-armed bandits for database index selection → Postdoc at Univ Melbourne</li>
-<li><a href="https://www.linkedin.com/in/dongge-liu-9a957913a">Dongge Liu</a> (w Toby Murray, Thuan Pham, Gidon Ernst at LMU Munich 2018–22). Software fuzzing with machine learning → Open-Source Security at Google</li>
-<li><a href="https://www.ngmarchant.net/">Neil Marchant</a> (w Beka Steorts at Duke, Aurore Delaigle 2016–20). Bayesian record linkage, adaptive importance sampling for efficient evaluation → Postdoc at Univ Melbourne</li>
-<li><a href="https://au.linkedin.com/in/leyla-roohi-b4544a67">Leyla Roohi</a> (w Vanessa Teague 2017–19). Secure storage and private querying for telecommunications metadata → Postdoc at Univ Melbourne → Analytics at National Australia Bank</li>
-<li><a href="https://scholar.google.com/citations?user=qDDC09EAAAAJ&amp;hl=en">Yuan Li</a> (w Trevor Cohn 2015–19). Crowd sourcing, Bayesian optimisation, NLP → Postdoc at Univ Melbourne</li>
-<li><a href="https://www.researchgate.net/profile/Lingjuan_Lyu">Lingjuan Lyu</a> (w Marimuthu Palaniswami 2016–18). Privacy in distributed sensing → Postdoc at the ANU → Head of Privacy and Security, Sony AI</li>
-<li><a href="https://sites.google.com/site/safiheidari/">Safiollah Heidari</a> (w Raj Buyya 2015–18). Distributed graph processing → Founder of NeuroPhyte</li>
-<li><a href="https://xunyunliu.github.io/">Xunyun Liu</a> (w Raj Buyya, Rodrigo Calheiros 2015–18). Stream computing → Assistant Prof at NUDT, China</li>
-<li><a href="https://www.researchgate.net/profile/Zay_Aye">Zay Aye</a> - CompSci (w Rao Kotagiri 2014–18). Learning distance metrics → Postdoc at Univ Melbourne (Infrastructure Engineering)</li>
-<li><a href="https://www.linkedin.com/in/yamuna-kankanige-8b258a26/">Yamuna Kankanige</a> (w James Bailey 2015–18). Predicting liver transplant outcomes with Austin Health → Senior Data Scientist, Peter MacCallum Cancer Centre</li>
-<li><a href="https://scholar.google.com.au/citations?user=1EPDwbAAAAAJ&amp;hl=en">Maryam Fanaeepour</a> - CompSci (w Lars Kulik, Egemen Tanin 2014–17). Location data privacy → Postdoc at Duke University → Specialist Manager, Data Science, Privacy, Trust at Deloitte</li>
-<li><a href="https://scholar.google.com.au/citations?user=GtpWKiwAAAAJ&amp;hl=en">Jiazhen He</a> - CompSci (w James Bailey, Rui Zhang 2014–17). Education analytics and MOOCs → Postdoc at Univ Melbourne → Associate Principal AI Scientist, AstraZeneca</li>
-<li><a href="https://www.researchgate.net/profile/Zuhe_Zhang">Zuhe Zhang</a> - Maths &amp; Stats (w Sanming Zhou 2014–17). Differential privacy in Bayesian statistics → Data Scientist at ANZ Bank → Data Scientist at Officeworks</li>
+<li><a href="http://www.malinga.me/">Malinga Perera</a> (w Renata
+Borovica-Gajic 2018–23). Self-driving databases → Software engineer at
+Amazon Web Services</li>
+<li><a
+href="https://www.linkedin.com/in/bastian-oetomo-34300856/">Bastian
+Oetomo</a> (w Renata Borovica-Gajic 2018–23). Multi-armed bandits for
+database index selection → Postdoc at Univ Melbourne</li>
+<li><a href="https://www.linkedin.com/in/dongge-liu-9a957913a">Dongge
+Liu</a> (w Toby Murray, Thuan Pham, Gidon Ernst at LMU Munich 2018–22).
+Software fuzzing with machine learning → Open-Source Security at
+Google</li>
+<li><a href="https://www.ngmarchant.net/">Neil Marchant</a> (w Beka
+Steorts at Duke, Aurore Delaigle 2016–20). Bayesian record linkage,
+adaptive importance sampling for efficient evaluation → Postdoc at Univ
+Melbourne</li>
+<li><a href="https://au.linkedin.com/in/leyla-roohi-b4544a67">Leyla
+Roohi</a> (w Vanessa Teague 2017–19). Secure storage and private
+querying for telecommunications metadata → Postdoc at Univ Melbourne →
+Analytics at National Australia Bank</li>
+<li><a
+href="https://scholar.google.com/citations?user=qDDC09EAAAAJ&amp;hl=en">Yuan
+Li</a> (w Trevor Cohn 2015–19). Crowd sourcing, Bayesian optimisation,
+NLP → Postdoc at Univ Melbourne</li>
+<li><a href="https://www.researchgate.net/profile/Lingjuan_Lyu">Lingjuan
+Lyu</a> (w Marimuthu Palaniswami 2016–18). Privacy in distributed
+sensing → Postdoc at the ANU → Head of Privacy and Security, Sony
+AI</li>
+<li><a href="https://sites.google.com/site/safiheidari/">Safiollah
+Heidari</a> (w Raj Buyya 2015–18). Distributed graph processing →
+Founder of NeuroPhyte</li>
+<li><a href="https://xunyunliu.github.io/">Xunyun Liu</a> (w Raj Buyya,
+Rodrigo Calheiros 2015–18). Stream computing → Assistant Prof at NUDT,
+China</li>
+<li><a href="https://www.researchgate.net/profile/Zay_Aye">Zay Aye</a> -
+CompSci (w Rao Kotagiri 2014–18). Learning distance metrics → Postdoc at
+Univ Melbourne (Infrastructure Engineering)</li>
+<li><a
+href="https://www.linkedin.com/in/yamuna-kankanige-8b258a26/">Yamuna
+Kankanige</a> (w James Bailey 2015–18). Predicting liver transplant
+outcomes with Austin Health → Senior Data Scientist, Peter MacCallum
+Cancer Centre</li>
+<li><a
+href="https://scholar.google.com.au/citations?user=1EPDwbAAAAAJ&amp;hl=en">Maryam
+Fanaeepour</a> - CompSci (w Lars Kulik, Egemen Tanin 2014–17). Location
+data privacy → Postdoc at Duke University → Specialist Manager, Data
+Science, Privacy, Trust at Deloitte</li>
+<li><a
+href="https://scholar.google.com.au/citations?user=GtpWKiwAAAAJ&amp;hl=en">Jiazhen
+He</a> - CompSci (w James Bailey, Rui Zhang 2014–17). Education
+analytics and MOOCs → Postdoc at Univ Melbourne → Associate Principal AI
+Scientist, AstraZeneca</li>
+<li><a href="https://www.researchgate.net/profile/Zuhe_Zhang">Zuhe
+Zhang</a> - Maths &amp; Stats (w Sanming Zhou 2014–17). Differential
+privacy in Bayesian statistics → Data Scientist at ANZ Bank → Data
+Scientist at Officeworks</li>
 </ul>
 </div>
 <div id="other-alumni" class="section level3">
 <h3>Other Alumni</h3>
 <ul>
-<li><a href="https://www.amilasilva.com/">Amila Silva</a> (postdoc 2023–23). Multi-modal learning for human-AI teaming → Machine Learning Engineer, Canva</li>
-<li><a href="https://cis.unimelb.edu.au/people/prameesha-weerasinghe">Sandamal Weerasinghe</a> (postdoc 2019–21). Adversarial machine learning.</li>
-<li><a href="https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&amp;hl=en">Roei Gelbhart</a> (student 2019–21). Robustness in machine learning.</li>
-<li><a href="https://changxu.io/">Chang Xu</a> (postdoc 2020–21). Adversarial learning for NLP → Data Scientist, News Corp, Sydney.</li>
-<li><a href="https://shuozhou.github.io/">Shuo Zhou</a> (postdoc w Tordesillas, Bailey, Bondell 2019–20). Complex networks in materials science, cybersecurity.</li>
-<li><a href="https://tlienart.github.io/">Thibaut Lienart</a> (postdoc 2018–19). Adversarial machine learning → Associate, Alan Turing Institute</li>
-<li><a href="https://scholar.google.com/citations?user=e_mtK4kAAAAJ&amp;hl=en">Yi Han</a> (postdoc 2016–19). Adversarial reinforcement learning → Postdoc at Melbourne</li>
-<li><a href="https://scholar.google.com/citations?user=TpErHPkAAAAJ&amp;hl=en">Shen Wang</a> (postdoc 2016–18). Probabilistic programming, databases, record linkage.</li>
-<li><a href="http://ben.fish/">Ben Fish</a> (medium-term PhD visitor 2016) → Postdoc at MSR Montréal</li>
-<li><a href="http://www.ruhr-uni-bochum.de/lmi/alda/">Francesco Aldà</a> (medium-term PhD visitor 2016) → Data Scientist at SAP, Germany <!-- ### PhD interns---former Microsoft Research --></li>
-<li><a href="http://www.linkedin.com/pub/akshay-balsubramani/12/3aa/2">Akshay Balsubramani</a> (MSR PhD intern 2012) → Postdoc at Stanford</li>
-<li><a href="http://acsweb.ucsd.edu/~ecoviell/">Emanuele Coviello</a> (MSR PhD intern 2012) → Founder/CEO at Keevio</li>
-<li><a href="http://www.eecs.berkeley.edu/~sahand_n/">Sahand Negahban</a> (MSR PhD intern 2011) → Assistant Prof at Yale Statistics</li>
-<li><a href="http://sifaka.cs.uiuc.edu/~dzhang22/">Duo Zhang</a> (MSR PhD intern 2011) → Software Engineer at Twitter</li>
-<li><a href="http://dm1.cs.uiuc.edu/">Bo Zhao</a> (MSR PhD intern 2011) → Researcher at Microsoft Research</li>
+<li><a href="https://www.amilasilva.com/">Amila Silva</a> (postdoc
+2023–23). Multi-modal learning for human-AI teaming → Machine Learning
+Engineer, Canva</li>
+<li><a
+href="https://cis.unimelb.edu.au/people/prameesha-weerasinghe">Sandamal
+Weerasinghe</a> (postdoc 2019–21). Adversarial machine learning.</li>
+<li><a
+href="https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&amp;hl=en">Roei
+Gelbhart</a> (student 2019–21). Robustness in machine learning.</li>
+<li><a href="https://changxu.io/">Chang Xu</a> (postdoc 2020–21).
+Adversarial learning for NLP → Data Scientist, News Corp, Sydney.</li>
+<li><a href="https://shuozhou.github.io/">Shuo Zhou</a> (postdoc w
+Tordesillas, Bailey, Bondell 2019–20). Complex networks in materials
+science, cybersecurity.</li>
+<li><a href="https://tlienart.github.io/">Thibaut Lienart</a> (postdoc
+2018–19). Adversarial machine learning → Associate, Alan Turing
+Institute</li>
+<li><a
+href="https://scholar.google.com/citations?user=e_mtK4kAAAAJ&amp;hl=en">Yi
+Han</a> (postdoc 2016–19). Adversarial reinforcement learning → Postdoc
+at Melbourne</li>
+<li><a
+href="https://scholar.google.com/citations?user=TpErHPkAAAAJ&amp;hl=en">Shen
+Wang</a> (postdoc 2016–18). Probabilistic programming, databases, record
+linkage.</li>
+<li><a href="http://ben.fish/">Ben Fish</a> (medium-term PhD visitor
+2016) → Postdoc at MSR Montréal</li>
+<li><a href="http://www.ruhr-uni-bochum.de/lmi/alda/">Francesco Aldà</a>
+(medium-term PhD visitor 2016) → Data Scientist at SAP, Germany
+<!-- ### PhD interns---former Microsoft Research --></li>
+<li><a
+href="http://www.linkedin.com/pub/akshay-balsubramani/12/3aa/2">Akshay
+Balsubramani</a> (MSR PhD intern 2012) → Postdoc at Stanford</li>
+<li><a href="http://acsweb.ucsd.edu/~ecoviell/">Emanuele Coviello</a>
+(MSR PhD intern 2012) → Founder/CEO at Keevio</li>
+<li><a href="http://www.eecs.berkeley.edu/~sahand_n/">Sahand
+Negahban</a> (MSR PhD intern 2011) → Assistant Prof at Yale
+Statistics</li>
+<li><a href="http://sifaka.cs.uiuc.edu/~dzhang22/">Duo Zhang</a> (MSR
+PhD intern 2011) → Software Engineer at Twitter</li>
+<li><a href="http://dm1.cs.uiuc.edu/">Bo Zhao</a> (MSR PhD intern 2011)
+→ Researcher at Microsoft Research</li>
 </ul>
 </div>
 
@@ -393,7 +447,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -411,7 +465,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
