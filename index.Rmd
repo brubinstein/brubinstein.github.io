@@ -1,9 +1,13 @@
 ---
+title: "&#32;"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+<head><title>Ben Rubinstein</title></head>
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
