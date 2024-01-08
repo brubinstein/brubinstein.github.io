@@ -250,25 +250,27 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Advisory
 
-* Member (2019--), Methodology Advisory Committee, Australian Bureau of Statistics.
-* Member (2015--), National Committee for Information and Communication Sciences, the Australian Academy of Science.
+* Member (2023--), Kingston AI Group. [link](https://kingstonaigroup.org.au/)
+* Member (2015--), National Committee for Information and Communication Sciences, the Australian Academy of Science. [link](https://www.science.org.au/supporting-science/national-committees-science/information-communication-sciences)
+* Member Judging Panel (2023), Falling Walls Lab Sydney
+* Member (2021--23), Go8 Computing, Formerly Australian Computing Research Alliance (ACRA). See e.g., the [statement on venue rankings](https://cis.unimelb.edu.au/news/2022/joint-statement-on-rankings-in-computer-science) in computer science research.
+* Member (2019--21), Methodology Advisory Committee, Australian Bureau of Statistics.
 * Member (2020--21), Ranking Advisory Committee, Computing Research and Education Association of Australasia (CORE).
 
 ### Institutional
 
-* Associate Dean Research (2020), Faculty of Engineering and Information Technology
+* Deputy Dean Research (interim; 2024), Faculty of Engineering and Information Technology
+* Associate Dean Research (2020--23), Faculty of Engineering and Information Technology
 * Co-lead (2021--), AI Group, School of Computing and Information Systems
 * Member (2019--), School Executive, School of Computing and Information Systems
-* Member (2019--) and Chair (2020), Awards and Prizes Working Group, Melbourne School of Engineering
 * Investigator (2000--), Melbourne Centre for Data Science (MCDS)
 * Community Researcher (2000--), Centre for AI and Digital Ethics (CAIDE), Melbourne Law School
-* Academic Fellow (2016--), Centre for Business Analytics, Melbourne Business School
 
 Many more committees and working groups at departmental, faculty and university levels.
 
 ### Program committees
 
-* **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17-18 (PC)](https://2017.icml.cc/),['19-21 (area chair)](https://icml.cc/), **NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17-19 (PC)](https://nips.cc/Conferences/2019/),['20 (area chair)](https://nips.cc/Conferences/2020/), [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
+* **ICML**['2011](http://www.icml-2011.org/),['12](http://icml.cc/2012/),['17-18 (PC)](https://2017.icml.cc/),['19-21 (area chair)](https://icml.cc/), **NeurIPS** (formerly NIPS)['2014](https://nips.cc/Conferences/2014),['17-19 (PC)](https://nips.cc/Conferences/2019/),['20,'23 (area chair)](https://nips.cc/Conferences/2020/), [**AAAI**'2018 (senior PC)](https://aaai.org/Conferences/AAAI/aaai18.php), 
 **ICDE**['2016](http://icde2016.fi/callposters.php#tabular1),['17](http://icde2017.sdsc.edu/), 
 [**AISTATS**'2017](http://www.aistats.org/), 
 [CSCML'2017](https://www.cs.bgu.ac.il/~fradmin/cscml17/organization.html), 

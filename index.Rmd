@@ -17,10 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Benjamin I. P. Rubinstein**, PhD (Berkeley)<br> 
 <p style="font-size:16px">Professor & AI co-lead, _School of Computing and Information Systems_<br>
-Associate Dean (Research), _Faculty of Engineering and Information Technology_<br>
+Deputy Dean Research (Interim), _Faculty of Engineering and Information Technology_<br>
 _The University of Melbourne, Australia_</p>
 
-I actively research topics in machine learning, particularly security and privacy implications of AI, such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in industry research labs including Microsoft Research Silicon Valley and IBM Research Australia, and received the PhD (Computer Science) from UC Berkeley in 2010. I have been part of teams that have: analysed privacy at the Australian Bureau of Statistics, National Australia Bank, and Transport for NSW; robustness of translation systems to data poisoning attacks with Facebook (Meta); helped identify and plug side-channel attacks against the Firefox browser; deanonymised Victorian Myki transport data and an unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016; developed scalable Bayesian approaches to record linkage tested by U.S. Census; and shipped production systems for record linkage in Bing and the Xbox360. Since joining Melbourne in 2013, I have been awarded 
+I actively research topics in machine learning, particularly security and privacy implications of AI, such as adversarial learning, differential privacy and record linkage. Prior to joining the University of Melbourne in 2013, I enjoyed four years in industry research labs including Microsoft Research Silicon Valley and IBM Research Australia, and received the PhD (Computer Science) from UC Berkeley in 2010. I'm currently a full professor and interim Deputy Dean (Research), and was Associate Dean (Research) 2020--2023. I have been part of teams that have: analysed privacy at the Australian Bureau of Statistics, National Australia Bank, and Transport for NSW; robustness of translation systems to data poisoning attacks with Facebook (Meta); helped identify and plug side-channel attacks against the Firefox browser; deanonymised Victorian Myki transport data and an unprecedented Australian Medicare data release, prompting introduction of the Re-identification Offence Bill 2016; developed scalable Bayesian approaches to record linkage tested by U.S. Census; and shipped production systems for record linkage in Bing and the Xbox360. Since joining Melbourne in 2013, I have been awarded 
 ```{r funding, echo=FALSE, results="asis"}
 FT <- read.csv("funding/funding.csv")
 
@@ -40,4 +40,4 @@ for (i in seq(from=1,to=nrow(FT))) {
 cat("\\$", round(total.competitive/1000, 2), "m in competitive funding ", sep="")
 cat("(\\$", round(total.lead/1000, 2), "m as lead) to my institution. ", sep="")
 ```
-Starting 2021, I am co-leading [CATCH MURI](https://catch-muri.org) which convenes a team of 16 experts across 6 US/AUS universities for fundamental discovery in robust human-AI teams for cybersecurity.
+Starting 2021, I am co-leading [CATCH MURI](https://catch-muri.org) which convenes a team of 16 experts across 6 US/AUS universities for fundamental discovery in robust human-AI teams for cybersecurity. 
