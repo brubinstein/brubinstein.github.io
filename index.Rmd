@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br>
 
-<img src="images/ben1.jpg" style="width:30%; border:12px solid; margin-right: 24px" align="left">
+<img src="images/ben2.jpg" style="width:30%; border:12px solid; margin-right: 24px" align="left">
 
 **Benjamin I. P. Rubinstein**, PhD (Berkeley)<br> 
 <p style="font-size:16px">Professor & AI co-lead, _School of Computing and Information Systems_<br>
