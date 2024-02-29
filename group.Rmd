@@ -20,6 +20,7 @@ I am fortunate to supervise a brilliant group of researchers.
 * [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-- ). Certified robustness at training time.
 * [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021-- ). Certified robustness for discrete data.
 * [Jiankai Jin](https://jason-jiankai.github.io/). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
+* [Jiacheng Zhang](https://cis.unimelb.edu.au/people/students/jiacheng-zhang). (w Feng Liu 2023-- ). Trustworthy ML.
 * Maria Bulychev. (w Neil Marchant 2024-- ). Adversarial learning.
 
 ### PhD students---Completed
