@@ -22,6 +22,7 @@ I am fortunate to supervise a brilliant group of researchers.
 * [Jiankai Jin](https://jason-jiankai.github.io/). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
 * [Jiacheng Zhang](https://cis.unimelb.edu.au/people/students/jiacheng-zhang). (w Feng Liu 2023-- ). Trustworthy ML.
 * Maria Bulychev. (w Neil Marchant 2024-- ). Adversarial learning.
+* [Wenqi Yan](https://www.linkedin.com/in/wenqi-yan-082a18223/?trk=people-guest_people_search-card&originalSubdomain=au). (w Thuan Pham, Toby Murray 2024-- ). Software fuzzing.
 
 ### PhD students---Completed
 
