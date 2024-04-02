@@ -11,7 +11,6 @@ I am fortunate to supervise a brilliant group of researchers.
 
 * [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (2019-- ). Certified robustness of machine learning.
 * [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Robustness, privacy, and generalisation in machine learning.
-* [Aref Miri Rekavandi](https://arekavandi.github.io/) (2023-- ). Robust learning.
 
 ### PhD students
 
@@ -44,8 +43,9 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### Other Alumni
 
+* [Aref Miri Rekavandi](https://arekavandi.github.io/) (psotdoc 2023--24). Certified robustness  →  Postdoc, University of Oxford
 * [Amila Silva](https://www.amilasilva.com/) (postdoc 2023--23). Multi-modal learning for human-AI teaming →  Machine Learning Engineer, Canva
-* [Sandamal Weerasinghe](https://cis.unimelb.edu.au/people/prameesha-weerasinghe) (postdoc 2019--21). Adversarial machine learning.
+* [Sandamal Weerasinghe](https://cis.unimelb.edu.au/people/prameesha-weerasinghe) (postdoc 2019--21). Adversarial machine learning → Energy and Forecasting Analyst, ZEN Energy (startup)
 * [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (student 2019--21). Robustness in machine learning.
 * [Chang Xu](https://changxu.io/) (postdoc 2020--21). Adversarial learning for NLP → Data Scientist, News Corp, Sydney.
 * [Shuo Zhou](https://shuozhou.github.io/) (postdoc w Tordesillas, Bailey, Bondell 2019--20). Complex networks in materials science, cybersecurity.
