@@ -11,6 +11,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 * [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (2019-- ). Certified robustness of machine learning.
 * [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Robustness, privacy, and generalisation in machine learning.
+* [Ying Zhao](https://scholar.google.com/citations?user=6e-e6Q4AAAAJ) (2024-- ). Differential privacy.
 
 ### PhD students
 
