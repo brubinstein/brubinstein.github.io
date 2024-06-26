@@ -40,4 +40,4 @@ for (i in seq(from=1,to=nrow(FT))) {
 cat("\\$", round(total.competitive/1000, 2), "m in competitive funding ", sep="")
 cat("(\\$", round(total.lead/1000, 2), "m as lead) to my institution. ", sep="")
 ```
-Starting 2021, I am co-leading [CATCH MURI](https://catch-muri.org) which convenes a team of 16 experts across 6 US/AUS universities for fundamental discovery in robust human-AI teams for cybersecurity. 
+Over 2021-24, I was co-lead of [CATCH MURI](https://catch-muri.org), convening a team of 16 experts across 6 US/AUS universities for fundamental discovery in robust human-AI teams for cybersecurity. 
