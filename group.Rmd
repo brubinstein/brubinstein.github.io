@@ -15,18 +15,19 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### PhD students
 
-* [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020-- ). Adversarial learning/game theory for autonomous systems.
 * [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-- ). Adversarial learning for NLP.
 * [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-- ). Certified robustness at training time.
 * [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021-- ). Certified robustness for discrete data.
 * [Jiankai Jin](https://jason-jiankai.github.io/). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
 * [Jiacheng Zhang](https://cis.unimelb.edu.au/people/students/jiacheng-zhang). (w Feng Liu 2023-- ). Trustworthy ML.
-* Maria Bulychev. (w Neil Marchant 2024-- ). Adversarial learning.
+* [Maria Bulychev](https://cis.unimelb.edu.au/people/graduate-researchers/artificial-intelligence/maria-bulychev). (w Neil Marchant 2024-- ). Watermarking GenAI and trustworthy AI.
 * [Wenqi Yan](https://www.linkedin.com/in/wenqi-yan-082a18223/?trk=people-guest_people_search-card&originalSubdomain=au). (w Thuan Pham, Toby Murray 2024-- ). Software fuzzing.
+* [Jiani Xie](https://www.linkedin.com/in/jiani-xie-a79a67152/?originalSubdomain=au). (w Andrew Cullen 2025-- ). Automatic speech recognition.
 
 ### PhD students---Completed
 
-* [Ruihan Zhang](https://scholar.google.com/citations?user=gjSlsnQAAAAJ&hl=en) (w Tim Miller, Kris Ehinger 2019--24). Explainable AI
+* [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020--24). Adversarial learning/game theory for autonomous systems → Data scientist at Proa
+* [Ruihan Zhang](https://scholar.google.com/citations?user=gjSlsnQAAAAJ&hl=en) (w Tim Miller, Kris Ehinger 2019--24). Explainable AI →  Postdoc at the State Grid Corporation of China
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018--23). Self-driving databases → Software engineer at Amazon Web Services
 * [Bastian Oetomo](https://www.linkedin.com/in/bastian-oetomo-34300856/) (w Renata Borovica-Gajic 2018--23). Multi-armed bandits for database index selection → Postdoc at Univ Melbourne
 * [Dongge Liu](https://www.linkedin.com/in/dongge-liu-9a957913a) (w Toby Murray, Thuan Pham, Gidon Ernst at LMU Munich 2018--22). Software fuzzing with machine learning → Open-Source Security at Google
