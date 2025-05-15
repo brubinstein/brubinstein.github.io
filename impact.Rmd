@@ -251,7 +251,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 ### Advisory
 
 * Member (2023--), Kingston AI Group. [link](https://kingstonaigroup.org.au/)
-* Member (2015--), National Committee for Information and Communication Sciences, the Australian Academy of Science. [link](https://www.science.org.au/supporting-science/national-committees-science/information-communication-sciences)
+* Member (2015--25), National Committee for Information and Communication Sciences, the Australian Academy of Science. [link](https://www.science.org.au/supporting-science/national-committees-science/information-communication-sciences)
 * Member Judging Panel (2023), Falling Walls Lab Sydney
 * Member (2021--23), Go8 Computing, Formerly Australian Computing Research Alliance (ACRA). See e.g., the [statement on venue rankings](https://cis.unimelb.edu.au/news/2022/joint-statement-on-rankings-in-computer-science) in computer science research.
 * Member (2019--21), Methodology Advisory Committee, Australian Bureau of Statistics.
@@ -259,7 +259,7 @@ for (i in seq(from=1,to=nrow(FT))) {
 
 ### Institutional
 
-* Deputy Dean Research (interim; 2024), Faculty of Engineering and Information Technology
+* Deputy Dean Research (interim 2024; ongoing 2025--), Faculty of Engineering and Information Technology
 * Associate Dean Research (2020--23), Faculty of Engineering and Information Technology
 * Co-lead (2021--), AI Group, School of Computing and Information Systems
 * Member (2019--), School Executive, School of Computing and Information Systems
