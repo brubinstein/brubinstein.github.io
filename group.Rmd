@@ -15,17 +15,17 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### PhD students
 
-* [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-- ). Certified robustness at training time.
-* [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021-- ). Certified robustness for discrete data.
-* [Jiankai Jin](https://jason-jiankai.github.io/). (w Olya Ohrimenko 2021-- ). Systems security of differential privacy.
-* [Jiacheng Zhang](https://cis.unimelb.edu.au/people/students/jiacheng-zhang). (w Feng Liu 2023-- ). Trustworthy ML.
+* [Jiacheng Zhang](https://cis.unimelb.edu.au/people/students/jiacheng-zhang). (w Feng Liu 2023-- ). Trustworthy AI.
 * [Maria Bulychev](https://cis.unimelb.edu.au/people/graduate-researchers/artificial-intelligence/maria-bulychev). (w Neil Marchant 2024-- ). Watermarking GenAI and trustworthy AI.
-* [Wenqi Yan](https://www.linkedin.com/in/wenqi-yan-082a18223/?trk=people-guest_people_search-card&originalSubdomain=au). (w Thuan Pham, Toby Murray 2024-- ). Software fuzzing.
-* [Jiani Xie](https://www.linkedin.com/in/jiani-xie-a79a67152/?originalSubdomain=au). (w Andrew Cullen 2025-- ). Automatic speech recognition.
+* [Wenqi Yan](https://www.linkedin.com/in/wenqi-yan-082a18223/?trk=people-guest_people_search-card&originalSubdomain=au). (w Thuan Pham, Toby Murray 2024-- ). Software fuzzing with LLMs.
+* [Jiani Xie](https://www.linkedin.com/in/jiani-xie-a79a67152/?originalSubdomain=au). (w Andrew Cullen 2025-- ). Security of automatic speech recognition.
 
 ### PhD students---Completed
 
-* [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-25). Adversarial learning for NLP.
+* [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021--25). Certified robustness for discrete data → Quant at Jane Street
+* [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-25). Certified robustness at training time → Postdoc at Univ Melbourne
+* [Jiankai Jin](https://www.linkedin.com/in/jin-jiankai-3a5750119/). (w Olya Ohrimenko 2021--25). Systems security of differential privacy.
+* [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-25). Adversarial learning for NLP → Postdoc (Applied Scientist) at Amazon
 * [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020--24). Adversarial learning/game theory for autonomous systems → Data scientist at Proa
 * [Ruihan Zhang](https://scholar.google.com/citations?user=gjSlsnQAAAAJ&hl=en) (w Tim Miller, Kris Ehinger 2019--24). Explainable AI →  Postdoc at the State Grid Corporation of China
 * [Malinga Perera](http://www.malinga.me/) (w Renata Borovica-Gajic 2018--23). Self-driving databases → Software engineer at Amazon Web Services
@@ -47,8 +47,9 @@ I am fortunate to supervise a brilliant group of researchers.
 
 * [Aref Miri Rekavandi](https://arekavandi.github.io/) (psotdoc 2023--24). Certified robustness  →  Postdoc, University of Oxford
 * [Amila Silva](https://www.amilasilva.com/) (postdoc 2023--23). Multi-modal learning for human-AI teaming →  Machine Learning Engineer, Canva
+* [Ni Ding](https://profiles.auckland.ac.nz/ni-ding) (postdoc 2020-23). Information theory for privacy → Lecturer, Univ Auckland, New Zealand 
 * [Sandamal Weerasinghe](https://cis.unimelb.edu.au/people/prameesha-weerasinghe) (postdoc 2019--21). Adversarial machine learning → Energy and Forecasting Analyst, ZEN Energy (startup)
-* [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (student 2019--21). Robustness in machine learning.
+* [Roei Gelbhart](https://scholar.google.co.il/citations?user=en8SzLcAAAAJ&hl=en) (student 2019--21). Robustness in machine learning → Applied Scientist, Amazon, Haifa.
 * [Chang Xu](https://changxu.io/) (postdoc 2020--21). Adversarial learning for NLP → Data Scientist, News Corp, Sydney.
 * [Shuo Zhou](https://shuozhou.github.io/) (postdoc w Tordesillas, Bailey, Bondell 2019--20). Complex networks in materials science, cybersecurity.
 * [Thibaut Lienart](https://tlienart.github.io/) (postdoc 2018--19). Adversarial machine learning → Associate, Alan Turing Institute
