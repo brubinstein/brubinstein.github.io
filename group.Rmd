@@ -24,7 +24,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 * [Zhuoqun (Calvin) Huang](https://github.com/Dovermore). (w Olya Ohrimenko, Neil Marchant 2021--25). Certified robustness for discrete data → Quant at Jane Street
 * [Shijie Liu](https://www.linkedin.com/in/shijie-liu-9162b8151/). (w Sarah Erfani, Paul Montague, Andrew Cullen 2021-25). Certified robustness at training time → Postdoc at Univ Melbourne
-* [Jiankai Jin](https://www.linkedin.com/in/jin-jiankai-3a5750119/). (w Olya Ohrimenko 2021--25). Systems security of differential privacy.
+* [Jiankai Jin](https://www.linkedin.com/in/jin-jiankai-3a5750119/). (w Olya Ohrimenko 2021--25). Systems security of differential privacy → Senior AI Security Research Engineer at 360 Security
 * [Jun Wang](https://www.linkedin.com/in/jun-wang-15065b170/). (w Trevor Cohn 2020-25). Adversarial learning for NLP → Postdoc (Applied Scientist) at Amazon
 * [Guoxin Sun](https://www.linkedin.com/in/guoxin-sun-338888162/). (w Tansu Alpcan, Seyit Camtepe 2020--24). Adversarial learning/game theory for autonomous systems → Data scientist at Proa
 * [Ruihan Zhang](https://scholar.google.com/citations?user=gjSlsnQAAAAJ&hl=en) (w Tim Miller, Kris Ehinger 2019--24). Explainable AI →  Postdoc at the State Grid Corporation of China
