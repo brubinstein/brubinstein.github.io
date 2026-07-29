@@ -1,4 +1,5 @@
 Amount,Start,End,Sponsor,Scheme,Title,CIs,Category,Notes
+35,2026,2026,Microsoft,Microsoft AI Red Teaming,External Red Team Alliance ([EXTRA](https://www.microsoft.com/en-us/security/blog/2026/07/27/enhancing-ai-security-through-global-ai-red-teaming/)),Benjamin Rubinstein,2-4,
 150,2025,2026,Google,Research Funding Agreement,From Data to Rapid Insights with Intelligent AI-Powered Databases,"Renata Borovica-Gajic, Benjamin Rubinstein",2-4,
 659,2025,2028, Office of National Intelligence, National Intelligence Discovery Grants 2025,,"Olga Ohrimenko, Renata Borovica-Gajic, Benjamin Rubinstein",1,
 267,2025,2025,Google,Research Funding Agreement,Improving the Quality of Generated Fuzz Drivers,"Van-Thuan Pham, Toby Murray, Benjamin Rubinstein",2-4
