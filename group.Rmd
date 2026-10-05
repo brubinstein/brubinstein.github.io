@@ -9,8 +9,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### Postdocs
 
-* [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (2019-- ). Certified robustness of machine learning.
-* [Neil Marchant](https://www.ngmarchant.net/) (2021-- ). Robustness, privacy, and generalisation in machine learning.
+* [Neil Marchant](https://www.ngmarchant.net/) (2021--26; w Olya Ohrimenko, Renata Borovica-Gajic 2026-- ). Robustness, privacy, and generalisation in machine learning.
 
 ### PhD students
 
@@ -46,6 +45,7 @@ I am fortunate to supervise a brilliant group of researchers.
 
 ### Other Alumni
 
+* [Andrew Cullen](https://www.linkedin.com/in/andrew-cullen-67b04746/?originalSubdomain=au) (2019--26). Certified robustness of machine learning.
 * [Ying Zhao](https://scholar.google.com/citations?user=6e-e6Q4AAAAJ) (2024--25). Differential privacy.
 * [Aref Miri Rekavandi](https://arekavandi.github.io/) (psotdoc 2023--24). Certified robustness  →  Postdoc, University of Oxford
 * [Amila Silva](https://www.amilasilva.com/) (postdoc 2023--23). Multi-modal learning for human-AI teaming →  Machine Learning Engineer, Canva
